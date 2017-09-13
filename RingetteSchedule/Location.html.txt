@@ -1,0 +1,152 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<HTML LANG="en" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<TITLE>Brewer - City Of Ottawa Ringette Association</TITLE>
+<META NAME="DESCRIPTION" CONTENT="City Of Ottawa Ringette Association - City Of Ottawa Ringette - Powered by Teamopolis Sports Websites, providers of free league/club websites and online sports registration services">
+<META NAME="KEYWORDS" CONTENT="city of ottawa ringette association,ringette,ottawa,ontario,canada">
+	<META HTTP-EQUIV="keyphrase" CONTENT="city of ottawa ringette association,ringette,ottawa,ontario,canada">
+	<META HTTP-EQUIV="abstract" CONTENT="Web Site is designed and developed by Teamopolis Inc. - Manage your sports league,club,team and online registration at www.teamopolis.com.">
+	<META HTTP-EQUIV="revisit-after" CONTENT="10 days">
+	<META HTTP-EQUIV="distribution" CONTENT="Global">
+	<META HTTP-EQUIV="copyright" CONTENT="© Copyright 2017 Teamopolis Inc.  All Rights Reserved.">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+<LINK REL="STYLESHEET" HREF="/styles/0/8/styles.css">
+<LINK REL="STYLESHEET" HREF="/styles/0/8/calendar.css">
+<LINK REL="STYLESHEET" HREF="/styles/common.css">
+<link rel="canonical" HREF="http://www.ottawaringette.on.ca/league/locations.aspx?LocID=10034&SC=True" />
+<meta name="robots" content="all" />
+<meta name="x-server-id" content="15" />
+<meta name="apple-itunes-app" content="app-id=500769175" />
+	<link rel="shortcut icon" href="/favicon.ico">
+	<link rel="icon" href="/favicon.ico">
+	<link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
+ <link rel="apple-touch-icon" href="/apple-touch-icon-60x60.png">
+<script language="javascript" type="text/javascript" src="/scripts/mobiledetect.js"></script>
+</head><body><form method="post" action="./locations.aspx?CO=True&amp;LocID=10034&amp;SC=True" id="ctl05">
+<div class="aspNetHidden">
+<input type="hidden" name="ctl06_TSM" id="ctl06_TSM" value="" />
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="M986wF5ls1s3zKaaUFRtcJTU/yjhwi7GgkW6Zq1nAVd/X/vDYI1jWE0C/GIthWOd7GHGkX8lGV91OpUHTvsBSkeCjFyqdVnhyssOCoQoHCm5eXW4gYk0sWjW2CVXiBgu/BqoSQyH0pzCXeui29quf4IQlhlSbpH0WvNk1U2mgeOH2ZZjcDKPEyZfqgqFk88BN8QTTvNWzzPukvpqhimW/zddtocusRWax333EmzysOywE2rM0Frq96sf1UMp0Oc3Qaq6EENf5AzkWIA7J0UcRr2UBfZuRjbCMWVku4H0D4MhqrdjnsB4OGRHo9ye4QyD1QffPo5J/hEaYwzVXXT1kxUk8k5XQLs+TE0N4RYkNb0deHdM5LLiNpPPR6a3V276qaVlBoxG5J4VAW0J8dUM73AM1SGHdFaxl7ZCwTmBy7DuiiccQbdumQr+wJaHHjdeCDSeq/hwRDPXRPxBBWzmV73+/wQ4eCWucSoT0VTGlH952A7gZIDb49677sF3WqR1dxeNne4pC0Oglu8426ooSnZ1jvlXPf307Lr7DQ0Mk3C8tJhLZmr+spNvJUuOUdBEHaztG0ZAneN3XFPFDkk0HCkPM4TMjAJ6mq5H57k0WiQqHf2G6wOwyBerGo1WEkrAlsGBn5GFLXg+MPI+ySWveJlAN5j/HLcHoSDKLw7wUwgFUG7uKIg6nf34cSe9RHF4lmosyr2GEXDZk4Bs8SS+FzW2v2Do2Y5IGyNux1YfCTS/7wz7y4XGnBwipkiEGBGEvwmkIaWg2gfttg0FPOWj2oOb8O2IC4Xm7Da/UyNgB2gQiynwTFcIsk/2RhDQvqsY0eyProGn+Cn7dSPLNuT4UBcm6qvKRSXAZ6Rhj7KAMzdtgMoA3u8UjQFlgsXp6znwTFeW8EiKgA/pZ3b4tRueO/TI4TfNZcMw43MXCopaxOHc+07f2t6gRLV8qepdzDRCUtCHn/js8NY8PL9FV78BV0iUF3czPrVHS3z0GliLMzWvNGr7I0nusmQIvMIQxcAZ/fuK/uTlDMkZTwOjxmFCiyRWV0GqIGGdf9S6K5dxBZVcas1AYN7PoqI11ydQ2CTyKp8dy3v36ndrXKGU98tAeSTEWttETy+5SweHI+TE5ID3lGZm" />
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['ctl05'];
+if (!theForm) {
+    theForm = document.ctl05;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<script src="/WebResource.axd?d=pynGkmcFUV13He1Qd6_TZGUlbYtsLbenpNxLCuxQXPHd560vegSKSdRPG-tbSlBvn3O6lQ2&amp;t=636284082552661246" type="text/javascript"></script>
+
+
+<script src="/Telerik.Web.UI.WebResource.axd?_TSM_HiddenField_=ctl06_TSM&amp;compress=1&amp;_TSM_CombinedScripts_=%3b%3bSystem.Web.Extensions%2c+Version%3d4.0.0.0%2c+Culture%3dneutral%2c+PublicKeyToken%3d31bf3856ad364e35%3aen-US%3abcca958d-0b33-4edf-8c7b-050821c334aa%3aea597d4b%3ab25378d2" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+if (typeof(Sys) === 'undefined') throw new Error('ASP.NET Ajax client-side framework failed to load.');
+//]]>
+</script>
+
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="14488991" />
+</div><script type="text/javascript">
+//<![CDATA[
+Sys.WebForms.PageRequestManager._initialize('ctl06', 'ctl05', [], [], [], 90, '');
+//]]>
+</script>
+<div style="background-color:#FFFFFF">
+<a title="Online Sports Registration &amp; Website Services" href="http://www.teamopolis.com/" style="display:inline-block;border-style:None;"><img title="Online Sports Registration &amp; Website Services" src="/images/0/8/leagues_banner_small.png" alt="" /></a></ br></div>
+
+
+<br />
+<div id="ctl08_panelLocation" class="mylocation" style="width:400px;padding:4px;">
+	
+<TABLE CLASS="content1_table" WIDTH="100%" CELLSPACING="0" CELLPADDING="0">
+	<TR HEIGHT="25">
+		<TD HEIGHT="25" WIDTH="11" VALIGN="top"><IMG HEIGHT="25" WIDTH="11" SRC="/images/0/8/content1_top_left.png"></TD>
+		<TD HEIGHT="25" WIDTH="100%" STYLE="BACKGROUND-IMAGE:url(/images/0/8/content1_top_middle.png)"
+			CLASS="content1_header_left" nowrap><h2>Brewer Information</h2>
+		</TD>
+		<td height="25" STYLE="BACKGROUND-IMAGE:url(/images/0/8/content1_top_middle.png)" CLASS="content1_header_right" nowrap>
+				&nbsp;
+		</td>
+		<TD HEIGHT="25" WIDTH="11" VALIGN="top"><IMG HEIGHT="25" WIDTH="11" SRC="/images/0/8/content1_top_right.png"></TD>
+	</TR>
+	<TR>
+		<TD WIDTH="11" VALIGN="top" STYLE="BACKGROUND-IMAGE:url(/images/0/8/content1_middle_left.png)"><IMG WIDTH="11" SRC="/images/blank.gif"></TD>
+		<TD VALIGN="top" CLASS="content1_text" colspan="2">
+			<!--Content Start -->
+			
+    <br />  
+    <table class="inside_table" width="100%" id="mylocation">
+        <tr>
+            <td valign="top" align="left"><table id="ctl08_panelLocation_ctl00_panelLocation_tblLocation" style="width:200px;">
+		<tr>
+			<td class="inside_header" valign="top" style="font-weight:bold;">Location:</td><td class="inside_text3" style="font-weight:bold;">Brewer</td>
+		</tr><tr>
+			<td class="inside_header" style="font-weight:bold;">Address:</td><td class="inside_text3">210 Hopewell Ave.</td>
+		</tr><tr>
+			<td class="inside_header" style="font-weight:bold;">City</td><td class="inside_text3">Ottawa, Ontario</td>
+		</tr><tr>
+			<td class="inside_header" style="font-weight:bold;">Phone:</td><td class="inside_text3">613-247-4917</td>
+		</tr>
+	</table></td>
+            <td valign="top">
+                <iframe width="340" height="280" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/?ie=UTF8&mrt=loc&t=h&view=map&z=15&output=embed&q=210%2bHopewell%2bAve.%2bOttawa%2bOntario%2bCanada"></iframe><br /><small><a style="color:#0000FF;text-align:left"href="https://maps.google.com/?ie=UTF8&mrt=loc&t=h&view=map&z=15&source=embed&q=210%2bHopewell%2bAve.%2bOttawa%2bOntario%2bCanada">View Larger Map</a></small>   
+            </td>
+        </tr>
+    </table>
+    <br /> 
+	
+		<script language="javascript" type="text/javascript">
+			function CloseMe() { 
+					window.close();
+	        }
+		</script>
+		<div style="text-align:center">
+			<input class="smButton" onclick="javascript:CloseMe();" type="button" value=" Close " name="panelMain_btnClose" />	
+		</div>
+	
+
+			<!--Content End -->
+		</TD>
+		<TD WIDTH="11" VALIGN="top" STYLE="BACKGROUND-IMAGE:url(/images/0/8/content1_middle_right.png)"><IMG WIDTH="11" SRC="/images/blank.gif"></TD>
+	</TR>
+	<TR HEIGHT="5">
+		<TD WIDTH="11"><IMG HEIGHT="5" WIDTH="11" SRC="/images/0/8/content1_bottom_left.png"></TD>
+		<TD COLSPAN="2" STYLE="BACKGROUND-IMAGE:url(/images/0/8/content1_bottom_middle.png)"></TD>
+		<TD WIDTH="11"><IMG HEIGHT="5" WIDTH="11" SRC="/images/0/8/content1_bottom_right.png"></TD>
+	</TR>
+</TABLE>
+</div>
+</form><script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(
+['_setAccount', 'UA-385851-5'],
+['_setDomainName', '.teamopolis.com'],
+['_trackPageview']
+);
+(function() {
+  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+</script>
+</body></html>

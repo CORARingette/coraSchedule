@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<teams>
+
+	<!-- Bunnies -->
+
+	<team>
+		<name>Jr Bunnies</name>
+		<map></map>
+		<url></url>
+	</team>
+	<team>
+		<name>Sr Bunnies</name>
+		<map></map>
+		<url></url>
+	</team>
+
+	<!-- U8 -->
+
+	<team>
+		<name>U8 Novice Bourke</name>
+		<map>Ottawa (Bourke)</map>
+		<url>http://ncrrl.on.ca/game_schedule.pl?Sched%201h%20U8%20R|http://ncrrl.on.ca/game_schedule.pl?embed%20Sched%202h%20U8%20R</url>
+	</team>
+
+	<team>
+		<name>U8 Novice Sammon</name>
+		<map>Ottawa (Sammon)</map>
+		<url>http://ncrrl.on.ca/game_schedule.pl?Sched%201h%20U8%20R|http://ncrrl.on.ca/game_schedule.pl?embed%20Sched%202h%20U8%20R</url>
+	</team>
+
+
+	<!-- U9 -->
+	<team>
+		<name>U9 Novice Benoit</name>
+		<map>Ottawa (Benoit)</map>
+		<url>http://ncrrl.on.ca/game_schedule.pl?Sched%201h%20U9%20R|http://ncrrl.on.ca/game_schedule.pl?embed%20Sched%202h%20U9%20R</url>
+	</team>
+	<team>
+		<name>U9 Novice Potvin</name>
+		<map>Ottawa (Potvin)</map>
+		<url>http://ncrrl.on.ca/game_schedule.pl?Sched%201h%20U9%20R|http://ncrrl.on.ca/game_schedule.pl?embed%20Sched%202h%20U9%20R</url>
+	</team>
+
+	<!-- U10 -->
+	<team>
+		<name>U10 Novice Bickerton</name>
+		<map>Ottawa (Bickerton)</map>
+		<url>http://ncrrl.on.ca/game_schedule.pl?Sched%201h%20U10%20R|http://ncrrl.on.ca/game_schedule.pl?embed%20Sched%202h%20U10%20R</url>
+	</team>
+
+	<team>
+		<name>U10 Novice Van Wallegham</name>
+		<map>Ottawa (Van Welleghem)</map>
+		<url>http://ncrrl.on.ca/game_schedule.pl?Sched%201h%20U10%20R|http://ncrrl.on.ca/game_schedule.pl?embed%20Sched%202h%20U10%20R</url>
+	</team>
+
+
+	<!-- U12 -->
+	<team>
+		<name>U12 Reg Lannon</name>
+		<map>Ottawa (Lannon)</map>
+		<url>http://ncrrl.on.ca/game_schedule.pl?Sched%201h%20U12%20R|http://ncrrl.on.ca/game_schedule.pl?embed%20Sched%202h%20U12%20R%20Red</url>
+	</team>
+
+	<team>
+		<name>U12 Reg Stachon</name>
+		<map>Ottawa (Stachon)</map>
+		<url>http://ncrrl.on.ca/game_schedule.pl?Sched%201h%20U12%20R|http://ncrrl.on.ca/game_schedule.pl?embed%20Sched%202h%20U12%20R%20Blue</url>
+	</team>
+
+	<team>
+		<name>U12 P Prov Red Cameron</name>
+		<map>Ottawa (Cameron)</map>
+		<url>http://ncrrl.on.ca/game_schedule.pl?Sched%201h%20U12%20PP%20Red|http://ncrrl.on.ca/game_schedule.pl?embed%20Sched%202h%20U12%20PP%20Red</url>
+	</team>
+	<team>
+		<name>U12 P Prov Blue Zarull</name>
+		<map>Ottawa (Zarull)</map>
+		<url>http://ncrrl.on.ca/game_schedule.pl?Sched%201h%20U12%20PP%20Blue|http://ncrrl.on.ca/game_schedule.pl?embed%20Sched%202h%20U12%20PP%20Blue</url>
+	</team>
+
+	<!-- U14 -->
+
+	<team>
+		<name>U14 Tween C Herdman</name>
+		<map>Ottawa (Herdman)</map>
+		<url>http://ncrrl.on.ca/game_schedule.pl?Sched%201h%20U14%20C|http://ncrrl.on.ca/game_schedule.pl?embed%20Sched%202h%20U14%20C</url>
+	</team>
+
+	<team>
+		<name>U14 Tween B Sarazin</name>
+		<map>Ottawa (Sarazin)</map>
+		<url>http://ncrrl.on.ca/game_schedule.pl?Sched%201h%20U14%20B|http://ncrrl.on.ca/game_schedule.pl?embed%20Sched%202h%20U14%20B%20Red</url>
+	</team>
+
+
+	<team>
+		<name>U14 Tween A Wippel</name>
+		<map>Ottawa (Wippel)</map>
+		<url>http://ncrrl.on.ca/game_schedule.pl?Sched%201h%20U14%20A|http://ncrrl.on.ca/game_schedule.pl?embed%20Sched%202h%20U14%20A</url>
+	</team>
+	<team>
+		<name>U14 Tween AA Kushner</name>
+		<map>Ottawa</map>
+		<url>http://membres.ringuette-quebec.qc.ca/cedules_liste_web.asp?ligues_id=50&amp;NbrAfficher=1000
+		</url>
+	</team>
+
+	<!-- U16 -->
+
+	<team>
+		<name>U16 Junior B Bergmans</name>
+		<map>Ottawa (Bergmans)</map>
+		<url>http://ncrrl.on.ca/game_schedule.pl?Sched%201h%20U16%20B|http://ncrrl.on.ca/game_schedule.pl?embed%20Sched%202h%20U16%20B</url>
+	</team>
+	<team>
+		<name>U16 Junior B McKillip</name>
+		<map>Ottawa (McKillip)</map>
+		<url>http://ncrrl.on.ca/game_schedule.pl?Sched%201h%20U16%20B|http://ncrrl.on.ca/game_schedule.pl?embed%20Sched%202h%20U16%20B</url>
+	</team>
+	<team>
+		<name>U16 Junior A Lowe</name>
+		<map>Ottawa Ice</map>
+		<url>http://membres.ringuette-quebec.qc.ca/cedules_liste_web.asp?ligues_id=51&amp;NbrAfficher=1000
+		</url>
+	</team>
+
+	<team>
+		<name>U16 Junior AA Gurtler</name>
+		<map>Ottawa Ice</map>
+		<url>http://membres.ringuette-quebec.qc.ca/cedules_liste_web.asp?ligues_id=48&amp;NbrAfficher=1000
+		</url>
+	</team>
+
+
+	<!-- U19 -->
+
+	<team>
+		<name>U19 Belle B Mackey</name>
+		<map>Ottawa (Mackey)</map>
+		<url>http://ncrrl.on.ca/game_schedule.pl?Sched%201h%20U19%20B|http://ncrrl.on.ca/game_schedule.pl?embed%20Sched%202h%20U19%20B</url>
+	</team>
+
+	<team>
+		<name>U19 Belle A Soulard</name>
+		<map>Ottawa</map>
+		<url>http://membres.ringuette-quebec.qc.ca/cedules_liste_web.asp?ligues_id=52&amp;NbrAfficher=1000
+		</url>
+	</team>
+
+
+	<team>
+		<name>U19 Belle AA Cram</name>
+		<map>Ottawa Ice</map>
+		<url>http://membres.ringuette-quebec.qc.ca/cedules_liste_web.asp?ligues_id=49&amp;NbrAfficher=1000
+		</url>
+	</team>
+
+	<!-- Open -->
+
+	<team>
+		<name>Open A</name>
+		<map>Ottawa Ice</map>
+		<url></url>
+	</team>
+
+
+	<!-- NRL -->
+
+	<team>
+		<name>NRL Open AA</name>
+		<map>Ottawa Ice</map>
+		<url>http://www.nationalringetteleague.ca/stats/schedule.php?view=season&amp;team_id=5&amp;season_id=41&amp;home_away=&amp;division_id=</url>
+	</team>
+
+
+	<!-- Development -->
+
+	<team>
+		<name>Goalie Clinic</name>
+		<map>Ottawa Ice</map>
+		<url></url>
+	</team>
+
+
+</teams>

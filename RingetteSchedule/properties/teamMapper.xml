@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<comment>Team Mapping</comment>
+
+					
+	<entry key="U8 Novice">Ottawa (Madely)</entry>
+	<entry key="U8 Novice White">Ottawa White</entry>
+	<entry key="U9 Novice">Ottawa (Leblanc)</entry>
+	<entry key="U9 Novice White">Ottawa White</entry>
+	<entry key="U10 Novice Purple">Ottawa Purple</entry>
+	<entry key="U10 Novice White">Ottawa White</entry>
+	
+
+	<!-- Petite -->
+
+	<entry key="U12 P Reg White">Ottawa</entry>
+	<entry key="U12 P Reg Blue">Ottawa</entry>
+	<entry key="U12 P Prov Red-2 White">Ottawa White (Landry)</entry>
+	<entry key="U12 P Prov Red-1 Purple">Ottawa Purple (Quinn)</entry>
+	<entry key="U12 P Prov Blue">Ottawa (Trudeau)</entry>
+
+	<!-- Tween -->
+
+	<entry key="U14 Tween B-2 White">Ottawa White</entry>
+	<entry key="U14 Tween B-1 Purple">Ottawa Purple</entry>
+	<entry key="U14 Tween C">Ottawa</entry>
+	<entry key="U14 Tween A">Ottawa</entry>
+	<entry key="U14 Tween AA">Ottawa</entry>
+	<!-- Junior -->
+
+	<entry key="U16 Junior B2">Ottawa</entry>
+	<entry key="U16 Junior B1">Ottawa</entry>
+	<entry key="U16 Junior A-1 Purple">Ottawa Purple</entry>
+	<entry key="U16 Junior A-2 White">Ottawa White</entry>
+	<entry key="U16 Junior AA">Ottawa</entry>
+
+
+	<!-- Belle -->
+
+	<entry key="U19 Belle B">Ottawa</entry>
+	<entry key="U19 Belle A">Ottawa</entry>
+	<entry key="U19 Belle AA">Ottawa</entry>
+	
+	<!-- Open -->
+	<entry key="NRL Open AA">Ottawa Ice</entry>
+	
+	<!-- Goalie Clinics -->
+	<entry key="Goalie Clinic">Ottawa Ice</entry>
+	
+	
+</properties>
