@@ -77,22 +77,18 @@ public class Event implements Comparable<Event> {
 	}
 
 	public String getSummary() {
-		// if (shareValue.equals("H") || shareValue.equals("V")) {
-		// if (getEventCalendar().get(Calendar.HOUR_OF_DAY) == 0) {
-		// System.err.println("No game info found for: " + team + ":" + new
-		// Date(eventCalendar.getTimeInMillis()));
-		// return "Unknown Time: See league schedule for details";
-		// } else {
-		// return gameNumber + ": " + team + " (" + shareValue + ") vs. " +
-		// shareTeam;
-		// }
-		// } else if (shareValue.equals("X")) {
-		// return team;
-		// } else {
-		// return team + (shareTeam != null ? " with " + shareTeam : " Full
-		// Ice");
-		// }
-		return "Summary TBD";
+		if (isGame()) {
+			if (shareTeam == null) {
+				System.err.println("No game info found for: " + team + ":" + getDate());
+				return "Unknown Time: See league schedule for details";
+			} else {
+				return gameNumber + ": " + team + " (" + shareValue + ") vs. " + shareTeam;
+			}
+		} else if (shareValue.equals("X")) {
+			return team;
+		} else {
+			return team + (shareTeam != null ? " with " + shareTeam : " Full Ice");
+		}
 
 	}
 

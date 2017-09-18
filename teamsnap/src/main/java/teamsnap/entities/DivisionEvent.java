@@ -8,7 +8,6 @@ import teamsnap.main.Constants;
 
 public class DivisionEvent extends BaseEntity {
 
-
 	private Team team;
 	private DivisionLocation location;
 
@@ -21,14 +20,16 @@ public class DivisionEvent extends BaseEntity {
 		makeFromResponse(item);
 	}
 
-	public DivisionEvent(int divisionId, int teamId, int locationId, String name, EventType eventType, Date gmtStartDate) {
+	public DivisionEvent(int divisionId, int teamId, int locationId, String name, Date gmtStartDate, boolean isGame) {
 		this();
 		addAttribute("name", name);
-		addAttribute("event_type", eventType.getDescription());
+		addAttribute("event_type", EventType.PRACTICE.getDescription());
 		addAttribute("start_date", gmtStartDate);
 		addAttribute("division_id", divisionId);
 		addAttribute("location_id", locationId);
 		addAttribute("team_id", teamId);
+		addAttribute("icon_color", isGame ? "red" : "green");
+		addAttribute("label", isGame ? "GAME" : "PRACTICE");
 	}
 
 	public Team getTeam() {
