@@ -89,11 +89,4 @@ public class ScheduleRecord implements Comparable<ScheduleRecord> {
 		return this.getGameDateAndTime().compareTo(obj.getGameDateAndTime());
 	}
 
-	public String getShareValue(String team) {
-		return getHome().equals(team) ? "H" : "V";
-	}
-
-	public String getShareTeam(String team) {
-		return getHome().equals(team) ? getVisitor() : getHome();
-	}
 }

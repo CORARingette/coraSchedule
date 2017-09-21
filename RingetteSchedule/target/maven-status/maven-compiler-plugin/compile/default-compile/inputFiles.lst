@@ -1,15 +1,16 @@
 C:\Users\rolan\Documents\GitHub\coraSchedule\RingetteSchedule\src\model\Event.java
 C:\Users\rolan\Documents\GitHub\coraSchedule\RingetteSchedule\src\processing\AbstractTeamEventProcessor.java
-C:\Users\rolan\Documents\GitHub\coraSchedule\RingetteSchedule\src\processing\TeamopolisEventGenerator.java
 C:\Users\rolan\Documents\GitHub\coraSchedule\RingetteSchedule\src\utils\LogFormatter.java
 C:\Users\rolan\Documents\GitHub\coraSchedule\RingetteSchedule\src\convertTS\LoadLocationsToTS.java
 C:\Users\rolan\Documents\GitHub\coraSchedule\RingetteSchedule\src\processing\Utils.java
 C:\Users\rolan\Documents\GitHub\coraSchedule\RingetteSchedule\src\leagueSched\LERQSchedule.java
+C:\Users\rolan\Documents\GitHub\coraSchedule\RingetteSchedule\src\leagueSched\NCRRLScheduleOld.java
 C:\Users\rolan\Documents\GitHub\coraSchedule\RingetteSchedule\src\schedule\ArenaMapper.java
 C:\Users\rolan\Documents\GitHub\coraSchedule\RingetteSchedule\src\schedule\ScheduleMaker.java
 C:\Users\rolan\Documents\GitHub\coraSchedule\RingetteSchedule\src\schedule\Context.java
 C:\Users\rolan\Documents\GitHub\coraSchedule\RingetteSchedule\src\leagueSched\LeagueScheduleFactory.java
 C:\Users\rolan\Documents\GitHub\coraSchedule\RingetteSchedule\src\leagueSched\NRLSchedule.java
+C:\Users\rolan\Documents\GitHub\coraSchedule\RingetteSchedule\src\model\GameType.java
 C:\Users\rolan\Documents\GitHub\coraSchedule\RingetteSchedule\src\utils\Dst.java
 C:\Users\rolan\Documents\GitHub\coraSchedule\RingetteSchedule\src\utils\DateTimeUtils.java
 C:\Users\rolan\Documents\GitHub\coraSchedule\RingetteSchedule\src\processing\teamSnap\TeamSnapEventGenerator.java
@@ -20,6 +21,7 @@ C:\Users\rolan\Documents\GitHub\coraSchedule\RingetteSchedule\src\schedule\DBCon
 C:\Users\rolan\Documents\GitHub\coraSchedule\RingetteSchedule\src\utils\MakeXML.java
 C:\Users\rolan\Documents\GitHub\coraSchedule\RingetteSchedule\src\schedule\Deleter.java
 C:\Users\rolan\Documents\GitHub\coraSchedule\RingetteSchedule\src\leagueSched\NCRRLSchedule.java
+C:\Users\rolan\Documents\GitHub\coraSchedule\RingetteSchedule\src\model\ShareValue.java
 C:\Users\rolan\Documents\GitHub\coraSchedule\RingetteSchedule\src\leagueSched\AbstractLeagueSchedule.java
 C:\Users\rolan\Documents\GitHub\coraSchedule\RingetteSchedule\src\schedule\IceSpreadsheet.java
 C:\Users\rolan\Documents\GitHub\coraSchedule\RingetteSchedule\src\leagueSched\ScheduleRecord.java

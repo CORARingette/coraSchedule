@@ -22,8 +22,7 @@ import utils.DateTimeUtils;
 
 public class LERQSchedule extends AbstractLeagueSchedule {
 
-	private static final Logger LOGGER = Logger.getLogger(LERQSchedule.class
-			.getName());
+	private static final Logger LOGGER = Logger.getLogger(LERQSchedule.class.getName());
 
 	private class TableNodeVisitor extends NodeVisitor {
 
@@ -43,49 +42,34 @@ public class LERQSchedule extends AbstractLeagueSchedule {
 			boolean started = false;
 			if (className != null && className.equals("DataTable")) {
 
-				NodeList rows = tag.getChildren().extractAllNodesThatMatch(
-						new TagNameFilter("tr"));
+				NodeList rows = tag.getChildren().extractAllNodesThatMatch(new TagNameFilter("tr"));
 				for (int r = 0; r < rows.size(); r++) {
-					NodeList cells = rows.elementAt(r).getChildren()
-							.extractAllNodesThatMatch(new TagNameFilter("td"));
+					NodeList cells = rows.elementAt(r).getChildren().extractAllNodesThatMatch(new TagNameFilter("td"));
 					if (cells.elementAt(2).toPlainTextString().equals("Heure")) {
 						started = true;
 						continue;
 					}
 					if (started) {
-						String gameNumber = cells.elementAt(0)
-								.toPlainTextString().trim();
-						String dateStr = cells.elementAt(1).toPlainTextString()
-								.trim();
-						String timeStr = cells.elementAt(2).toPlainTextString()
-								.trim();
-						String arena = cells.elementAt(3).toPlainTextString()
-								.trim();
-						String home = cells.elementAt(4).toPlainTextString()
-								.trim();
-						String away = cells.elementAt(5).toPlainTextString()
-								.trim();
+						String gameNumber = cells.elementAt(0).toPlainTextString().trim();
+						String dateStr = cells.elementAt(1).toPlainTextString().trim();
+						String timeStr = cells.elementAt(2).toPlainTextString().trim();
+						String arena = cells.elementAt(3).toPlainTextString().trim();
+						String home = cells.elementAt(4).toPlainTextString().trim();
+						String away = cells.elementAt(5).toPlainTextString().trim();
 
-						String mappedTeamName = Config.instance.GetConfig(team)
-								.getMap();
-						if (home.equals(mappedTeamName)
-								|| away.equals(mappedTeamName)) {
-							LOGGER.fine("found dateStr: " + dateStr
-									+ ",timeStr:" + timeStr + ",arena:" + arena
+						String mappedTeamName = Config.instance.GetConfig(team).getMap();
+						if (home.equals(mappedTeamName) || away.equals(mappedTeamName)) {
+							LOGGER.fine("found dateStr: " + dateStr + ",timeStr:" + timeStr + ",arena:" + arena
 									+ ",away:" + away + ",home:" + home);
 
 							ScheduleRecord event = new ScheduleRecord();
 
 							Calendar calendar = Calendar.getInstance();
 							calendar.setTimeInMillis(0);
-							int[] dateValues = DateTimeUtils
-									.parseDateDDMMYY(dateStr);
-							calendar.set(Calendar.YEAR,
-									dateValues[DateTimeUtils.PARSE_DATE_YEAR]);
-							calendar.set(Calendar.MONTH,
-									dateValues[DateTimeUtils.PARSE_DATE_MONTH]);
-							calendar.set(Calendar.DAY_OF_MONTH,
-									dateValues[DateTimeUtils.PARSE_DATE_DAY]);
+							int[] dateValues = DateTimeUtils.parseDateDDMMYY(dateStr);
+							calendar.set(Calendar.YEAR, dateValues[DateTimeUtils.PARSE_DATE_YEAR]);
+							calendar.set(Calendar.MONTH, dateValues[DateTimeUtils.PARSE_DATE_MONTH]);
+							calendar.set(Calendar.DAY_OF_MONTH, dateValues[DateTimeUtils.PARSE_DATE_DAY]);
 
 							event.setGameDate(calendar.getTime());
 							event.setGameTime(timeStr);
@@ -108,21 +92,13 @@ public class LERQSchedule extends AbstractLeagueSchedule {
 	 */
 	public static void main(String[] args) {
 		try {
-			LERQSchedule lerq = new LERQSchedule("U19 Belle AA Cram");
+			LERQSchedule lerq = new LERQSchedule("U19AA Cram");
 			SimpleDateFormat formatter = new SimpleDateFormat("d-MMM-yy");
-			Calendar calendar = Calendar.getInstance();
-			calendar.setTime(formatter.parse("02-Oct-16"));
-			List<ScheduleRecord> records = lerq.findEntryForDay(formatter.parse("02-Oct-16"));
+			List<ScheduleRecord> records = lerq.findEntriesForDay(formatter.parse("01-Oct-17"));
 			for (int i = 0; i < records.size(); i++) {
-				LERQSchedule.LOGGER.info(records.get(i).getHome()
-						+ ":"
-						+ records.get(i).getVisitor()
-						+ ":"
-						+ records.get(i).getLocation()
-						+ ":"
-						+ records.get(i).getGameDate()
-						+ ":"
-						+ records.get(i).getGameTime());
+				LERQSchedule.LOGGER.info(records.get(i).getHome() + ":" + records.get(i).getVisitor() + ":"
+						+ records.get(i).getLocation() + ":" + records.get(i).getGameDate() + ":"
+						+ records.get(i).getGameTime() + ":" + records.get(i).getGameNumber());
 			}
 
 		} catch (ParseException e) {
@@ -138,8 +114,7 @@ public class LERQSchedule extends AbstractLeagueSchedule {
 
 			URLConnection conn = url.openConnection();
 
-			BufferedReader rd = new BufferedReader(new InputStreamReader(
-					conn.getInputStream()));
+			BufferedReader rd = new BufferedReader(new InputStreamReader(conn.getInputStream()));
 			StringBuffer sb = new StringBuffer();
 			String line;
 			while ((line = rd.readLine()) != null) {

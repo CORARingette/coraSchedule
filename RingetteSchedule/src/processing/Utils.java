@@ -11,20 +11,6 @@ public class Utils {
 		return location;
 	}
 
-	public static String getDivisionFromTeamName(String team) {
-
-		String division = null;
-		;
-		if (team.equals("NRL")) {
-			division = "NRL";
-		} else if (team.contains("Bunnies")) {
-			division = "Bunnies";
-		} else {
-			int divEnd = team.indexOf(" ");
-			division = team.substring(0, divEnd);
-		}
-		return division;
-	}
 
 	public static EventType getEventTypeFromShareValue(String shareValue) {
 		if (shareValue.equals("H") || shareValue.equals("V")) {

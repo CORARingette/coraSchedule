@@ -1,5 +1,6 @@
 package utils;
 
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Hashtable;
@@ -204,6 +205,22 @@ public final class DateTimeUtils {
 		return eventCalendar.getTime();
 	}
 
+	public static Date makeTruncatedDate(Date startDate) {
+		java.util.Calendar cal = java.util.Calendar.getInstance(); // locale-specific
+		cal.setTime(startDate);
+		cal.set(java.util.Calendar.HOUR_OF_DAY, 0);
+		cal.set(java.util.Calendar.MINUTE, 0);
+		cal.set(java.util.Calendar.SECOND, 0);
+		cal.set(java.util.Calendar.MILLISECOND, 0);
+		long time = cal.getTimeInMillis();
+		return new Date(time);
+	}
+
+	public static String makeTruncatedTime(Date startDate) {
+		SimpleDateFormat sdf = new SimpleDateFormat("HH:mm");
+		return sdf.format(startDate);
+	}
+
 	static {
 		monthMap.put("Jan", Integer.valueOf(0));
 		monthMap.put("Feb", Integer.valueOf(1));
@@ -218,5 +235,5 @@ public final class DateTimeUtils {
 		monthMap.put("Nov", Integer.valueOf(10));
 		monthMap.put("Dec", Integer.valueOf(11));
 	}
-		
+
 }

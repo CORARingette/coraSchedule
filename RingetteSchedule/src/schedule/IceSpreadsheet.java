@@ -1,6 +1,8 @@
 package schedule;
 
 import java.io.IOException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Date;
@@ -15,6 +17,7 @@ import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 import model.Event;
+import model.ShareValue;
 import utils.Config;
 
 public class IceSpreadsheet {
@@ -24,7 +27,7 @@ public class IceSpreadsheet {
 	// sheet config
 	private final int ROW_COMMENT = 1;
 	private final int ROW_DATE = 3;
-	private final int START_COLUMN = 18;
+	private final int START_COLUMN = 32;
 	private final int COLUMNS_PER_WEEK = 14;
 
 	private final static String WORKBOOK_FILENAME = "Master.xlsx";
@@ -119,8 +122,13 @@ public class IceSpreadsheet {
 										String iceInfo = iceCell.toString();
 										String iceTime = parseTimeFromIceInfo(iceInfo);
 										String location = parseLocationFromIceInfo(iceInfo);
-
-										Event event = new Event(team, location, share, null, date, iceTime, null);
+										if (location == null || location.isEmpty()) {
+											LOGGER.severe("Location is null or empty in spreadsheet: " + team + "Row: "
+													+ teamRowIndex + " Column: " + convertColumnToLetters(column));
+										}
+										String normalizedLocation = ArenaMapper.getInstance().getProperty(location);
+										Event event = new Event(team, normalizedLocation, ShareValue.fromShortString(share), null, date, iceTime,
+												null);
 										iceEvents.add(event);
 
 									} else {
@@ -143,8 +151,9 @@ public class IceSpreadsheet {
 
 	private void loadWeekComments() {
 		boolean finished = false;
-		int offset = 0;
+		int offset = START_COLUMN;
 		int count = 0;
+		dumpRow(ROW_COMMENT);
 		XSSFRow commentRow = currentSheet.getRow(ROW_COMMENT);
 		do {
 			XSSFCell commentCell = commentRow.getCell((int) offset);
@@ -172,10 +181,19 @@ public class IceSpreadsheet {
 		return teamEvents;
 	}
 
-	public String getShareTeam(Date date, String location, String team) {
-		Event matchingEvent = iceEvents.stream().findAny()
-				.filter(e -> e.getLocation().equals(location) && e.getDate().equals(date) && !e.getTeam().equals(team))
+	public String getShareTeam(Date date, String time, String location, String team) {
+		if (date == null || time == null || location == null || team == null) {
+			// no point running expensive lookup
+			return null;
+		}
+
+		String normalizedLocation = ArenaMapper.getInstance().getProperty(location);
+		Event matchingEvent = iceEvents.stream().filter(e -> normalizedLocation.equals(e.getLocation())
+				&& date.equals(e.getDate()) && time.equals(e.getTime()) && !team.equals(e.getTeam())).findAny()
 				.orElse(null);
+		if (matchingEvent == null) {
+			dump();
+		}
 		return matchingEvent != null ? matchingEvent.getTeam() : null;
 	}
 
@@ -220,4 +238,32 @@ public class IceSpreadsheet {
 		return major + minor;
 	}
 
+	private void dumpRow(int rowNumber) {
+		XSSFRow row = currentSheet.getRow(rowNumber);
+		int cells = row.getPhysicalNumberOfCells();
+		int firstCell = row.getFirstCellNum();
+		for (int c = firstCell; c < cells; c++) {
+			System.err.print(c + ":" + row.getCell(c).toString() + ";");
+		}
+		System.err.println();
+	}
+
+	public void dump() {
+		for (Event event : iceEvents) {
+			System.err.println(
+					event.getTeam() + ":" + event.getLocation() + ":" + event.getDate() + ":" + event.getTime());
+		}
+	}
+
+	public static void main(String[] args) {
+		try {
+			IceSpreadsheet ish = new IceSpreadsheet();
+			SimpleDateFormat formater = new SimpleDateFormat("yyyy/MM/dd");
+			String team = ish.getShareTeam(formater.parse("2017/09/25"), "18:00", "Carleton University",
+					"U19A Soulard");
+			System.err.println(team);
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
+	}
 }

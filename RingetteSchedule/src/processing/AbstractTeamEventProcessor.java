@@ -7,12 +7,11 @@ import java.util.List;
 import java.util.logging.Logger;
 
 import leagueSched.AbstractLeagueSchedule;
-import leagueSched.LERQSchedule;
 import leagueSched.LeagueScheduleFactory;
-import leagueSched.NCRRLSchedule;
-import leagueSched.NRLSchedule;
 import leagueSched.ScheduleRecord;
 import model.Event;
+import model.GameType;
+import model.ShareValue;
 import schedule.ArenaMapper;
 import schedule.Context;
 import schedule.IceSpreadsheet;
@@ -54,14 +53,16 @@ public abstract class AbstractTeamEventProcessor {
 
 		for (Event iceEvent : IceSpreadsheet.getInstance().getIceEvents(team)) {
 
-			iceEvent.setShareTeam(
-					IceSpreadsheet.getInstance().getShareTeam(iceEvent.getDate(), iceEvent.getLocation(), team));
+			if (iceEvent.isPractice() && !iceEvent.isFullIce()) {
+				iceEvent.setShareTeam(IceSpreadsheet.getInstance().getShareTeam(iceEvent.getDate(), iceEvent.getTime(),
+						iceEvent.getLocation(), team));
+			}
 
 			// reset on new date
 			if (!iceEvent.getDate().equals(currentDate)) {
 				eventDayCounter = 0;
 				currentDate = iceEvent.getDate();
-				records = schedule.findEntryForDay(iceEvent.getDate());
+				records = schedule.findEntriesForDay(iceEvent.getDate());
 			}
 
 			if (iceEvent.isGame()) {
@@ -72,10 +73,10 @@ public abstract class AbstractTeamEventProcessor {
 					if (eventDayCounter <= (records.size() - 1)) {
 						ScheduleRecord scheduleRecord = records.get(eventDayCounter);
 						if (iceEvent.getShareTeam() == null) {
-							iceEvent.setShareTeam(scheduleRecord.getHome().equals(team) ? scheduleRecord.getVisitor()
-									: scheduleRecord.getHome());
+							calculateShareTeamAndValue(iceEvent, scheduleRecord);
 						}
-						if (iceEvent.getLocation() == null) {
+						if (iceEvent.getLocation() == null
+								|| iceEvent.getLocation().equals(GameType.AWAY_GAME.getGameType())) {
 							iceEvent.setLocation(scheduleRecord.getLocation());
 						}
 						iceEvent.setGameNumber(scheduleRecord.getGameNumber());
@@ -94,6 +95,17 @@ public abstract class AbstractTeamEventProcessor {
 		processUnmatchedEvents(team, schedule, usedCalendarEvents);
 		postProcess(team);
 
+	}
+
+	private void calculateShareTeamAndValue(Event event, ScheduleRecord scheduleRecord) {
+		String teamName = Config.instance.GetConfig(event.getTeam()).getMap();
+		if (scheduleRecord.getHome().equals(teamName)) {
+			event.setShareTeam(scheduleRecord.getVisitor());
+			event.setShareValue(ShareValue.HOME);
+		} else {
+			event.setShareTeam(scheduleRecord.getHome());
+			event.setShareValue(ShareValue.VISITOR);
+		}
 	}
 
 	private void processUnmatchedEvents(String team, AbstractLeagueSchedule schedule,
@@ -117,11 +129,12 @@ public abstract class AbstractTeamEventProcessor {
 			// make sure date falls beyond last record and is not prior to
 			// schedule start
 			if (scheduleRecord.compareTo(lastRecord) > 0
-					&& scheduleRecord.getGameDate().compareTo(Context.getInstance().getScheduleStartDate()) < 0) {
+					&& scheduleRecord.getGameDate().compareTo(Context.getInstance().getScheduleStartDate()) > 0) {
 				// Create ice event from schedule record
-				Event iceEvent = new Event(team, scheduleRecord.getLocation(), scheduleRecord.getShareValue(team),
-						scheduleRecord.getShareTeam(team), scheduleRecord.getGameDate(), scheduleRecord.getGameTime(),
-						scheduleRecord.getGameNumber());
+
+				Event iceEvent = new Event(team, scheduleRecord.getLocation(), null, null, scheduleRecord.getGameDate(),
+						scheduleRecord.getGameTime(), scheduleRecord.getGameNumber());
+				calculateShareTeamAndValue(iceEvent, scheduleRecord);
 				prepareForProcessing(iceEvent);
 			}
 		}
@@ -136,6 +149,10 @@ public abstract class AbstractTeamEventProcessor {
 			iceEvent.setLocation(resolvedLoction);
 		} else {
 			ArenaMapper.getInstance().addError(iceEvent.getLocation());
+		}
+		if (iceEvent.getLocation() == null || iceEvent.getLocation().isEmpty()
+				|| iceEvent.getLocation().equals("Unknown")) {
+			LOGGER.severe("Location is null, empty or unknown: " + iceEvent.getTeam() + ":" + iceEvent.getTime());
 		}
 		process(iceEvent);
 

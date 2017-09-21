@@ -4,6 +4,7 @@
 	<comment>Arena Name Mapping</comment>
 
 	<entry key="2 Glaces - Candiac">2 Glaces - Candiac</entry>
+	<entry key="Ancienne Lorette - Québec">Ancienne Lorette</entry>
 	<entry key="Arena Baribeau - 231 Magnus Rue E Gatineau, QC">Baribeau</entry>
 	<entry key="Ar Gatineau, QC J8P4Z7">Baribeau</entry>
 	<entry key="Ar Montr">Montreal</entry>
@@ -16,19 +17,21 @@
 	<entry
 		key="ArÃ©na Michel-Normandin - 3105 boul. Rome Brossard Brossard, QC">Michel-Normandin - Brossard</entry>
 	<entry key="ArÃ©na Rolland  - 12000 boul. Rolland MontrÃ©al-Nord, QC">Henri Bourassa</entry>
-	<entry key="Away Game">Unknown</entry>
+	<entry key="Away Game">Away Game</entry>
 	<entry key="BA Scott">Barbara Anne Scott</entry>
 	<entry key="BSP-Mattamy">Sensplex 1 - Mattamy</entry>
 	<entry key="BSR">BSR</entry>
 	<entry key="Barbara Ann Scot">Barbara Anne Scott</entry>
 	<entry key="Baribeau">Baribeau</entry>
 	<entry key="Baribeau (Gatineau)">Baribeau</entry>
+	<entry key="Baribeau - Gatineau">Baribeau</entry>
 	<entry key="Barrett 1 - Gloucester">Barrett East</entry>
 	<entry key="Barrett 1">Barrett East</entry>
 	<entry key="Barrett E - Gloucester">Barrett East</entry>
 	<entry key="Barrett E">Barrett East</entry>
 	<entry key="Barrett W">Barrett West</entry>
 	<entry key="Barrett">Barrett East</entry>
+	<entry key="Barrett - Gloucester">Barrett</entry>
 	<entry key="Beaconsfield - LSL">Beaconsfield</entry>
 	<entry key="Beaudry - Gatineau">Beaudry</entry>
 	<entry key="Beaudry">Beaudry</entry>
@@ -59,6 +62,7 @@
 	<entry key="Brewer">Brewer</entry>
 	<entry key="Brian Kilrea - Ottawa">Kilrea</entry>
 	<entry key="Bruno Verret 1">Bruno Verret 1</entry>
+	<entry key="BSR - Lévis">BSR Lévis</entry>
 	<entry key="Buckingham">Buckingham</entry>
 	<entry key="CARP - West Ottawa">Carp</entry>
 	<entry key="CIH - Rockland">CIHA - Rockland</entry>
@@ -67,6 +71,7 @@
 	<entry key="Carleton A">Carleton University</entry>
 	<entry key="Carleton University Ice House -   University Dr. Ottawa, ON">Carleton University</entry>
 	<entry key="Carleton University">Carleton University</entry>
+	<entry key="Carleton University - Ottawa">Carleton University</entry>
 	<entry key="Carleton">Carleton University</entry>
 	<entry key="Carp">Carp</entry>
 	<entry key="Cataraqui">Cataraqui</entry>
@@ -76,6 +81,7 @@
 	<entry key="Cobden">Cobden</entry>
 	<entry
 		key="Complexe Walter-Buswell -  220 boul. Arthur Sauve  Saint-Eustache, QC J7R2H9">St-Eustache</entry>
+		<entry key="CS Duval auto (Gilles Chabot)  - Boucherville">Gilles Chabot - Boucherville</entry>
 	<entry key="Cumberland">Cumberland</entry>
 	<entry key="D.D.O. Centre civique">D.D.O. Centre civique</entry>
 	<entry key="Delson">Delson</entry>
@@ -116,6 +122,7 @@
 	<entry key="Kilrea">Kilrea</entry>
 	<entry key="Kirkland - LSL">Kirkland</entry>
 	<entry key="Kirkland Arena - 16950 boul. Hymus Kirkland, QC">Kirkland</entry>
+<entry key="Kingston Invista Centre - Kingston Transit">Invista Centre</entry>
 	<entry key="L'Academie">CIHA - Rockland</entry>
 	<entry key="La Plaine - Forum">La Plaine - Forum</entry>
 	<entry key="Magna Centre - 395 Mulock Drive Newmarket, ON">Magna Centre</entry>
@@ -146,6 +153,7 @@
 	<entry key="Peplinski Arena - 1264 Walkley Ottawa, ON">Peplinski</entry>
 	<entry key="Peplinski">Peplinski</entry>
 	<entry key="Pierrefonds 1">Pierrefonds</entry>
+	<entry key="Pierrefonds - LSL">Pierrefonds</entry>
 	<entry key="Pointe-Claire - LSL">Pointe-Claire - LSL</entry>
 	<entry key="Potvin - Gloucester">Richcraft-Potvin</entry>
 	<entry key="Potvin">Potvin</entry>
@@ -206,10 +214,14 @@
 	<entry key="St Laurent">St Laurent</entry>
 	<entry key="St-Basile-Jean Rougeau">St-Basile-Jean Rougeau</entry>
 	<entry key="St-Bruno Michael-Bilodeau">St-Bruno Michael-Bilodeau</entry>
+	<entry key="St-Bruno - Michael-Bilodeau">St-Bruno Michael-Bilodeau</entry>
 	<entry key="St-Eustache">St-Eustache</entry>
 	<entry key="St-Eustache Complexe Walter-Buswell">St-Eustache</entry>
+	<entry key="St-Henri- Lévis Québec">St-Henri Lévis</entry>
+	<entry key="St-Hilaire -1- Centre sportif Paul Lemieux">Centre Sportif Paul Lemieux St-Hilaire</entry>
 	<entry key="St-Jean-Vianney">St-Jean-Vianney</entry>
 	<entry key="St-Laurent - Ottawa">St Laurent</entry>
+	<entry key="Ste-Marie - Québec">Centre Caztel Ste-Marie</entry>
 	<entry key="St-Lazare">St-Lazare</entry>
 	<entry key="St-Romuald">St-Romuald</entry>
 	<entry key="St-Timothé - 4 cités">Saint-Timothée</entry>
@@ -221,20 +233,23 @@
 	<entry key="Stuart Holmes Arena -5660 Osgoode Main St  Osgoode, ON">Osgoode</entry>
 	<entry key="TBA">TBD</entry>
 	<entry key="tbd">TBD</entry>
+	<entry key="Thedford Mines">Centre Mario-Gosselin-Thetford Mines</entry>
 	<entry key="Tom Brown - Ottawa">Tom Brown</entry>
 	<entry key="Tom Brown Arena - 141 Bayview Rd. Ottawa, ON">Tom Brown</entry>
 	<entry key="Tom Brown">Tom Brown</entry>
+	<entry key="Tom Brown Arena">Tom Brown</entry>
 	<entry key="Tom Graham Arena - 1300 Elgin Mills Rd. Richmond Hill, ON">Tom Graham Arena</entry>
 	<entry key="Val Bélair">Val Belair</entry>
 	<entry key="Val D'Espoir - St-Janvier">Val D'Espoire</entry>
 	<entry key="Vanier">Grandmaitre</entry>
+	<entry key="Vaudreuil - LSL">Vaudreuil</entry>
 	<entry key="W. Erskine Johnston (Carp) - West Ottawa">Carp</entry>
 	<entry key="Walkley">Walkley</entry>
 	<entry key="Walter Baker A">Walter Baker A</entry>
 	<entry key="Walter Baker B - Nepean">Walter Baker B</entry>
 	<entry key="Walter Baker B">Walter Baker B</entry>
 	<entry key="Walter Baker">Walter Baker</entry>
-	<entry key="Westwood - Dorval">Westwood </entry>
+	<entry key="Westwood - Dorval">Westwood</entry>
 	<entry key="Yvon Chartrand - Laval">Yvon-Chartrand</entry>
 	<entry key="bell sensplex palladium">Sensplex 2 - Citizen</entry>
 	<entry key="grandmaitre">Grandmaitre</entry>

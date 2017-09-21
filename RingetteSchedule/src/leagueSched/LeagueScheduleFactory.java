@@ -20,7 +20,7 @@ public class LeagueScheduleFactory {
 		if (schedule == null) {
 			String url = Config.instance.GetConfig(team).getUrl();
 
-			if (url != null && (url.contains("ncrrl") || url.contains("montreal.sibername.com"))) {
+			if (url != null && (url.contains("ncrrl"))) {
 				schedule = new NCRRLSchedule(team);
 			} else if (url != null && url.contains("http://membres.ringuette-quebec.qc.ca")) {
 				schedule = new LERQSchedule(team);

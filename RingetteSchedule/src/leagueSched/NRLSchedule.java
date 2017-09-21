@@ -146,7 +146,7 @@ public class NRLSchedule extends AbstractLeagueSchedule {
 			Calendar calendar = Calendar.getInstance();
 			calendar.setTime(formatter.parse("07/11/2015"));
 
-			List<ScheduleRecord> records = loader.findEntryForDay(formatter.parse("07/11/2015"));
+			List<ScheduleRecord> records = loader.findEntriesForDay(formatter.parse("07/11/2015"));
 			for (int i = 0; i < records.size(); i++) {
 				NRLSchedule.LOGGER.info(records.get(i).getHome() + ":" + records.get(i).getVisitor() + ":"
 						+ records.get(i).getLocation() + ":" + records.get(i).getGameDate() + ":" + records.get(i).getGameTime());

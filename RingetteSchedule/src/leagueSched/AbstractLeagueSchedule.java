@@ -8,6 +8,8 @@ import java.util.logging.Logger;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
+import utils.DateTimeUtils;
+
 public abstract class AbstractLeagueSchedule {
 
 	private static final Logger LOGGER = Logger.getLogger(AbstractLeagueSchedule.class.getName());
@@ -20,8 +22,8 @@ public abstract class AbstractLeagueSchedule {
 
 	protected List<ScheduleRecord> schedule = new ArrayList<ScheduleRecord>();
 
-	public List<ScheduleRecord> findEntryForDay(Date gameDate) {
-		List<ScheduleRecord> results = schedule.stream().filter(s -> s.getGameDate().equals(gameDate))
+	public List<ScheduleRecord> findEntriesForDay(Date gameDate) {
+		List<ScheduleRecord> results = schedule.stream().filter(s -> DateTimeUtils.makeTruncatedDate(s.getGameDate()).equals(gameDate))
 				.collect(Collectors.toList());
 		Collections.sort(results);
 		return results;

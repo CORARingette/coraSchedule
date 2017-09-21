@@ -5,10 +5,12 @@ leagueSched\LERQSchedule.class
 model\Event.class
 leagueSched\ScheduleRecord.class
 processing\teamSnap\EventKey.class
+model\ShareValue.class
 schedule\Context.class
 processing\Utils.class
 processing\teamSnap\TeamSnapEventGenerator.class
 schedule\EventManager.class
+leagueSched\NCRRLScheduleOld.class
 leagueSched\AbstractLeagueSchedule.class
 schedule\ArenaMapper.class
 leagueSched\NRLSchedule.class
@@ -16,7 +18,7 @@ utils\LogFormatter.class
 leagueSched\LERQSchedule$1.class
 utils\Dst.class
 utils\Config.class
-processing\TeamopolisEventGenerator.class
+model\GameType.class
 leagueSched\LeagueScheduleFactory.class
 schedule\IceSpreadsheet.class
 schedule\Deleter.class

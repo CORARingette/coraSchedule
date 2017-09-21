@@ -3,19 +3,23 @@ package processing.teamSnap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+import java.util.logging.Logger;
 
 import model.Event;
 import processing.AbstractTeamEventProcessor;
 import processing.Utils;
 import schedule.ArenaMapper;
+import schedule.Context;
 import teamsnap.entities.Division;
 import teamsnap.entities.DivisionEvent;
 import teamsnap.entities.DivisionLocation;
-import teamsnap.entities.EventType;
 import teamsnap.entities.League;
 import teamsnap.entities.Team;
+import utils.Config;
 
 public class TeamSnapEventGenerator extends AbstractTeamEventProcessor {
+	private static final Logger LOGGER = Logger.getLogger(TeamSnapEventGenerator.class.getName());
+
 	private List<DivisionEvent> allEvents;
 	private League teamSnap;
 	private Set<EventKey> existingScheduleEvents = new HashSet<EventKey>();
@@ -44,27 +48,37 @@ public class TeamSnapEventGenerator extends AbstractTeamEventProcessor {
 			System.exit(-1);
 		}
 
-//		// add the events
-//		for (EventKey eventToAdd : eventsToAdd) {
-//			Event event = (Event) eventToAdd.getSource();
-//			String divison = Utils.getDivisionFromTeamName(event.getTeam());
-//			Division division = teamSnap.getDivisionByName(divison);
-//			Team team = division.getTeamByName(event.getTeam());
-//			DivisionLocation location = teamSnap.getLocationByName(event.getLocation());
-//			DivisionEvent divisionEvent = new DivisionEvent(Integer.valueOf(division.getDivisionId()),
-//					Integer.valueOf(team.getTeamId()), Integer.valueOf(location.getLocationId()), event.getSummary(),
-//					event.getFullDateTime(),event.isGame());
-//			divisionEvent.create();
-//		}
-//
-//		Set<EventKey> eventsToRemove = new HashSet<EventKey>(existingScheduleEvents);
-//		eventsToRemove.removeAll(updatedScheduleEvents);
-//
-//		// remove events
-//		for (EventKey eventToRemove : eventsToRemove) {
-//			DivisionEvent divisionEvent = (DivisionEvent) eventToRemove.getSource();
-//			divisionEvent.delete();
-//		}
+		// add the events
+		for (EventKey eventToAdd : eventsToAdd) {
+			Event event = (Event) eventToAdd.getSource();
+			String divison = Config.instance.GetConfig(event.getTeam()).getDivision();
+			Division division = teamSnap.getDivisionByName(divison);
+			Team team = division.getTeamByName(event.getTeam());
+			DivisionLocation location = teamSnap.getLocationByName(event.getLocation());
+			DivisionEvent divisionEvent = new DivisionEvent(Integer.valueOf(division.getDivisionId()),
+					Integer.valueOf(team.getTeamId()), Integer.valueOf(location.getLocationId()), event.getSummary(),
+					event.getFullDateTime(), event.isGame());
+			if (!Context.dryRun) {
+				divisionEvent.create();
+			} else {
+				LOGGER.info("Adding new event: " + division.getName() + ":" + team.getName() + ":" + location.getName()
+						+ ":" + event.getFullDateTime() + ":" + event.isGame() + ":" + event.getSummary());
+			}
+		}
+
+		Set<EventKey> eventsToRemove = new HashSet<EventKey>(existingScheduleEvents);
+		eventsToRemove.removeAll(updatedScheduleEvents);
+
+		// remove events
+		for (EventKey eventToRemove : eventsToRemove) {
+			DivisionEvent divisionEvent = (DivisionEvent) eventToRemove.getSource();
+			if (!Context.dryRun) {
+				divisionEvent.delete();
+			} else {
+				LOGGER.info("Deleting existing event: " + divisionEvent.getTeamId() + ":"
+						+ divisionEvent.getLocationId() + ":" + divisionEvent.getCalendarStartDate());
+			}
+		}
 
 	}
 
@@ -76,7 +90,7 @@ public class TeamSnapEventGenerator extends AbstractTeamEventProcessor {
 				System.err.println("Location does not exist in TeamSnap: " + event.getLocation());
 				dataMissing = true;
 			}
-			String divisonName = Utils.getDivisionFromTeamName(event.getTeam());
+			String divisonName = Config.instance.GetConfig(event.getTeam()).getDivision();
 			Division division = teamSnap.getDivisionByName(divisonName);
 			if (division == null) {
 				System.err.println("Division does not exist in TeamSnap: " + divisonName);

@@ -6,6 +6,8 @@ import java.util.Calendar;
 import java.util.Date;
 
 public class Context {
+	
+	public static final boolean dryRun = true;
 
 	// This is the date of the first Saturday of the schedule which should be
 	// week 1

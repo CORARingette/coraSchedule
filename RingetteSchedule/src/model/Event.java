@@ -1,22 +1,25 @@
 package model;
 
 import java.util.Date;
+import java.util.logging.Logger;
 
 import utils.DateTimeUtils;
 
 public class Event implements Comparable<Event> {
 
-	private final String team;
+	private static final Logger LOGGER = Logger.getLogger(Event.class.getName());
 
-	private final String shareValue;
+
+	private final String team;
 	private final Date date;
 	private final String time;
 
 	private String shareTeam;
 	private String gameNumber;
 	private String location;
+	private ShareValue shareValue;
 
-	public Event(String team, String location, String shareValue, String shareTeam, Date date, String time,
+	public Event(String team, String location, ShareValue shareValue, String shareTeam, Date date, String time,
 			String gameNumber) {
 		super();
 		this.team = team;
@@ -40,7 +43,7 @@ public class Event implements Comparable<Event> {
 		this.location = location;
 	}
 
-	public String getShareValue() {
+	public ShareValue getShareValue() {
 		return shareValue;
 	}
 
@@ -64,12 +67,24 @@ public class Event implements Comparable<Event> {
 		this.shareTeam = shareTeam;
 	}
 
+	public void setShareValue(ShareValue shareValue) {
+		this.shareValue = shareValue;
+	}
+
 	public String getTime() {
 		return time;
 	}
 
 	public boolean isGame() {
-		return shareValue != null && (shareValue.equals("H") || shareValue.equals("V"));
+		return shareValue != null && (shareValue == ShareValue.HOME || shareValue == ShareValue.VISITOR);
+	}
+
+	public boolean isPractice() {
+		return shareValue != null && (shareValue==ShareValue.HALF || shareValue == ShareValue.FULL);
+	}
+
+	public boolean isFullIce() {
+		return shareValue != null && shareValue == ShareValue.FULL;
 	}
 
 	public Date getFullDateTime() {
@@ -78,18 +93,29 @@ public class Event implements Comparable<Event> {
 
 	public String getSummary() {
 		if (isGame()) {
-			if (shareTeam == null) {
-				System.err.println("No game info found for: " + team + ":" + getDate());
-				return "Unknown Time: See league schedule for details";
-			} else {
-				return gameNumber + ": " + team + " (" + shareValue + ") vs. " + shareTeam;
-			}
-		} else if (shareValue.equals("X")) {
-			return team;
+			return makeGameSummary();
+		} else if (isPractice()) {
+			return makePracticeSummary();
 		} else {
-			return team + (shareTeam != null ? " with " + shareTeam : " Full Ice");
+			return team + "Other event";
 		}
+	}
 
+	private String makePracticeSummary() {
+		if (isFullIce()) {
+			return team + " - Full Ice";
+		} else {
+			return team + " shared with " + shareTeam;
+		}
+	}
+
+	private String makeGameSummary() {
+		if (shareTeam == null) {
+			LOGGER.info("No game info found for: " + team + ":" + getDate());
+			return "Unknown Time: See league schedule for details";
+		} else {
+			return gameNumber + ": " + team + " (" + shareValue.getShortString() + ") vs. " + shareTeam;
+		}
 	}
 
 	@Override
