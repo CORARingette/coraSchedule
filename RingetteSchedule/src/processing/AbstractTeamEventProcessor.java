@@ -7,7 +7,9 @@ import java.util.List;
 import java.util.logging.Logger;
 
 import leagueSched.AbstractLeagueSchedule;
+import leagueSched.LERQSchedule;
 import leagueSched.LeagueScheduleFactory;
+import leagueSched.NCRRLSchedule;
 import leagueSched.ScheduleRecord;
 import model.Event;
 import model.GameType;
@@ -29,7 +31,9 @@ public abstract class AbstractTeamEventProcessor {
 
 	public void doProcessingAll() {
 		for (String team : IceSpreadsheet.getInstance().getAllTeams()) {
-			doProcessing(team);
+			if (Config.getInstance().GetConfig(team).isActive()) {
+				doProcessing(team);
+			}
 		}
 
 	}
@@ -98,7 +102,7 @@ public abstract class AbstractTeamEventProcessor {
 	}
 
 	private void calculateShareTeamAndValue(Event event, ScheduleRecord scheduleRecord) {
-		String teamName = Config.instance.GetConfig(event.getTeam()).getMap();
+		String teamName = Config.getInstance().GetConfig(event.getTeam()).getMap();
 		if (scheduleRecord.getHome().equals(teamName)) {
 			event.setShareTeam(scheduleRecord.getVisitor());
 			event.setShareValue(ShareValue.HOME);
@@ -110,7 +114,17 @@ public abstract class AbstractTeamEventProcessor {
 
 	private void processUnmatchedEvents(String team, AbstractLeagueSchedule schedule,
 			List<ScheduleRecord> usedCalendarEvents) {
-
+		if (schedule instanceof NCRRLSchedule && !Context.loadNCRRL)
+		{
+			return;
+		}
+		
+		
+		if (schedule instanceof LERQSchedule && !Context.loadLERQ)
+		{
+			return;
+		}
+		
 		Collections.sort(usedCalendarEvents);
 
 		// find that last processed ice record from ice schedule
@@ -143,6 +157,10 @@ public abstract class AbstractTeamEventProcessor {
 
 	private void prepareForProcessing(Event iceEvent) {
 
+		if (iceEvent.getLocation() == null)
+		{
+			LOGGER.severe("Location is null: " + iceEvent.getTeam() + ":" + iceEvent.getDate() + ":" + iceEvent.getTime());
+		}
 		// look up normalized arena name
 		String resolvedLoction = ArenaMapper.getInstance().getProperty(iceEvent.getLocation());
 		if (resolvedLoction != null) {

@@ -1,16 +1,22 @@
 package model;
 
 public enum ShareValue {
-	HOME("H"), VISITOR("V"), HALF("0.5"), FULL("1.0"), OTHER("X");
+	HOME("H", true), VISITOR("V", true), HALF("0.5", false), FULL("1.0", false), OTHER("X", false);
 
 	private final String shortString;
+	private final boolean isGame;
 
-	ShareValue(String shortString) {
+	ShareValue(String shortString, boolean isGame) {
 		this.shortString = shortString;
+		this.isGame = isGame;
 	}
 
 	public String getShortString() {
 		return shortString;
+	}
+
+	public boolean isGame() {
+		return isGame;
 	}
 
 	public static ShareValue fromShortString(String shortString) {
@@ -26,4 +32,5 @@ public enum ShareValue {
 			return ShareValue.OTHER;
 		}
 	}
+
 }

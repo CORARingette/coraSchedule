@@ -32,47 +32,53 @@ public class NCRRLSchedule extends AbstractLeagueSchedule {
 		super(team);
 
 		try {
-			URL url = new URL((String) Config.instance.GetConfig(team).getUrl());
+			String urlList = Config.getInstance().GetConfig(team).getUrl();
+			String[] urls = urlList.split("\\|");
+			for (String urlString : urls) {
+				URL url = new URL(urlString);
 
-			URLConnection conn = url.openConnection();
+				URLConnection conn = url.openConnection();
 
-			BufferedReader rd = new BufferedReader(new InputStreamReader(conn.getInputStream()));
-			StringBuffer sb = new StringBuffer();
-			String line;
-			while ((line = rd.readLine()) != null) {
-				sb.append(line);
-				sb.append("\n");
-			}
-			rd.close();
+				BufferedReader rd = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+				StringBuffer sb = new StringBuffer();
+				String line;
+				while ((line = rd.readLine()) != null) {
+					sb.append(line);
+					sb.append("\n");
+				}
+				rd.close();
 
-			StringReader sin = new StringReader(sb.toString());
+				StringReader sin = new StringReader(sb.toString());
 
-			CalendarBuilder builder = new CalendarBuilder();
+				CalendarBuilder builder = new CalendarBuilder();
 
-			Calendar calendar = builder.build(sin);
-			System.err.println(calendar);
-			ComponentList<CalendarComponent> componentList = calendar.getComponents();
-			for (Object component : componentList) {
-				if (component instanceof VEvent) {
-					VEvent vEvent = (VEvent) component;
-					DtStart start = vEvent.getStartDate();
-					Date startDate = start.getDate();
-					Summary summary = vEvent.getSummary();
-					if (summary.getValue().contains("[Game - NCRRL]")) {
-						Location location = vEvent.getLocation();
-						String gameNumber = vEvent.getUid().getValue().replaceFirst("EID", "");
-						String teamName = Config.instance.GetConfig(team).getMap();
-						String homeStr = parseHomeFromSummary(summary.getValue());
-						String visitorStr = parseVisitorFromSummary(summary.getValue());
-						if (homeStr.equals(teamName) || visitorStr.equals(teamName)) {
-							ScheduleRecord event = new ScheduleRecord();
-							event.setGameDate(DateTimeUtils.makeTruncatedDate(startDate));
-							event.setGameTime(DateTimeUtils.makeTruncatedTime(startDate));
-							event.setLocation(location.getValue());
-							event.setHome(homeStr);
-							event.setVisitor(visitorStr);
-							event.setGameNumber(gameNumber);
-							schedule.add(event);
+				Calendar calendar = builder.build(sin);
+				System.err.println(calendar);
+				ComponentList<CalendarComponent> componentList = calendar.getComponents();
+				for (Object component : componentList) {
+					if (component instanceof VEvent) {
+						VEvent vEvent = (VEvent) component;
+						DtStart start = vEvent.getStartDate();
+						Date startDate = start.getDate();
+						Summary summary = vEvent.getSummary();
+						if (summary.getValue().contains("[Game - NCRRL]")) {
+							Location location = vEvent.getLocation();
+							String gameNumberStr = vEvent.getUid().getValue().replaceFirst("EID", "");
+							String[] parts = gameNumberStr.split("-");
+							String gameNumber = parts[1];
+							String teamName = Config.getInstance().GetConfig(team).getMap();
+							String homeStr = parseHomeFromSummary(summary.getValue());
+							String visitorStr = parseVisitorFromSummary(summary.getValue());
+							if (homeStr.equals(teamName) || visitorStr.equals(teamName)) {
+								ScheduleRecord event = new ScheduleRecord();
+								event.setGameDate(DateTimeUtils.makeTruncatedDate(startDate));
+								event.setGameTime(DateTimeUtils.makeTruncatedTime(startDate));
+								event.setLocation(location.getValue());
+								event.setHome(homeStr);
+								event.setVisitor(visitorStr);
+								event.setGameNumber(gameNumber);
+								schedule.add(event);
+							}
 						}
 					}
 				}
@@ -97,17 +103,13 @@ public class NCRRLSchedule extends AbstractLeagueSchedule {
 		return teams[1].trim();
 	}
 
-
-
-
-
 	public static void main(String[] args) throws ParserException {
 
-		NCRRLSchedule loader = new NCRRLSchedule("U14A Zarull");
+		NCRRLSchedule loader = new NCRRLSchedule("U8 Lannon");
 		SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
 		try {
 
-			List<ScheduleRecord> records = loader.findEntriesForDay(formatter.parse("25/09/2017"));
+			List<ScheduleRecord> records = loader.findEntriesForDay(formatter.parse("03/12/2017"));
 			for (int i = 0; i < records.size(); i++) {
 				NCRRLSchedule.LOGGER.info(records.get(i).getHome() + ":" + records.get(i).getVisitor() + ":"
 						+ records.get(i).getGameDate() + ":" + records.get(i).getGameTime() + ":"

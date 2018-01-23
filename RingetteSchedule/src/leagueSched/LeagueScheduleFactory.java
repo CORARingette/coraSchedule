@@ -18,7 +18,7 @@ public class LeagueScheduleFactory {
 	public AbstractLeagueSchedule getLeagueSchedule(String team) {
 		AbstractLeagueSchedule schedule = leagueScheduleLookup.get(team);
 		if (schedule == null) {
-			String url = Config.instance.GetConfig(team).getUrl();
+			String url = Config.getInstance().GetConfig(team).getUrl();
 
 			if (url != null && (url.contains("ncrrl"))) {
 				schedule = new NCRRLSchedule(team);

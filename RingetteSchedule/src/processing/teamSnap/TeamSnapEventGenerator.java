@@ -7,9 +7,9 @@ import java.util.logging.Logger;
 
 import model.Event;
 import processing.AbstractTeamEventProcessor;
-import processing.Utils;
 import schedule.ArenaMapper;
 import schedule.Context;
+import schedule.IceSpreadsheet;
 import teamsnap.entities.Division;
 import teamsnap.entities.DivisionEvent;
 import teamsnap.entities.DivisionLocation;
@@ -29,7 +29,11 @@ public class TeamSnapEventGenerator extends AbstractTeamEventProcessor {
 		teamSnap = new League();
 		allEvents = teamSnap.getAllEvents();
 		for (DivisionEvent divisionEvent : allEvents) {
-			existingScheduleEvents.add(new EventKey(divisionEvent));
+			LOGGER.info(">>> TE: " + divisionEvent.getTeam().getName() + ":"
+					+ divisionEvent.getCalendarStartDate().getTime() + ":" + divisionEvent.getLocation().getName());
+			if (Config.getInstance().GetConfig(divisionEvent.getTeam().getName()) != null && Config.getInstance().GetConfig(divisionEvent.getTeam().getName()).isActive()) {
+				existingScheduleEvents.add(new EventKey(divisionEvent));
+			}
 		}
 	}
 
@@ -38,6 +42,8 @@ public class TeamSnapEventGenerator extends AbstractTeamEventProcessor {
 			ArenaMapper.getInstance().dumpErrors();
 			System.exit(-1);
 		}
+
+		LOGGER.info("Calculating schedule difference");
 		Set<EventKey> eventsToAdd = new HashSet<EventKey>(updatedScheduleEvents);
 		eventsToAdd.removeAll(existingScheduleEvents);
 
@@ -48,10 +54,11 @@ public class TeamSnapEventGenerator extends AbstractTeamEventProcessor {
 			System.exit(-1);
 		}
 
+		LOGGER.info("Adding events");
 		// add the events
 		for (EventKey eventToAdd : eventsToAdd) {
 			Event event = (Event) eventToAdd.getSource();
-			String divison = Config.instance.GetConfig(event.getTeam()).getDivision();
+			String divison = Config.getInstance().GetConfig(event.getTeam()).getDivision();
 			Division division = teamSnap.getDivisionByName(divison);
 			Team team = division.getTeamByName(event.getTeam());
 			DivisionLocation location = teamSnap.getLocationByName(event.getLocation());
@@ -66,19 +73,33 @@ public class TeamSnapEventGenerator extends AbstractTeamEventProcessor {
 			}
 		}
 
+		LOGGER.info("Done adding events");
+
+		if (!isOKToDelete()) {
+			System.err.println("Errors exist, exiting");
+			System.exit(-1);
+		}
+
+		LOGGER.info("Calculating events to delete");
+
 		Set<EventKey> eventsToRemove = new HashSet<EventKey>(existingScheduleEvents);
 		eventsToRemove.removeAll(updatedScheduleEvents);
 
+		LOGGER.info("Deleting events");
 		// remove events
 		for (EventKey eventToRemove : eventsToRemove) {
 			DivisionEvent divisionEvent = (DivisionEvent) eventToRemove.getSource();
-			if (!Context.dryRun) {
-				divisionEvent.delete();
-			} else {
-				LOGGER.info("Deleting existing event: " + divisionEvent.getTeamId() + ":"
-						+ divisionEvent.getLocationId() + ":" + divisionEvent.getCalendarStartDate());
+
+			if (Config.getInstance().GetConfig(divisionEvent.getTeam().getName()).isActive()) {
+				if (!Context.dryRun) {
+					divisionEvent.delete();
+				} else {
+					LOGGER.info("Deleting existing event: " + divisionEvent.getName() + ":"
+							+ divisionEvent.getLocationId() + ":" + divisionEvent.getCalendarStartDate().getTime());
+				}
 			}
 		}
+		LOGGER.info("Done deleting events");
 
 	}
 
@@ -87,24 +108,40 @@ public class TeamSnapEventGenerator extends AbstractTeamEventProcessor {
 		for (EventKey eventToAdd : eventsToAdd) {
 			Event event = (Event) eventToAdd.getSource();
 			if (teamSnap.getLocationByName(event.getLocation()) == null) {
-				System.err.println("Location does not exist in TeamSnap: " + event.getLocation());
+				LOGGER.severe("Location does not exist in TeamSnap: " + event.getLocation());
 				dataMissing = true;
 			}
-			String divisonName = Config.instance.GetConfig(event.getTeam()).getDivision();
+			String divisonName = Config.getInstance().GetConfig(event.getTeam()).getDivision();
 			Division division = teamSnap.getDivisionByName(divisonName);
 			if (division == null) {
-				System.err.println("Division does not exist in TeamSnap: " + divisonName);
+				LOGGER.severe("Division does not exist in TeamSnap: " + divisonName);
 				dataMissing = true;
 			} else {
 				Team team = division.getTeamByName(event.getTeam());
 				if (team == null) {
-					System.err.println("Team does not exist in TeamSnap: " + event.getTeam());
+					LOGGER.severe("Team does not exist in TeamSnap: " + event.getTeam());
 					dataMissing = true;
 				}
 			}
 
 		}
+
 		return dataMissing;
+	}
+
+	private boolean isOKToDelete() {
+		boolean ok = true;
+		// check we are only removing events for teams we recognize
+		for (EventKey existingScheduleEvent : existingScheduleEvents) {
+			DivisionEvent de = (DivisionEvent) existingScheduleEvent.getSource();
+			if (Config.getInstance().GetConfig(de.getTeam().getName()) == null
+					|| !IceSpreadsheet.getInstance().isValidTeam(de.getTeam().getName())) {
+				LOGGER.severe("Team not found in configuration: " + de.getTeam().getName());
+				ok = false;
+				break;
+			}
+		}
+		return ok;
 	}
 
 	@Override
@@ -121,6 +158,7 @@ public class TeamSnapEventGenerator extends AbstractTeamEventProcessor {
 	@Override
 	protected void process(Event iceEvent) {
 		EventKey eventKey = new EventKey(iceEvent);
+		LOGGER.info(">>> IE: " + iceEvent.getTeam() + ":" + iceEvent.getFullDateTime() + ":" + iceEvent.getLocation());
 		updatedScheduleEvents.add(eventKey);
 	}
 

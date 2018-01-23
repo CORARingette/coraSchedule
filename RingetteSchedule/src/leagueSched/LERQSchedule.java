@@ -57,7 +57,7 @@ public class LERQSchedule extends AbstractLeagueSchedule {
 						String home = cells.elementAt(4).toPlainTextString().trim();
 						String away = cells.elementAt(5).toPlainTextString().trim();
 
-						String mappedTeamName = Config.instance.GetConfig(team).getMap();
+						String mappedTeamName = Config.getInstance().GetConfig(team).getMap();
 						if (home.equals(mappedTeamName) || away.equals(mappedTeamName)) {
 							LOGGER.fine("found dateStr: " + dateStr + ",timeStr:" + timeStr + ",arena:" + arena
 									+ ",away:" + away + ",home:" + home);
@@ -110,7 +110,7 @@ public class LERQSchedule extends AbstractLeagueSchedule {
 		super(team);
 
 		try {
-			URL url = new URL((String) Config.instance.GetConfig(team).getUrl());
+			URL url = new URL((String) Config.getInstance().GetConfig(team).getUrl());
 
 			URLConnection conn = url.openConnection();
 

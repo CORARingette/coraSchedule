@@ -19,9 +19,9 @@ import org.w3c.dom.NodeList;
 public class Config {
 	private static final Logger LOGGER = Logger.getLogger(Config.class.getName());
 
-	Hashtable<String, ConfigItem> configItems = new Hashtable<String, ConfigItem>();
+	private Hashtable<String, ConfigItem> configItems = new Hashtable<String, ConfigItem>();
 
-	public static Config instance = new Config();
+	private final static Config instance = new Config();
 
 	private Config() {
 		try {
@@ -40,19 +40,29 @@ public class Config {
 				String url = xPath.evaluate("url", teamNode);
 				String map = xPath.evaluate("map", teamNode);
 				String division = xPath.evaluate("division", teamNode);
-				if (division == null
-						|| division.isEmpty()) {
+				String active = xPath.evaluate("active", teamNode);
+				boolean isActive = active.equals("true");
+				if (division == null || division.isEmpty()) {
 					LOGGER.severe("Missing config entry for team: " + team + ":" + url + ":" + map + ":" + division);
 				}
-				configItems.put(team, new ConfigItem(team, url, map, division));
+				configItems.put(team, new ConfigItem(team, url, map, division,isActive));
 			}
 
 			System.err.println("Done");
 		} catch (Exception e) {
 			e.printStackTrace();
+			System.exit(-1);
 		}
 
 	}
+	
+	
+
+	public static Config getInstance() {
+		return instance;
+	}
+
+
 
 	public class ConfigItem {
 
@@ -60,12 +70,14 @@ public class Config {
 		private final String url;
 		private final String map;
 		private final String division;
+		private final boolean active;
 
-		public ConfigItem(String team, String url, String map, String division) {
+		public ConfigItem(String team, String url, String map, String division, boolean active) {
 			this.team = team;
 			this.url = url;
 			this.map = map;
 			this.division = division;
+			this.active = active;
 		}
 
 		public String getTeam() {
@@ -83,6 +95,11 @@ public class Config {
 		public String getDivision() {
 			return division;
 		}
+
+		public boolean isActive() {
+			return active;
+		}
+
 	}
 
 	public ConfigItem GetConfig(String team) {

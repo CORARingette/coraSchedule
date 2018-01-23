@@ -123,4 +123,16 @@ public class Event implements Comparable<Event> {
 		return getFullDateTime().compareTo(otherEvent.getFullDateTime());
 	}
 
+	public String dump()
+	{
+		StringBuffer sb = new StringBuffer();
+		sb.append(team).append(":");
+		sb.append(date).append(":");
+		sb.append(time).append(":");
+		sb.append(location).append(":");
+		sb.append(shareValue).append(":");
+		sb.append(shareTeam).append(":");
+		sb.append(gameNumber).append(":");
+		return sb.toString();
+	}
 }

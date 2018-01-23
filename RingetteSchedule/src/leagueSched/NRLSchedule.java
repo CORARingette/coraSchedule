@@ -22,7 +22,7 @@ public class NRLSchedule extends AbstractLeagueSchedule {
 		super(team);
 		try {
 
-			String url = Config.instance.GetConfig(team).getUrl();
+			String url = Config.getInstance().GetConfig(team).getUrl();
 
 			if (url != null) {
 				URL ncrrl = new URL(url);

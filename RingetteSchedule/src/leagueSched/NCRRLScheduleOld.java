@@ -21,7 +21,7 @@ public class NCRRLScheduleOld extends AbstractLeagueSchedule {
 	public NCRRLScheduleOld(String team) {
 		super(team);
 		try {
-			String urlList = Config.instance.GetConfig(team).getUrl();
+			String urlList = Config.getInstance().GetConfig(team).getUrl();
 			String[] urls = urlList.split("\\|");
 			for (String url : urls) {
 				if (url != null && !url.isEmpty()) {
@@ -56,7 +56,7 @@ public class NCRRLScheduleOld extends AbstractLeagueSchedule {
 								temp = in.readLine();// home score
 								temp = in.readLine(); // cancelled?
 
-								String teamName = Config.instance.GetConfig(team).getMap();
+								String teamName = Config.getInstance().GetConfig(team).getMap();
 								if (homeStr.equals(teamName) || awayStr.equals(teamName)) {
 									ScheduleRecord event = new ScheduleRecord();
 									Calendar calendar = Calendar.getInstance();

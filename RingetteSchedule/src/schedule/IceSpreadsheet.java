@@ -70,7 +70,7 @@ public class IceSpreadsheet {
 						String teamCellValue = cell.toString().trim();
 						teamCellValue = teamCellValue.replaceAll("#", "-");
 
-						if (Config.instance.GetConfig(teamCellValue) != null) {
+						if (Config.getInstance().GetConfig(teamCellValue) != null) {
 							System.err.println(cell.toString().trim() + ":" + new Integer(rowIndex));
 							String team = teamCellValue.trim();
 							List<Integer> rowList = teamsLookup.get(team);
@@ -79,7 +79,7 @@ public class IceSpreadsheet {
 								teamsLookup.put(team, rowList);
 							}
 							rowList.add(Integer.valueOf(rowIndex));
-						}
+						} 
 					}
 
 				}
@@ -108,18 +108,18 @@ public class IceSpreadsheet {
 
 								XSSFCell shareCell = row.getCell(column);
 
-								// locate the marker for the type of ice
-								if (shareCell != null && (shareCell.toString().equals("0.5")
-										|| shareCell.toString().equals("1.0") || shareCell.toString().equals("H")
-										|| shareCell.toString().equals("V") || shareCell.toString().equals("F")
-										|| shareCell.toString().equals("<EOL>"))) {
+								ShareValue shareValue = shareCell != null
+										? ShareValue.fromShortString(shareCell.toString()) : ShareValue.OTHER;
+								// load only practices, games will be loaded
+								// from league schedules
+								if (shareValue == ShareValue.FULL || shareValue == ShareValue.HALF) {
 
 									XSSFCell iceCell = row.getCell((int) (column - 1));
 									if (iceCell != null && !iceCell.toString().isEmpty()) {
 
 										Date date = dateRow.getCell((int) (column - 1)).getDateCellValue();
-										String share = shareCell.toString();
-										String iceInfo = iceCell.toString();
+										String share = shareCell.toString().trim();;
+										String iceInfo = iceCell.toString().trim();
 										String iceTime = parseTimeFromIceInfo(iceInfo);
 										String location = parseLocationFromIceInfo(iceInfo);
 										if (location == null || location.isEmpty()) {
@@ -127,8 +127,13 @@ public class IceSpreadsheet {
 													+ teamRowIndex + " Column: " + convertColumnToLetters(column));
 										}
 										String normalizedLocation = ArenaMapper.getInstance().getProperty(location);
-										Event event = new Event(team, normalizedLocation, ShareValue.fromShortString(share), null, date, iceTime,
-												null);
+										if (normalizedLocation == null)
+										{
+											ArenaMapper.getInstance().addError(location);
+										}
+										Event event = new Event(team,
+												normalizedLocation != null ? normalizedLocation : location,
+												ShareValue.fromShortString(share), null, date, iceTime, null);
 										iceEvents.add(event);
 
 									} else {
@@ -146,6 +151,7 @@ public class IceSpreadsheet {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+
 		LOGGER.info("Loading Done.");
 	}
 
@@ -173,6 +179,11 @@ public class IceSpreadsheet {
 
 	public List<String> getAllTeams() {
 		return Collections.list(teamsLookup.keys());
+	}
+	
+	public boolean isValidTeam(String team)
+	{
+		return teamsLookup.containsKey(team);
 	}
 
 	public List<Event> getIceEvents(String team) {
@@ -250,20 +261,20 @@ public class IceSpreadsheet {
 
 	public void dump() {
 		for (Event event : iceEvents) {
-			System.err.println(
-					event.getTeam() + ":" + event.getLocation() + ":" + event.getDate() + ":" + event.getTime());
+			System.err.println(event.dump());
 		}
+		ArenaMapper.getInstance().dumpErrors();
 	}
 
 	public static void main(String[] args) {
 		try {
 			IceSpreadsheet ish = new IceSpreadsheet();
 			SimpleDateFormat formater = new SimpleDateFormat("yyyy/MM/dd");
-			String team = ish.getShareTeam(formater.parse("2017/09/25"), "18:00", "Carleton University",
-					"U19A Soulard");
+			String team = ish.getShareTeam(formater.parse("2017/09/25"), "18:00", "Carleton University", "U19AA Cram");
 			System.err.println(team);
 		} catch (ParseException e) {
 			e.printStackTrace();
 		}
 	}
+
 }

@@ -6,8 +6,10 @@ import java.util.Calendar;
 import java.util.Date;
 
 public class Context {
-	
-	public static final boolean dryRun = true;
+
+	public static final boolean dryRun = false;
+	public static final boolean loadNCRRL = true;
+	public static final boolean loadLERQ = true;
 
 	// This is the date of the first Saturday of the schedule which should be
 	// week 1
@@ -28,8 +30,6 @@ public class Context {
 		}
 	}
 
-
-
 	public static Context getInstance() {
 		return instance;
 	}
@@ -42,13 +42,9 @@ public class Context {
 		this.processingEndWeek = processingEndWeek;
 	}
 
-
-
 	public Date getScheduleStartDate() {
 		return scheduleStartDate;
 	}
-
-
 
 	public Date getWeekStartDate(int week) {
 		Date d = null;
