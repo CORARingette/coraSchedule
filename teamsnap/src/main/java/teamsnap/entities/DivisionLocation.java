@@ -25,7 +25,7 @@ public class DivisionLocation extends BaseEntity {
 		return (String) attributes.get("name");
 	}
 	
-	public String getLocationId() {
-		return (String) attributes.get("id");
+	public Integer getLocationId() {
+		return (Integer) attributes.get("id");
 	}
 }

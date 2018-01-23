@@ -30,6 +30,8 @@ public class DivisionEvent extends BaseEntity {
 		addAttribute("team_id", teamId);
 		addAttribute("icon_color", isGame ? "red" : "green");
 		addAttribute("label", isGame ? "GAME" : "PRACTICE");
+		addAttribute("duration_in_minutes", 60);
+		addAttribute("minutes_to_arrive_early", isGame ? 60 : 30);
 	}
 
 	public Team getTeam() {
@@ -40,8 +42,12 @@ public class DivisionEvent extends BaseEntity {
 		this.team = team;
 	}
 
-	public String getTeamId() {
-		return (String) attributes.get("team_id");
+	public Integer getTeamId() {
+		return (Integer) attributes.get("team_id");
+	}
+
+	public String getName() {
+		return (String) attributes.get("name");
 	}
 
 	public DivisionLocation getLocation() {
@@ -52,8 +58,14 @@ public class DivisionEvent extends BaseEntity {
 		this.location = location;
 	}
 
-	public String getLocationId() {
-		return (String) attributes.get("division_location_id");
+	public Integer getLocationId() {
+		return (Integer) attributes.get("division_location_id");
+	}
+	
+	public EventType getEventType()
+	{
+		// kludge for now
+		return ((String) attributes.get("label")).equals("GAME")? EventType.GAME: EventType.PRACTICE;
 	}
 
 	public Calendar getCalendarStartDate() {

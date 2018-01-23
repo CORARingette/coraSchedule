@@ -6,7 +6,7 @@ import org.codehaus.jackson.annotate.JsonIgnoreProperties;
 public class Attribute {
 	private String name;
 	private String type;
-	private String value;
+	private Object value;
 
 	public String getName() {
 		return name;
@@ -24,11 +24,11 @@ public class Attribute {
 		this.type = type;
 	}
 
-	public String getValue() {
+	public Object getValue() {
 		return value;
 	}
 
-	public void setValue(String value) {
+	public void setValue(Object value) {
 		this.value = value;
 	}
 

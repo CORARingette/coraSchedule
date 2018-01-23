@@ -38,8 +38,8 @@ public class Division extends BaseEntity {
 		}
 	}
 
-	public String getDivisionId() {
-		return (String) attributes.get("id");
+	public Integer getDivisionId() {
+		return (Integer) attributes.get("id");
 	}
 
 	public String getName() {

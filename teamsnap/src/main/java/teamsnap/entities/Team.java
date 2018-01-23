@@ -25,7 +25,7 @@ public class Team extends BaseEntity {
 		return (String) attributes.get("name");
 	}
 
-	public String getTeamId() {
-		return (String) attributes.get("id");
+	public Integer getTeamId() {
+		return (Integer) attributes.get("id");
 	}
 }

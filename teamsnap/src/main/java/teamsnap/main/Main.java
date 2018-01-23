@@ -1,9 +1,6 @@
 package teamsnap.main;
 
-import java.util.Date;
-
-import teamsnap.entities.DivisionEvent;
-import teamsnap.entities.EventType;
+import teamsnap.entities.League;
 
 public class Main {
 
@@ -26,10 +23,12 @@ public class Main {
 			// .queryString("division_id", 219320).asJson();
 			// System.err.println(eventListResponse.getBody().toString());
 			//
-			DivisionEvent de = new DivisionEvent(Integer.valueOf(Constants.ADMIN_DIVISION),
-					Integer.valueOf(Constants.TEST_TEAM_ID), Integer.valueOf(Constants.BREWER_ID),
-					"Home Game vs Montreal Mission v1", new Date(), false);
-			de.create();
+			// DivisionEvent de = new
+			// DivisionEvent(Integer.valueOf(Constants.ADMIN_DIVISION),
+			// Integer.valueOf(Constants.TEST_TEAM_ID),
+			// Integer.valueOf(Constants.BREWER_ID),
+			// "Home Game vs Montreal Mission v1", new Date(), true);
+			// de.create();
 			//
 			// de.delete();
 			// DivisionLocation dl = new DivisionLocation(Constants.MY_LEAGUE,
@@ -45,8 +44,8 @@ public class Main {
 			// e.addAttribute("name", "Power skating");
 			// e.addAttribute("is_game", Boolean.FALSE);
 			// e.create();
-			// League league = new League();
-			// System.err.println(league);
+			League league = new League();
+			System.err.println(league);
 			//
 			// new Event().getCreateFieldMessage();
 		} catch (Exception e) {

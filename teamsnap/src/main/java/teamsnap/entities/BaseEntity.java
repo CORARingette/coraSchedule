@@ -46,6 +46,7 @@ public abstract class BaseEntity {
 			}
 			HttpResponse<JsonNode> eventListResponse = Unirest.post(apiString)
 					.header("Authorization", "Bearer " + Authorization.instance().getToken())
+					.header("accept-encoding", "gzip")
 					.body(template.makeJsonString()).asJson();
 			LOGGER.info("Create Return String: " + template.makeJsonString() + ":\n"
 					+ eventListResponse.getBody().toString());
@@ -71,7 +72,7 @@ public abstract class BaseEntity {
 	}
 
 	protected int getId() {
-		return Integer.valueOf((String) attributes.get("id"));
+		return (Integer) attributes.get("id");
 	}
 
 }
