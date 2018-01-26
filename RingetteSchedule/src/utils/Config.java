@@ -28,7 +28,7 @@ public class Config {
 			DocumentBuilderFactory builderFactory = DocumentBuilderFactory.newInstance();
 			DocumentBuilder builder = builderFactory.newDocumentBuilder();
 
-			Document document = builder.parse(new FileInputStream("properties\\TeamConfig.xml"));
+			Document document = builder.parse(new FileInputStream("properties\\TeamConfig.2017-2018.xml"));
 
 			XPath xPath = XPathFactory.newInstance().newXPath();
 

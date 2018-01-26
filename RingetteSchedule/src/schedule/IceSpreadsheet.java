@@ -192,6 +192,10 @@ public class IceSpreadsheet {
 		return teamEvents;
 	}
 
+	public List<Event> getIceEvents() {
+		return iceEvents;
+	}
+
 	public String getShareTeam(Date date, String time, String location, String team) {
 		if (date == null || time == null || location == null || team == null) {
 			// no point running expensive lookup

@@ -8,3 +8,8 @@ RingetteSchedule/target/RingetteSchedule-0.0.1-SNAPSHOT.jar
 RingetteSchedule/target/surefire-reports/TEST-utils.DateTimeUtilsTest.xml
 RingetteSchedule/target/surefire-reports/utils.DateTimeUtilsTest.txt
 RingetteSchedule/~$Master.xlsx
+RingetteSchedule/target/classes/leagueSched/LeagueScheduleFactory.class
+RingetteSchedule/target/classes/leagueSched/LeagueScheduleFactory.class
+RingetteSchedule/target/classes/leagueSched/LERQSchedule$TableNodeVisitor.class
+RingetteSchedule/target/classes/leagueSched/LERQSchedule.class
+RingetteSchedule/target/classes/leagueSched/NCRRLSchedule.class
