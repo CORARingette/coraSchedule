@@ -30,6 +30,9 @@ public class IceSpreadsheet {
 	private final int START_COLUMN = 32;
 	private final int COLUMNS_PER_WEEK = 14;
 
+	// NOTE, this is only true for ice analysis
+	private final boolean includeHomeGames = false;
+
 	private final static String WORKBOOK_FILENAME = "Master.xlsx";
 	private final static String SHEET_NAME = "Season";
 
@@ -79,7 +82,7 @@ public class IceSpreadsheet {
 								teamsLookup.put(team, rowList);
 							}
 							rowList.add(Integer.valueOf(rowIndex));
-						} 
+						}
 					}
 
 				}
@@ -112,13 +115,14 @@ public class IceSpreadsheet {
 										? ShareValue.fromShortString(shareCell.toString()) : ShareValue.OTHER;
 								// load only practices, games will be loaded
 								// from league schedules
-								if (shareValue == ShareValue.FULL || shareValue == ShareValue.HALF) {
+								if (shareValue == ShareValue.FULL || shareValue == ShareValue.HALF
+										|| (includeHomeGames && shareValue == ShareValue.HOME)) {
 
 									XSSFCell iceCell = row.getCell((int) (column - 1));
 									if (iceCell != null && !iceCell.toString().isEmpty()) {
 
 										Date date = dateRow.getCell((int) (column - 1)).getDateCellValue();
-										String share = shareCell.toString().trim();;
+										String share = shareCell.toString().trim();
 										String iceInfo = iceCell.toString().trim();
 										String iceTime = parseTimeFromIceInfo(iceInfo);
 										String location = parseLocationFromIceInfo(iceInfo);
@@ -127,8 +131,7 @@ public class IceSpreadsheet {
 													+ teamRowIndex + " Column: " + convertColumnToLetters(column));
 										}
 										String normalizedLocation = ArenaMapper.getInstance().getProperty(location);
-										if (normalizedLocation == null)
-										{
+										if (normalizedLocation == null) {
 											ArenaMapper.getInstance().addError(location);
 										}
 										Event event = new Event(team,
@@ -180,9 +183,8 @@ public class IceSpreadsheet {
 	public List<String> getAllTeams() {
 		return Collections.list(teamsLookup.keys());
 	}
-	
-	public boolean isValidTeam(String team)
-	{
+
+	public boolean isValidTeam(String team) {
 		return teamsLookup.containsKey(team);
 	}
 

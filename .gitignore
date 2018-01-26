@@ -13,3 +13,7 @@ RingetteSchedule/target/classes/leagueSched/LeagueScheduleFactory.class
 RingetteSchedule/target/classes/leagueSched/LERQSchedule$TableNodeVisitor.class
 RingetteSchedule/target/classes/leagueSched/LERQSchedule.class
 RingetteSchedule/target/classes/leagueSched/NCRRLSchedule.class
+RingetteSchedule/target/classes/utils/Config.class
+*.class
+*.class
+*.class
