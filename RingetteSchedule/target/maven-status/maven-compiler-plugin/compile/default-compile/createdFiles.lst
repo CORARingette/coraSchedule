@@ -2,6 +2,7 @@ utils\Config$ConfigItem.class
 schedule\DBConnnection.class
 convertTS\LoadLocationsToTS.class
 leagueSched\LERQSchedule.class
+schedule\Analyser.class
 model\Event.class
 leagueSched\ScheduleRecord.class
 processing\teamSnap\EventKey.class

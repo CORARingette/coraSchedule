@@ -38,6 +38,7 @@ public class NCRRLSchedule extends AbstractLeagueSchedule {
 				URL url = new URL(urlString);
 
 				URLConnection conn = url.openConnection();
+				conn.setRequestProperty("User-Agent", "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.95 Safari/537.11");
 
 				BufferedReader rd = new BufferedReader(new InputStreamReader(conn.getInputStream()));
 				StringBuffer sb = new StringBuffer();
@@ -84,7 +85,7 @@ public class NCRRLSchedule extends AbstractLeagueSchedule {
 				}
 			}
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
+			System.err.println("Exception createing NCRRL Schedule for: " + team);
 			e.printStackTrace();
 		}
 	}
@@ -105,11 +106,11 @@ public class NCRRLSchedule extends AbstractLeagueSchedule {
 
 	public static void main(String[] args) throws ParserException {
 
-		NCRRLSchedule loader = new NCRRLSchedule("U8 Lannon");
+		NCRRLSchedule loader = new NCRRLSchedule("U10 Van Walleghem");
 		SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
 		try {
 
-			List<ScheduleRecord> records = loader.findEntriesForDay(formatter.parse("03/12/2017"));
+			List<ScheduleRecord> records = loader.findEntriesForDay(formatter.parse("29/09/2018"));
 			for (int i = 0; i < records.size(); i++) {
 				NCRRLSchedule.LOGGER.info(records.get(i).getHome() + ":" + records.get(i).getVisitor() + ":"
 						+ records.get(i).getGameDate() + ":" + records.get(i).getGameTime() + ":"

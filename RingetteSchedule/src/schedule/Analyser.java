@@ -1,5 +1,8 @@
 package schedule;
 
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -34,6 +37,23 @@ public class Analyser {
 			locationList.add(event);
 		}
 
+	}
+
+	private void dumpForExcel() {
+		try {
+			PrintWriter out = new PrintWriter(new FileWriter("AllIce.txt"));
+			out.println("Team\tLocation\tShare Value");
+			List<Event> events = sheet.getIceEvents();
+			for (Event event : events) {
+				out.println(event.getTeam() + "\t" + event.getLocation() + "\t"
+						+ ((event.getShareValue() == ShareValue.FULL || event.getShareValue() == ShareValue.HOME) ? 1.0
+								: 0.5));
+			}
+			out.close();
+		} catch (Exception e) {
+
+			e.printStackTrace();
+		} 
 	}
 
 	private void dumpByTeam() {
@@ -98,6 +118,7 @@ public class Analyser {
 		analyser.dumpByTeam();
 		System.err.println("");
 		analyser.dumpByLocation();
+		analyser.dumpForExcel() ;
 	}
 
 }

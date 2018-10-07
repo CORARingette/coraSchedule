@@ -140,9 +140,9 @@ public class IceSpreadsheet {
 										iceEvents.add(event);
 
 									} else {
-										LOGGER.severe(
-												"******************* Loader Error: No Ice Info for " + team + "Row: "
-														+ teamRowIndex + " Column: " + convertColumnToLetters(column));
+										LOGGER.severe("******************* Loader Error: No Ice Info for " + team
+												+ "Row: " + (teamRowIndex + 1) + " Column: "
+												+ convertColumnToLetters(column - 1));
 									}
 
 								}
@@ -204,10 +204,20 @@ public class IceSpreadsheet {
 			return null;
 		}
 
-		String normalizedLocation = ArenaMapper.getInstance().getProperty(location);
-		Event matchingEvent = iceEvents.stream().filter(e -> normalizedLocation.equals(e.getLocation())
-				&& date.equals(e.getDate()) && time.equals(e.getTime()) && !team.equals(e.getTeam())).findAny()
-				.orElse(null);
+		Event matchingEvent = null;
+		try {
+			String normalizedLocation = ArenaMapper.getInstance().getProperty(location);
+
+			if (normalizedLocation != null) {
+				matchingEvent = iceEvents.stream().filter(e -> normalizedLocation.equals(e.getLocation())
+						&& date.equals(e.getDate()) && time.equals(e.getTime()) && !team.equals(e.getTeam())).findAny()
+						.orElse(null);
+			} else {
+				LOGGER.severe("******************* Loader Error: No normalized location found for " + location);
+			}
+		} catch (Exception e) {
+			dump();
+		}
 		if (matchingEvent == null) {
 			dump();
 		}

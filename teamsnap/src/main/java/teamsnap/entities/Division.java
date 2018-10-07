@@ -47,7 +47,7 @@ public class Division extends BaseEntity {
 	}
 
 	public boolean isArchived() {
-		return attributes.get("is_archived") != null && attributes.get("is_archived").equals("true");
+		return attributes.get("is_archived") != null && (boolean) attributes.get("is_archived");
 	}
 
 	public List<Team> getTeams() {

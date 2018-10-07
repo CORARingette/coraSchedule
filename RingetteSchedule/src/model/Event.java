@@ -3,21 +3,22 @@ package model;
 import java.util.Date;
 import java.util.logging.Logger;
 
+import lombok.Getter;
+import lombok.Setter;
 import utils.DateTimeUtils;
 
 public class Event implements Comparable<Event> {
 
 	private static final Logger LOGGER = Logger.getLogger(Event.class.getName());
 
+	@Getter private final String team;
+	@Getter private final Date date;
+	@Getter private final String time;
 
-	private final String team;
-	private final Date date;
-	private final String time;
-
-	private String shareTeam;
-	private String gameNumber;
-	private String location;
-	private ShareValue shareValue;
+	@Getter @Setter private String shareTeam;
+	@Getter @Setter private String gameNumber;
+	@Getter @Setter private String location;
+	@Getter @Setter private ShareValue shareValue;
 
 	public Event(String team, String location, ShareValue shareValue, String shareTeam, Date date, String time,
 			String gameNumber) {
@@ -31,56 +32,12 @@ public class Event implements Comparable<Event> {
 		this.location = location;
 	}
 
-	public String getTeam() {
-		return team;
-	}
-
-	public String getLocation() {
-		return location;
-	}
-
-	public void setLocation(String location) {
-		this.location = location;
-	}
-
-	public ShareValue getShareValue() {
-		return shareValue;
-	}
-
-	public String getShareTeam() {
-		return shareTeam;
-	}
-
-	public Date getDate() {
-		return date;
-	}
-
-	public String getGameNumber() {
-		return gameNumber;
-	}
-
-	public void setGameNumber(String gameNumber) {
-		this.gameNumber = gameNumber;
-	}
-
-	public void setShareTeam(String shareTeam) {
-		this.shareTeam = shareTeam;
-	}
-
-	public void setShareValue(ShareValue shareValue) {
-		this.shareValue = shareValue;
-	}
-
-	public String getTime() {
-		return time;
-	}
-
 	public boolean isGame() {
 		return shareValue != null && (shareValue == ShareValue.HOME || shareValue == ShareValue.VISITOR);
 	}
 
 	public boolean isPractice() {
-		return shareValue != null && (shareValue==ShareValue.HALF || shareValue == ShareValue.FULL);
+		return shareValue != null && (shareValue == ShareValue.HALF || shareValue == ShareValue.FULL);
 	}
 
 	public boolean isFullIce() {
@@ -123,8 +80,7 @@ public class Event implements Comparable<Event> {
 		return getFullDateTime().compareTo(otherEvent.getFullDateTime());
 	}
 
-	public String dump()
-	{
+	public String dump() {
 		StringBuffer sb = new StringBuffer();
 		sb.append(team).append(":");
 		sb.append(date).append(":");

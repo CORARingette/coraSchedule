@@ -2,6 +2,8 @@ package teamsnap.entities;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.SortedSet;
+import java.util.TreeSet;
 import java.util.logging.Logger;
 
 import org.codehaus.jackson.map.ObjectMapper;
@@ -73,6 +75,16 @@ public abstract class BaseEntity {
 
 	protected int getId() {
 		return (Integer) attributes.get("id");
+	}
+	
+	public void dump()
+	{
+		StringBuilder sb = new StringBuilder();
+		SortedSet<String> keys = new TreeSet<>(attributes.keySet());
+		for (String key : keys) { 
+			sb.append(key).append("=").append(attributes.get(key)).append("\n");
+		}
+		LOGGER.info(sb.toString());
 	}
 
 }

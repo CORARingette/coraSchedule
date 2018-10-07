@@ -1,0 +1,196 @@
+Row Labels	Count of Share Value
+Jr Bunnies Seely	21
+Brewer	21
+Sr Bunnies Craig	21
+Brewer	20
+St Laurent	1
+U10 Novice Bickerton	37
+Barbara Anne Scott	1
+Belltown Dome	2
+Brewer	5
+Kilrea	6
+Peplinski	5
+Sandy Hill	4
+St Laurent	12
+Tom Brown	1
+Walkley	1
+U10 Novice Van Wallegham	35
+Barbara Anne Scott	1
+Belltown Dome	1
+Brewer	5
+Carleton University	1
+Kilrea	5
+Peplinski	5
+Sandy Hill	2
+St Laurent	11
+Tom Brown	3
+Walkley	1
+U12 P Prov Blue Zarull	41
+Brewer	23
+Carleton University	1
+Goulbourn Rec Centre	1
+Kilrea	1
+Peplinski	4
+Sandy Hill	3
+St Laurent	6
+Tom Brown	1
+Walkley	1
+U12 P Prov Red Cameron	46
+Brewer	19
+Carleton University	1
+Dulude	1
+Kanata Rec Centre	2
+Kilrea	4
+McNabb	2
+Peplinski	4
+Sandy Hill	3
+St Laurent	7
+Tom Brown	3
+U12 Reg Lannon	38
+Brewer	15
+Carleton University	1
+Kilrea	3
+Peplinski	5
+Sandy Hill	3
+St Laurent	7
+Tom Brown	3
+Walkley	1
+U12 Reg Stachon	33
+Beaudry	1
+Brewer	10
+Kilrea	3
+Peplinski	6
+Sandy Hill	2
+St Laurent	5
+Tom Brown	2
+Walkley	4
+U14 Tween A Wippel	46
+Brewer	8
+Carleton University	6
+Kilrea	2
+Peplinski	19
+Richcraft-HEO	1
+Sandy Hill	4
+St Laurent	5
+Tom Brown	1
+U14 Tween AA Kushner	42
+Brewer	6
+Carleton University	21
+Kilrea	2
+Nepean Sportsplex Rink 1	1
+Nepean Sportsplex Rink 3	1
+Orleans Rec - Senecal	1
+Peplinski	2
+Sandy Hill	3
+St Laurent	3
+Tom Brown	2
+U14 Tween B Sarazin	36
+Brewer	12
+Grandmaitre	2
+Kilrea	1
+McNabb	1
+Peplinski	5
+Sandy Hill	2
+St Laurent	5
+Tom Brown	5
+Walkley	3
+U14 Tween C Herdman	34
+Brewer	16
+Carleton University	1
+Grandmaitre	2
+McNabb	1
+Peplinski	3
+Sandy Hill	3
+St Laurent	5
+Tom Brown	2
+Walkley	1
+U16 Junior A Lowe	51
+Barbara Anne Scott	1
+Brewer	2
+Carleton University	3
+Grandmaitre	2
+Kanata Rec Centre	1
+Kilrea	1
+Peplinski	25
+Sandy Hill	7
+Sensplex 1 - Mattamy	1
+St Laurent	5
+Tom Brown	2
+Walkley	1
+U16 Junior AA Gurtler	57
+Carleton University	18
+Kilrea	3
+Nepean Sportsplex Rink 2	1
+Orleans Rec - Senecal	1
+Peplinski	13
+Sandy Hill	10
+Sensplex 1 - Mattamy	1
+Sensplex 4 - Palladium	2
+St Laurent	7
+Tom Brown	1
+U16 Junior B Bergmans	41
+Brewer	21
+Kilrea	1
+Peplinski	9
+Sandy Hill	4
+St Laurent	4
+Tom Brown	2
+U16 Junior B McKillip	39
+Brewer	22
+Kilrea	1
+McNabb	2
+Peplinski	3
+Sandy Hill	5
+St Laurent	3
+Tom Brown	3
+U19 Belle A Soulard	62
+Brewer	22
+Carleton University	21
+Kilrea	2
+Nepean Sportsplex Rink 2	1
+Peplinski	6
+Potvin	1
+Sandy Hill	5
+Tom Brown	4
+U19 Belle AA Cram	72
+Brewer	1
+Carleton University	26
+Grandmaitre	1
+Kilrea	3
+Orleans Rec - Senecal	2
+Peplinski	6
+Sandy Hill	8
+Tom Brown	1
+Walkley	24
+U19 Belle B Mackey	34
+Brewer	19
+Grandmaitre	2
+Peplinski	5
+Sandy Hill	4
+St Laurent	2
+Tom Brown	2
+U8 Novice Sammon	36
+Belltown Dome	3
+Brewer	11
+Carleton University	2
+Kilrea	4
+McNabb	2
+Peplinski	3
+Sandy Hill	2
+St Laurent	6
+Tom Brown	1
+Walkley	2
+U9 Novice Benoit	32
+Barbara Anne Scott	1
+Belltown Dome	3
+Brewer	4
+Carleton University	3
+Grandmaitre	1
+Kilrea	4
+Peplinski	2
+St Laurent	12
+Tom Brown	1
+Walkley	1
+(blank)	
+(blank)	
+Grand Total	854

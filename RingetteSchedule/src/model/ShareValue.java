@@ -1,23 +1,14 @@
 package model;
 
+import lombok.Getter;
+import lombok.RequiredArgsConstructor;
+
+@RequiredArgsConstructor
 public enum ShareValue {
 	HOME("H", true), VISITOR("V", true), HALF("0.5", false), FULL("1.0", false), OTHER("X", false);
 
-	private final String shortString;
-	private final boolean isGame;
-
-	ShareValue(String shortString, boolean isGame) {
-		this.shortString = shortString;
-		this.isGame = isGame;
-	}
-
-	public String getShortString() {
-		return shortString;
-	}
-
-	public boolean isGame() {
-		return isGame;
-	}
+	@Getter private final String shortString;
+	@Getter private final boolean isGame;
 
 	public static ShareValue fromShortString(String shortString) {
 		if (shortString.equals(ShareValue.HOME.getShortString())) {

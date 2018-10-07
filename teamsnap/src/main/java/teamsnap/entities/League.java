@@ -26,8 +26,9 @@ public class League extends BaseEntity {
 		query = new Query("https://api.teamsnap.com/v3/divisions/search");
 		for (Item item : query.execute("parent_id", Constants.MY_LEAGUE).getItems()) {
 			Division division = new Division(this, item);
+			division.dump();
 			if (!division.isArchived()) {
-				divisions.add(new Division(this, item));
+				divisions.add(division);
 			}
 		}
 

@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<teams>
+
+	<!-- Bunnies -->
+
+	<team>
+		<name>Jr Bunnies</name>
+		<map></map>
+		<url></url>
+		<division>Bunnies</division>
+		<active>false</active>
+	</team>
+	<team>
+		<name>Bunnies</name>
+		<map>Bunnies</map>
+		<url>http://nothing</url>
+		<division>Bunnies</division>
+		<active>false</active>
+	</team>
+
+	<!-- U8 -->
+
+	<team>
+		<name>U8 Isaac</name>
+		<map>Ottawa - Isaac</map>
+		<url>http://ncrrl.on.ca/schedules/101?ical=0&amp;n=U8&amp;nocache|http://ncrrl.on.ca/schedules/105?ical=0&amp;n=U8_R_Red&amp;nocache</url>
+		<division>U8</division>
+		<active>true</active>
+	</team>
+
+	<team>
+		<name>U8 Cyr</name>
+		<map>Ottawa - Cyr</map>
+		<url>http://ncrrl.on.ca/schedules/101?ical=0&amp;n=U8&amp;nocache|http://ncrrl.on.ca/schedules/105?ical=0&amp;n=U8_R_Red&amp;nocache</url>
+		<division>U8</division>
+		<active>true</active>
+	</team>
+
+
+	<!-- U9 -->
+	<team>
+		<name>U9 Dziver</name>
+		<map>Ottawa - Dziver</map>
+		<url>http://ncrrl.on.ca/schedules/102?ical=0&amp;n=U9&amp;nocache|http://ncrrl.on.ca/schedules/107?ical=0&amp;n=U9_R_Red&amp;nocache</url>
+		<division>U9</division>
+		<active>true</active>
+	</team>
+	<team>
+		<name>U9 Plouffe</name>
+		<map>Ottawa - Plouffe</map>
+		<url>http://ncrrl.on.ca/schedules/102?ical=0&amp;n=U9&amp;nocache|http://ncrrl.on.ca/schedules/107?ical=0&amp;n=U9_R_Red&amp;nocache</url>
+		<division>U9</division>
+		<active>true</active>
+	</team>
+
+	<team>
+		<name>U9 Waddell</name>
+		<map>Ottawa - Waddell</map>
+		<url>http://ncrrl.on.ca/schedules/102?ical=0&amp;n=U9&amp;nocache|http://ncrrl.on.ca/schedules/107?ical=0&amp;n=U9_R_Red&amp;nocache</url>
+		<division>U9</division>
+		<active>true</active>
+	</team>
+
+	<!-- U10 -->
+	<team>
+		<name>U10 Frechette</name>
+		<map>Ottawa - Frechette</map>
+		<url>http://ncrrl.on.ca/schedules/108?ical=0&amp;n=U10_R_Blue&amp;nocache</url>
+		<division>U10</division>
+		<active>true</active>
+	</team>
+
+	<team>
+		<name>U10 Van Walleghem</name>
+		<map>Ottawa - Van Walleghem</map>
+		<url>http://ncrrl.on.ca/schedules/109?ical=0&amp;n=U10_R_Red&amp;nocache</url>
+		<division>U10</division>
+		<active>true</active>
+	</team>
+
+
+	<!-- U12 -->
+	<team>
+		<name>U12 Reg Kingstone</name>
+		<map>Ottawa - Kingstone</map>
+		<url>http://ncrrl.on.ca/schedules/114?ical=0&amp;n=U12_Regional_Blue&amp;nocache|http://ncrrl.on.ca/schedules/115?ical=0&amp;n=U12_Regional_Red&amp;nocache</url>
+		<division>U12</division>
+		<active>true</active>
+	</team>
+
+	<team>
+		<name>U12 Reg Mackey</name>
+		<map>Ottawa - Mackey</map>
+		<url>http://ncrrl.on.ca/schedules/115?ical=0&amp;n=U12_Regional_Red&amp;nocache|http://ncrrl.on.ca/schedules/115?ical=0&amp;n=U12_Regional_Red&amp;nocache</url>
+		<division>U12</division>
+		<active>true</active>
+	</team>
+
+	<team>
+		<name>U12 Reg Lafontaine</name>
+		<map>Ottawa - Lafontaine</map>
+		<url>http://ncrrl.on.ca/schedules/114?ical=0&amp;n=U12_Regional_Blue&amp;nocache|http://ncrrl.on.ca/schedules/115?ical=0&amp;n=U12_Regional_Red&amp;nocache</url>
+		<division>U12</division>
+		<active>true</active>
+	</team>
+
+	<team>
+		<name>U12 Reg Peltzer</name>
+		<map>Ottawa - Peltzer</map>
+		<url>http://ncrrl.on.ca/schedules/115?ical=0&amp;n=U12_Regional_Red&amp;nocache|http://ncrrl.on.ca/schedules/115?ical=0&amp;n=U12_Regional_Red&amp;nocache</url>
+		<division>U12</division>
+		<active>true</active>
+	</team>
+
+	<team>
+		<name>U12 Prov Red Purves</name>
+		<map>Ottawa - Purves</map>
+		<url>http://ncrrl.on.ca/schedules/112?ical=0&amp;n=U12_Provincial_Red&amp;nocache</url>
+		<division>U12</division>
+		<active>true</active>
+	</team>
+	<team>
+		<name>U12 Prov Blue Stass</name>
+		<map>Ottawa - Stass</map>
+		<url>http://ncrrl.on.ca/schedules/111?ical=0&amp;n=U12_Provincial_Blue&amp;nocache</url>
+		<division>U12</division>
+		<active>true</active>
+	</team>
+
+	<!-- U14 -->
+
+	<team>
+		<name>U14C Glinski</name>
+		<map>Ottawa - Glinski</map>
+		<url>http://ncrrl.on.ca/schedules/119?ical=0&amp;n=U14_C&amp;nocache</url>
+		<division>U14</division>
+		<active>true</active>
+	</team>
+
+	<team>
+		<name>U14B Moodie</name>
+		<map>Ottawa - Moodie</map>
+		<url>http://ncrrl.on.ca/schedules/118?ical=0&amp;n=U14_B&amp;nocache</url>
+		<division>U14</division>
+		<active>true</active>
+	</team>
+
+
+	<team>
+		<name>U14A Rausch</name>
+		<map>Ottawa - Rausch</map>
+		<url>http://ncrrl.on.ca/schedules/117?ical=0&amp;n=U14_A&amp;nocache</url>
+		<division>U14</division>
+		<active>true</active>
+	</team>
+	<team>
+		<name>U14AA Wolf</name>
+		<map>Ottawa</map>
+		<url>http://membres.ringuette-quebec.qc.ca/cedules_liste_web.asp?ligues_id=67&amp;NbrAfficher=1000
+		</url>
+		<division>U14</division>
+		<active>true</active>
+	</team>
+
+	<!-- U16 -->
+
+	<team>
+		<name>U16C Hart</name>
+		<map>Ottawa - Hart</map>
+		<url>http://ncrrl.on.ca/schedules/139?ical=0&amp;n=U16_B2&amp;nocache</url>
+		<division>U16</division>
+		<active>true</active>
+	</team>
+	<team>
+		<name>U16B McWaters</name>
+		<map>Ottawa - McWaters</map>
+		<url>http://ncrrl.on.ca/schedules/138?ical=0&amp;n=U16_B1&amp;nocache</url>
+		<division>U16</division>
+		<active>true</active>
+	</team>
+	<team>
+		<name>U16A Wippel</name>
+		<map>Ottawa</map>
+		<url>http://membres.ringuette-quebec.qc.ca/cedules_liste_web.asp?ligues_id=68&amp;NbrAfficher=1000
+		</url>
+		<division>U16</division>
+		<active>true</active>
+	</team>
+
+	<team>
+		<name>U16AA Grant</name>
+		<map>Ottawa</map>
+		<url>http://membres.ringuette-quebec.qc.ca/cedules_liste_web.asp?ligues_id=65&amp;NbrAfficher=1000
+		</url>
+		<division>U16</division>
+		<active>true</active>
+	</team>
+
+
+	<!-- U19 -->
+
+	<team>
+		<name>U19B Bergmans</name>
+		<map>Ottawa - Bergmans</map>
+		<url>http://ncrrl.on.ca/schedules/134?ical=0&amp;n=U19_B&amp;nocache</url>
+		<division>U19</division>
+		<active>true</active>
+	</team>
+
+	<team>
+		<name>U19B McNamee</name>
+		<map>Ottawa - McNamee</map>
+		<url>http://ncrrl.on.ca/schedules/134?ical=0&amp;n=U19_B&amp;nocache
+		</url>
+		<division>U19</division>
+		<active>true</active>
+	</team>
+
+	<team>
+		<name>U19A Fabiano</name>
+		<map>Ottawa</map>
+		<url>http://membres.ringuette-quebec.qc.ca/cedules_liste_web.asp?ligues_id=69&amp;NbrAfficher=1000
+		</url>
+		<division>U19</division>
+		<active>true</active>
+	</team>
+
+
+	<team>
+		<name>U19AA Cram</name>
+		<map>Ottawa</map>
+		<url>http://membres.ringuette-quebec.qc.ca/cedules_liste_web.asp?ligues_id=66&amp;NbrAfficher=1000
+		</url>
+		<division>U19</division>
+		<active>true</active>
+	</team>
+
+	<!-- Open -->
+
+	<team>
+		<name>Open A</name>
+		<map>Ottawa Ice</map>
+		<url></url>
+		<division>Open</division>
+		<active>false</active>
+	</team>
+
+
+	<!-- NRL -->
+
+	<team>
+		<name>Ottawa Ice NRL</name>
+		<map>Ottawa Ice</map>
+		<url>http://www.nationalringetteleague.ca/stats/schedule.php?view=season&amp;team_id=5&amp;season_id=41&amp;home_away=&amp;division_id=
+		</url>
+		<division>Open</division>
+		<active>true</active>
+	</team>
+
+
+	<!-- Development -->
+
+	<team>
+		<name>Goalie Clinic</name>
+		<map>Ottawa Ice</map>
+		<url></url>
+		<division>Goalie</division>
+		<active>false</active>
+	</team>
+
+	<!-- Test -->
+	<team>
+		<name>TestTeam</name>
+		<map>Ottawa Ice</map>
+		<url>
+		</url>
+		<division>Admin</division>
+		<active>false</active>
+	</team>
+
+	<team>
+		<name>Coaches</name>
+		<map>Ottawa Ice</map>
+		<url>
+		</url>
+		<division>Admin</division>
+		<active>false</active>
+	</team>
+</teams>

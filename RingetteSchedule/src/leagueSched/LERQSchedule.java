@@ -92,9 +92,9 @@ public class LERQSchedule extends AbstractLeagueSchedule {
 	 */
 	public static void main(String[] args) {
 		try {
-			LERQSchedule lerq = new LERQSchedule("U19AA Cram");
+			LERQSchedule lerq = new LERQSchedule("U16AA Grant");
 			SimpleDateFormat formatter = new SimpleDateFormat("d-MMM-yy");
-			List<ScheduleRecord> records = lerq.findEntriesForDay(formatter.parse("01-Oct-17"));
+			List<ScheduleRecord> records = lerq.findEntriesForDay(formatter.parse("30-Sep-18"));
 			for (int i = 0; i < records.size(); i++) {
 				LERQSchedule.LOGGER.info(records.get(i).getHome() + ":" + records.get(i).getVisitor() + ":"
 						+ records.get(i).getLocation() + ":" + records.get(i).getGameDate() + ":"
@@ -113,6 +113,8 @@ public class LERQSchedule extends AbstractLeagueSchedule {
 			URL url = new URL((String) Config.getInstance().GetConfig(team).getUrl());
 
 			URLConnection conn = url.openConnection();
+			conn.setRequestProperty("User-Agent", "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.95 Safari/537.11");
+
 
 			BufferedReader rd = new BufferedReader(new InputStreamReader(conn.getInputStream()));
 			StringBuffer sb = new StringBuffer();
