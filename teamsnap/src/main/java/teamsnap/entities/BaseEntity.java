@@ -4,7 +4,6 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.SortedSet;
 import java.util.TreeSet;
-import java.util.logging.Logger;
 
 import org.codehaus.jackson.map.ObjectMapper;
 
@@ -12,15 +11,16 @@ import com.mashape.unirest.http.HttpResponse;
 import com.mashape.unirest.http.JsonNode;
 import com.mashape.unirest.http.Unirest;
 
+import lombok.extern.java.Log;
 import teamsnap.apiClient.Attribute;
 import teamsnap.apiClient.Item;
 import teamsnap.apiClient.Response;
 import teamsnap.apiClient.Template;
 import teamsnap.auth.Authorization;
 
+@Log
 public abstract class BaseEntity {
 
-	protected static final Logger LOGGER = Logger.getLogger(BaseEntity.class.getName());
 	protected String apiString;
 	protected HashMap<String, Object> attributes = new HashMap<String, Object>();
 
@@ -50,7 +50,7 @@ public abstract class BaseEntity {
 					.header("Authorization", "Bearer " + Authorization.instance().getToken())
 					.header("accept-encoding", "gzip")
 					.body(template.makeJsonString()).asJson();
-			LOGGER.info("Create Return String: " + template.makeJsonString() + ":\n"
+			log.fine("Create Return String: " + template.makeJsonString() + ":\n"
 					+ eventListResponse.getBody().toString());
 
 			ObjectMapper mapper = new ObjectMapper();
@@ -63,15 +63,33 @@ public abstract class BaseEntity {
 		}
 	}
 
-	public void delete() {
+	public void update(Map<String, Object> updates) {
 		try {
-			Unirest.delete(apiString + "/" + getId())
-					.header("Authorization", "Bearer " + Authorization.instance().getToken()).asJson();
-			LOGGER.info("Successfully deleted");
+			Template template = new Template();
+			for (Map.Entry<String, Object> entry : updates.entrySet()) {
+				template.addStringAttribute(entry.getKey(), entry.getValue());
+			}
+			Unirest.put(apiString + "/" + getId())
+					.header("Authorization", "Bearer " + Authorization.instance().getToken())
+					.header("accept-encoding", "gzip")
+					.body(template.makeJsonString()).asJson();
+			log.fine("Successfully updated");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
+	
+	public void delete() {
+		try {
+			Unirest.delete(apiString + "/" + getId())
+					.header("Authorization", "Bearer " + Authorization.instance().getToken()).asJson();
+			log.fine("Successfully deleted");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+
 
 	protected int getId() {
 		return (Integer) attributes.get("id");
@@ -84,7 +102,7 @@ public abstract class BaseEntity {
 		for (String key : keys) { 
 			sb.append(key).append("=").append(attributes.get(key)).append("\n");
 		}
-		LOGGER.info(sb.toString());
+		log.fine(sb.toString());
 	}
 
 }

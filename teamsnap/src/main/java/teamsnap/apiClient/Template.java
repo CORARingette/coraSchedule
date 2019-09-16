@@ -6,8 +6,10 @@ import org.codehaus.jackson.map.ObjectMapper;
 import org.codehaus.jackson.node.ArrayNode;
 import org.codehaus.jackson.node.ObjectNode;
 
+import lombok.extern.java.Log;
 import teamsnap.main.Constants;
 
+@Log
 public class Template {
 
 	private ObjectMapper mapper = new ObjectMapper();
@@ -52,6 +54,6 @@ public class Template {
 		Template t = new Template();
 		t.addStringAttribute("Test", 1);
 		t.addStringAttribute("Test2", "Hello");
-		System.err.println(t.makeJsonString());
+		Template.log.info(t.makeJsonString());
 	}
 }

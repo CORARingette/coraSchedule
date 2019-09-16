@@ -4,13 +4,13 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Date;
 import java.util.List;
-import java.util.logging.Logger;
 
 import leagueSched.AbstractLeagueSchedule;
 import leagueSched.LERQSchedule;
 import leagueSched.LeagueScheduleFactory;
 import leagueSched.NCRRLSchedule;
 import leagueSched.ScheduleRecord;
+import lombok.extern.java.Log;
 import model.Event;
 import model.GameType;
 import model.ShareValue;
@@ -19,9 +19,8 @@ import schedule.Context;
 import schedule.IceSpreadsheet;
 import utils.Config;
 
+@Log
 public abstract class AbstractTeamEventProcessor {
-
-	private static final Logger LOGGER = Logger.getLogger(AbstractTeamEventProcessor.class.getName());
 
 	protected abstract void preProcess(String team);
 
@@ -42,7 +41,7 @@ public abstract class AbstractTeamEventProcessor {
 
 		AbstractLeagueSchedule schedule = LeagueScheduleFactory.getInstance().getLeagueSchedule(team);
 		if (schedule == null) {
-			LOGGER.severe("Cannot process team: " + team + ", no league schedule found");
+			log.warning("Cannot process team: " + team + ", no league schedule found");
 			return;
 		}
 
@@ -60,6 +59,10 @@ public abstract class AbstractTeamEventProcessor {
 			if (iceEvent.isPractice() && !iceEvent.isFullIce()) {
 				iceEvent.setShareTeam(IceSpreadsheet.getInstance().getShareTeam(iceEvent.getDate(), iceEvent.getTime(),
 						iceEvent.getLocation(), team));
+				if (iceEvent.getShareTeam() == null)
+				{
+					log.warning("Share team not found: " + iceEvent.getTeam() + ":" + iceEvent.getFullDateTime());
+				}
 			}
 
 			// reset on new date
@@ -114,17 +117,14 @@ public abstract class AbstractTeamEventProcessor {
 
 	private void processUnmatchedEvents(String team, AbstractLeagueSchedule schedule,
 			List<ScheduleRecord> usedCalendarEvents) {
-		if (schedule instanceof NCRRLSchedule && !Context.loadNCRRL)
-		{
+		if (schedule instanceof NCRRLSchedule && !Context.loadNCRRL) {
 			return;
 		}
-		
-		
-		if (schedule instanceof LERQSchedule && !Context.loadLERQ)
-		{
+
+		if (schedule instanceof LERQSchedule && !Context.loadLERQ) {
 			return;
 		}
-		
+
 		Collections.sort(usedCalendarEvents);
 
 		// find that last processed ice record from ice schedule
@@ -157,9 +157,8 @@ public abstract class AbstractTeamEventProcessor {
 
 	private void prepareForProcessing(Event iceEvent) {
 
-		if (iceEvent.getLocation() == null)
-		{
-			LOGGER.severe("Location is null: " + iceEvent.getTeam() + ":" + iceEvent.getDate() + ":" + iceEvent.getTime());
+		if (iceEvent.getLocation() == null) {
+			log.severe("Location is null: " + iceEvent.getTeam() + ":" + iceEvent.getDate() + ":" + iceEvent.getTime());
 		}
 		// look up normalized arena name
 		String resolvedLoction = ArenaMapper.getInstance().getProperty(iceEvent.getLocation());
@@ -170,7 +169,7 @@ public abstract class AbstractTeamEventProcessor {
 		}
 		if (iceEvent.getLocation() == null || iceEvent.getLocation().isEmpty()
 				|| iceEvent.getLocation().equals("Unknown")) {
-			LOGGER.severe("Location is null, empty or unknown: " + iceEvent.getTeam() + ":" + iceEvent.getTime());
+			log.severe("Location is null, empty or unknown: " + iceEvent.getTeam() + ":" + iceEvent.getTime());
 		}
 		process(iceEvent);
 

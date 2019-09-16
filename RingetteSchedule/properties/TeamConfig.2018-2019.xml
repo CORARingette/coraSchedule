@@ -48,7 +48,7 @@
 	<team>
 		<name>U9 Plouffe</name>
 		<map>Ottawa - Plouffe</map>
-		<url>http://ncrrl.on.ca/schedules/102?ical=0&amp;n=U9&amp;nocache|http://ncrrl.on.ca/schedules/107?ical=0&amp;n=U9_R_Red&amp;nocache</url>
+		<url>http://ncrrl.on.ca/schedules/102?ical=0&amp;n=U9&amp;nocache|http://ncrrl.on.ca/schedules/107?ical=0&amp;n=U9_R_Red&amp;nocache|http://ncrrl.on.ca/schedules/106?ical=0&amp;n=U9_R_Blue&amp;nocache</url>
 		<division>U9</division>
 		<active>true</active>
 	</team>
@@ -65,7 +65,7 @@
 	<team>
 		<name>U10 Frechette</name>
 		<map>Ottawa - Frechette</map>
-		<url>http://ncrrl.on.ca/schedules/108?ical=0&amp;n=U10_R_Blue&amp;nocache</url>
+		<url>http://ncrrl.on.ca/schedules/108?ical=0&amp;n=U10_R_Blue&amp;nocache|http://ncrrl.on.ca/schedules/109?ical=0&amp;n=U10_R_Red&amp;nocache</url>
 		<division>U10</division>
 		<active>true</active>
 	</team>
@@ -73,7 +73,7 @@
 	<team>
 		<name>U10 Van Walleghem</name>
 		<map>Ottawa - Van Walleghem</map>
-		<url>http://ncrrl.on.ca/schedules/109?ical=0&amp;n=U10_R_Red&amp;nocache</url>
+		<url>http://ncrrl.on.ca/schedules/109?ical=0&amp;n=U10_R_Red&amp;nocache|http://ncrrl.on.ca/schedules/108?ical=0&amp;n=U10_R_Blue&amp;nocache</url>
 		<division>U10</division>
 		<active>true</active>
 	</team>
@@ -91,7 +91,7 @@
 	<team>
 		<name>U12 Reg Mackey</name>
 		<map>Ottawa - Mackey</map>
-		<url>http://ncrrl.on.ca/schedules/115?ical=0&amp;n=U12_Regional_Red&amp;nocache|http://ncrrl.on.ca/schedules/115?ical=0&amp;n=U12_Regional_Red&amp;nocache</url>
+		<url>http://ncrrl.on.ca/schedules/115?ical=0&amp;n=U12_Regional_Red&amp;nocache|http://ncrrl.on.ca/schedules/114?ical=0&amp;n=U12_Regional_Blue&amp;nocache</url>
 		<division>U12</division>
 		<active>true</active>
 	</team>
@@ -140,7 +140,7 @@
 	<team>
 		<name>U14B Moodie</name>
 		<map>Ottawa - Moodie</map>
-		<url>http://ncrrl.on.ca/schedules/118?ical=0&amp;n=U14_B&amp;nocache</url>
+		<url>http://ncrrl.on.ca/schedules/118?ical=0&amp;n=U14_B&amp;nocache|http://ncrrl.on.ca/schedules/117?ical=0&amp;n=U14_A&amp;nocache</url>
 		<division>U14</division>
 		<active>true</active>
 	</team>

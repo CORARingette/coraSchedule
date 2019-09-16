@@ -38,6 +38,10 @@
 							<key>ical4j.parsing.relaxed</key>
 							<value>true</value>
 						</systemProperty>
+						<systemProperty>
+							<key>java.util.logging.config.file</key>
+							<value>properties/logging.properties</value>
+						</systemProperty>
 					</systemProperties>
 				</configuration>
 			</plugin>

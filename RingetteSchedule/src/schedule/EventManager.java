@@ -4,6 +4,9 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashSet;
 
+import lombok.extern.java.Log;
+
+@Log
 public class EventManager {
 	private static EventManager instance = new EventManager();
 	private static int eventCounter = 0;
@@ -22,7 +25,7 @@ public class EventManager {
 		String key = team + "." + dateString + "." + calendar.getTime();
 		if (keys.contains(key)) {
 			key += "." + eventCounter++;
-			System.err.println("Event Conflict:" + team + ":" + calendar.getTime());
+			log.warning("Event Conflict:" + team + ":" + calendar.getTime());
 		}
 		keys.add(key);
 

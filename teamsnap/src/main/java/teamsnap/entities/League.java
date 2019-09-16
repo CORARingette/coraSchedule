@@ -2,15 +2,12 @@ package teamsnap.entities;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.Logger;
 
 import teamsnap.apiClient.Item;
 import teamsnap.apiClient.Query;
 import teamsnap.main.Constants;
 
 public class League extends BaseEntity {
-
-	protected static final Logger LOGGER = Logger.getLogger(League.class.getName());
 
 	private List<Division> divisions = new ArrayList<Division>();
 	private List<DivisionLocation> locations = new ArrayList<DivisionLocation>();

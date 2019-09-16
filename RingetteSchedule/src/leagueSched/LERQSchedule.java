@@ -8,7 +8,6 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.List;
-import java.util.logging.Logger;
 
 import org.htmlparser.Parser;
 import org.htmlparser.Tag;
@@ -17,12 +16,12 @@ import org.htmlparser.filters.TagNameFilter;
 import org.htmlparser.util.NodeList;
 import org.htmlparser.visitors.NodeVisitor;
 
+import lombok.extern.java.Log;
 import utils.Config;
 import utils.DateTimeUtils;
 
+@Log
 public class LERQSchedule extends AbstractLeagueSchedule {
-
-	private static final Logger LOGGER = Logger.getLogger(LERQSchedule.class.getName());
 
 	private class TableNodeVisitor extends NodeVisitor {
 
@@ -59,7 +58,7 @@ public class LERQSchedule extends AbstractLeagueSchedule {
 
 						String mappedTeamName = Config.getInstance().GetConfig(team).getMap();
 						if (home.equals(mappedTeamName) || away.equals(mappedTeamName)) {
-							LOGGER.fine("found dateStr: " + dateStr + ",timeStr:" + timeStr + ",arena:" + arena
+							log.fine("found dateStr: " + dateStr + ",timeStr:" + timeStr + ",arena:" + arena
 									+ ",away:" + away + ",home:" + home);
 
 							ScheduleRecord event = new ScheduleRecord();
@@ -96,7 +95,7 @@ public class LERQSchedule extends AbstractLeagueSchedule {
 			SimpleDateFormat formatter = new SimpleDateFormat("d-MMM-yy");
 			List<ScheduleRecord> records = lerq.findEntriesForDay(formatter.parse("30-Sep-18"));
 			for (int i = 0; i < records.size(); i++) {
-				LERQSchedule.LOGGER.info(records.get(i).getHome() + ":" + records.get(i).getVisitor() + ":"
+				LERQSchedule.log.info(records.get(i).getHome() + ":" + records.get(i).getVisitor() + ":"
 						+ records.get(i).getLocation() + ":" + records.get(i).getGameDate() + ":"
 						+ records.get(i).getGameTime() + ":" + records.get(i).getGameNumber());
 			}

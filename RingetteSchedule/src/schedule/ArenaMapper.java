@@ -4,13 +4,12 @@ import java.io.FileInputStream;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
-import java.util.logging.Logger;
 
-import processing.AbstractTeamEventProcessor;
+import lombok.extern.java.Log;
 
+@Log
 public class ArenaMapper {
 	private static ArenaMapper instance = new ArenaMapper();
-	private static final Logger LOGGER = Logger.getLogger(ArenaMapper.class.getName());
 
 	private Properties arenaMapper = new Properties();
 	List<String> arenaMapperErrors = new ArrayList<String>();
@@ -34,7 +33,7 @@ public class ArenaMapper {
 	public void addError(String error) {
 		if (error == null)
 		{
-			LOGGER.severe("Error string is null");
+			log.severe("Error string is null");
 		}
 		if (!arenaMapperErrors.contains(error)) {
 			arenaMapperErrors.add(error);
@@ -44,7 +43,7 @@ public class ArenaMapper {
 	public void dumpErrors() {
 		for (String location : arenaMapperErrors) {
 			String arenaEntry = "<entry key=\"" + location + "\"></entry>";
-			System.err.println(arenaEntry);
+			log.severe(arenaEntry);
 		}
 	}
 

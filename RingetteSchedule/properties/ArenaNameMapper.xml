@@ -25,6 +25,8 @@
 	<entry key="BSP-Mattamy">Sensplex 1 - Mattamy</entry>
 	<entry key="BSR">BSR</entry>
 	<entry key="Barbara Ann Scot">Barbara Anne Scott</entry>
+	<entry key="Barbara Anne Scott">Barbara Anne Scott</entry>
+	<entry key="B A Scott">Barbara Anne Scott</entry>
 	<entry key="Baribeau">Baribeau</entry>
 	<entry key="Baribeau Arena Gatineau">Baribeau</entry>
 	<entry key="Baribeau (Gatineau)">Baribeau</entry>
@@ -36,6 +38,7 @@
 	<entry key="Barrett East">Barrett East</entry>
 	<entry key="Barrett W">Barrett West</entry>
 	<entry key="Barrett W - Gloucester">Barrett West</entry>
+	<entry key="Barrett West">Barrett West</entry>
 	<entry key="Barrett">Barrett East</entry>
 	<entry key="Barrett - Gloucester">Barrett</entry>
 	<entry key="Beaconsfield - LSL">Beaconsfield</entry>
@@ -53,6 +56,10 @@
 	<entry key="Bell Sensplex - Palladium Insurance">Sensplex 4 - Palladium</entry>
 	<entry key="Bell Sensplex - Scotiabank">Sensplex 3 - Scotiabank</entry>
 	<entry key="Bell Sensplex - Canadian Tire">Sensplex 2 - Citizen</entry>
+	<entry key="Bell Sensplex - Canadian Tire Arena">Sensplex 2 - Citizen</entry>
+	<entry key="Bell Sensplex - Bradley's Insurance">Sensplex 4 - Palladium</entry>
+	<entry key="Bell Sensplex - Bradley's Insurance Arena">Sensplex 4 - Palladium</entry>
+	<entry key="Bell Sensplex - Recharge with Milk Arena">Sensplex 3 - Scotiabank</entry>
 	<entry key="Bell">Bell</entry>
 	<entry key="Bell Centennial">Bell</entry>
 	<entry key="BellSensplex 1 M">Sensplex 1 - Mattamy</entry>
@@ -118,13 +125,17 @@
 	<entry key="Etienne Desmarteau - 3430 rue de Bellechasse Montreal, QC">Étienne Desmarteaux - Montreal</entry>
 	<entry key="Fleury - 3700 rue Fleury Est Montreal Nord, QC">Fleury</entry>
 	<entry key="Fleury - Montréal">Fleury</entry>
+	<entry key="Fred G. Barrett Arena - East Rink">Barrett East</entry>
+	<entry key="Fred G. Barrett Arena - West Rink">Barrett West</entry>
 	<entry key="Gatineau Beaudry">Beaudry</entry>
 	<entry key="GCRA Barrett East (Fred G Barrett Arena)">Barrett East</entry>
 	<entry key="GCRA Barrett West (Fred G Barrett Arena)">Barrett West</entry>
 	<entry key="GCRA Bob MacQuarrie - Roger Senecal">Orleans Rec - Senecal</entry>
+	<entry key="GCRA Bob MacQuarrie - Manley">Orleans</entry>
 	<entry key="Gilles Chabot - Boucherville">Gilles Chabot - Boucherville</entry>
 	<entry key="Gilles Chabot - Boucherville change de nom pour CS Duval auto">Complexe Sportif Duval Auto</entry>
 	<entry key="Goubourn RC A">Goulbourn Rec Centre</entry>
+	<entry key="Goulbourn Rec Centre">Goulbourn Rec Centre</entry>
 	<entry key="Goulbourn Recreation Complex A">Goulbourn Rec Centre</entry>
 	<entry key="GRC A">Goulbourn Rec Centre</entry>
 	<entry key="Goulbourn B">Goulbourn Rec Centre B</entry>
@@ -185,6 +196,7 @@
 	<entry key="Minto">Minto</entry>
 	<entry key="Nepean Sportsplex 2">Nepean Sportsplex Rink 2</entry>
 	<entry key="Nepean Sportsplex Arena 2">Nepean Sportsplex Rink 2</entry>
+	<entry key="Nepean Sportsplex Rink 2">Nepean Sportsplex Rink 2</entry>
 	<entry key="Nepean Sportsplex Rink 3">Nepean Sportsplex Rink 3</entry>
 	<entry key="Nick Smith A">Arnprior A</entry>
 	<entry key="Nick Smith Centre Arena A">Arnprior A</entry>
@@ -209,7 +221,8 @@
 	<entry key="Pierrefonds - LSL">Pierrefonds</entry>
 	<entry key="Pointe-Claire - LSL">Pointe-Claire - LSL</entry>
 	<entry key="Potvin - Gloucester">Richcraft-Potvin</entry>
-	<entry key="Potvin">Potvin</entry>
+	<entry key="Potvin - Richcraft Sensplex">Richcraft-Potvin</entry>
+	<entry key="Potvin">Richcraft-Potvin</entry>
 	<entry key="Potvin-Scotiaban">Richcraft-Scotiabank</entry>
 	<entry key="RIM Park - 2001 University Ave. E. Waterloo, ON">RIM Park</entry>
 	<entry key="RJ Kennedy">RJ Kennedy</entry>
@@ -217,6 +230,7 @@
 	<entry key="Ray Friel 1">RayFriel 1</entry>
 	<entry key="Ray Friel Recreation Complex - Arena 1">RayFriel 1</entry>
 	<entry key="Ray Friel 2">RayFriel 2</entry>
+	<entry key="Ray Friel Recreation Complex - Arena 2">RayFriel 2</entry>
 	<entry key="Ray Friel Centre - 1585 - 10th Line Rd. Orleans, ON">Ray Friel</entry>
 	<entry key="Ray Friel">Ray Friel</entry>
 	<entry key="Ray Kinsella Arena - RA Centre">RA Centre - Ray Kinsella Arena</entry>
@@ -233,6 +247,7 @@
 	<entry key="Richcraft-Scotia">Richcraft-Scotiabank</entry>
 	<entry key="Richcraft Sensplex - Scotiabank Arena">Richcraft-Scotiabank</entry>
 	<entry key="Richcraft-HEO">Richcraft-HEO</entry>
+	<entry key="Richcraft Sensplex - Hockey Eastern Ontario (HEO) Arena">Richcraft-HEO</entry>
 	<entry key="Richcraft Sensplex - HEO Arena">Richcraft-HEO</entry>
 	<entry key="Rich Sensplex HEO">Richcraft-HEO</entry>
 	<entry key="Richcraft-Cdn Ti">Richcraft-Canadian Tire</entry>

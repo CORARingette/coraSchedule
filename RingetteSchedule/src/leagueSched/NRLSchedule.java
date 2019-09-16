@@ -7,16 +7,15 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.List;
-import java.util.logging.Logger;
 
 import org.htmlparser.util.ParserException;
 
+import lombok.extern.java.Log;
 import utils.Config;
 import utils.DateTimeUtils;
 
+@Log
 public class NRLSchedule extends AbstractLeagueSchedule {
-
-	private static final Logger LOGGER = Logger.getLogger(NRLSchedule.class.getName());
 
 	public NRLSchedule(String team) {
 		super(team);
@@ -36,7 +35,6 @@ public class NRLSchedule extends AbstractLeagueSchedule {
 				String timeStr = null;
 
 				while ((inputLine = in.readLine()) != null) {
-					// System.err.println(inputLine);
 					// <td class="ls-schedule ls-date">
 					if (inputLine.matches("\\s*<td class=\"ls-schedule ls-date\">")) {
 						dateStr = cleanDate(in.readLine());
@@ -88,7 +86,7 @@ public class NRLSchedule extends AbstractLeagueSchedule {
 				in.close();
 
 			} else {
-				LOGGER.warning("************ No League Schedule for: " + team);
+				log.warning("************ No League Schedule for: " + team);
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -148,7 +146,7 @@ public class NRLSchedule extends AbstractLeagueSchedule {
 
 			List<ScheduleRecord> records = loader.findEntriesForDay(formatter.parse("07/11/2015"));
 			for (int i = 0; i < records.size(); i++) {
-				NRLSchedule.LOGGER.info(records.get(i).getHome() + ":" + records.get(i).getVisitor() + ":"
+				NRLSchedule.log.info(records.get(i).getHome() + ":" + records.get(i).getVisitor() + ":"
 						+ records.get(i).getLocation() + ":" + records.get(i).getGameDate() + ":" + records.get(i).getGameTime());
 			}
 

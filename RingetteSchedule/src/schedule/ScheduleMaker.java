@@ -1,13 +1,11 @@
 package schedule;
 
 
-import java.util.logging.Logger;
-
+import lombok.extern.java.Log;
 import processing.teamSnap.TeamSnapEventGenerator;
 
+@Log
 public class ScheduleMaker {
-
-	private static final Logger LOGGER = Logger.getLogger(ScheduleMaker.class.getName());
 
 	/**
 	 * @param args
@@ -21,7 +19,7 @@ public class ScheduleMaker {
 			}
 		}
 
-		ScheduleMaker.LOGGER.info("Scheduling for weeks: 1 to " + Context.getInstance().getProcessingEndWeek());
+		ScheduleMaker.log.info("Scheduling for weeks: 1 to " + Context.getInstance().getProcessingEndWeek());
 
 
 		// create the event generator and process
@@ -34,7 +32,7 @@ public class ScheduleMaker {
 		// dump out errors for fixing before running
 		ArenaMapper.getInstance().dumpErrors();
 
-		ScheduleMaker.LOGGER.info("Done.");
+		ScheduleMaker.log.info("Done.");
 	}
 
 }

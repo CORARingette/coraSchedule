@@ -1,15 +1,18 @@
 package teamsnap.entities;
 
 import java.util.Calendar;
+import java.util.Collections;
 import java.util.Date;
 
+import lombok.Getter;
+import lombok.Setter;
 import teamsnap.apiClient.Item;
 import teamsnap.main.Constants;
 
 public class DivisionEvent extends BaseEntity {
 
-	private Team team;
-	private DivisionLocation location;
+	@Getter @Setter private Team team;
+	@Getter @Setter private DivisionLocation location;
 
 	private DivisionEvent() {
 		super("https://api.teamsnap.com/v3/division_events");
@@ -34,14 +37,6 @@ public class DivisionEvent extends BaseEntity {
 		addAttribute("minutes_to_arrive_early", isGame ? 60 : 30);
 	}
 
-	public Team getTeam() {
-		return team;
-	}
-
-	public void setTeam(Team team) {
-		this.team = team;
-	}
-
 	public Integer getTeamId() {
 		return (Integer) attributes.get("team_id");
 	}
@@ -49,15 +44,7 @@ public class DivisionEvent extends BaseEntity {
 	public String getName() {
 		return (String) attributes.get("name");
 	}
-
-	public DivisionLocation getLocation() {
-		return location;
-	}
-
-	public void setLocation(DivisionLocation location) {
-		this.location = location;
-	}
-
+	
 	public Integer getLocationId() {
 		return (Integer) attributes.get("division_location_id");
 	}
@@ -80,5 +67,10 @@ public class DivisionEvent extends BaseEntity {
 			e.printStackTrace();
 		}
 		return result;
+	}
+	
+	public void setSummary(String summary)
+	{
+		update(Collections.singletonMap("name", summary));
 	}
 }

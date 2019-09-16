@@ -1,14 +1,11 @@
 package schedule;
 
 import java.io.IOException;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Date;
 import java.util.Hashtable;
 import java.util.List;
-import java.util.logging.Logger;
 import java.util.stream.Collectors;
 
 import org.apache.poi.xssf.usermodel.XSSFCell;
@@ -16,13 +13,13 @@ import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
+import lombok.extern.java.Log;
 import model.Event;
 import model.ShareValue;
 import utils.Config;
 
+@Log
 public class IceSpreadsheet {
-
-	private static final Logger LOGGER = Logger.getLogger(IceSpreadsheet.class.getName());
 
 	// sheet config
 	private final int ROW_COMMENT = 1;
@@ -74,7 +71,7 @@ public class IceSpreadsheet {
 						teamCellValue = teamCellValue.replaceAll("#", "-");
 
 						if (Config.getInstance().GetConfig(teamCellValue) != null) {
-							System.err.println(cell.toString().trim() + ":" + new Integer(rowIndex));
+							log.finest(cell.toString().trim() + ":" + new Integer(rowIndex));
 							String team = teamCellValue.trim();
 							List<Integer> rowList = teamsLookup.get(team);
 							if (rowList == null) {
@@ -89,12 +86,12 @@ public class IceSpreadsheet {
 			}
 
 		}
-		LOGGER.info("Teams: " + teamsLookup.size());
+		log.info("Teams: " + teamsLookup.size());
 	}
 
 	private void load() {
 
-		LOGGER.info("Loading Started...");
+		log.fine("Loading Started...");
 		XSSFRow dateRow = currentSheet.getRow(ROW_DATE);
 
 		try {
@@ -127,7 +124,7 @@ public class IceSpreadsheet {
 										String iceTime = parseTimeFromIceInfo(iceInfo);
 										String location = parseLocationFromIceInfo(iceInfo);
 										if (location == null || location.isEmpty()) {
-											LOGGER.severe("Location is null or empty in spreadsheet: " + team + "Row: "
+											log.warning("Location is null or empty in spreadsheet: " + team + "Row: "
 													+ teamRowIndex + " Column: " + convertColumnToLetters(column));
 										}
 										String normalizedLocation = ArenaMapper.getInstance().getProperty(location);
@@ -140,7 +137,7 @@ public class IceSpreadsheet {
 										iceEvents.add(event);
 
 									} else {
-										LOGGER.severe("******************* Loader Error: No Ice Info for " + team
+										log.warning("******************* Loader Error: No Ice Info for " + team
 												+ "Row: " + (teamRowIndex + 1) + " Column: "
 												+ convertColumnToLetters(column - 1));
 									}
@@ -155,7 +152,7 @@ public class IceSpreadsheet {
 			e.printStackTrace();
 		}
 
-		LOGGER.info("Loading Done.");
+		log.fine("Loading Done.");
 	}
 
 	private void loadWeekComments() {
@@ -213,14 +210,14 @@ public class IceSpreadsheet {
 						&& date.equals(e.getDate()) && time.equals(e.getTime()) && !team.equals(e.getTeam())).findAny()
 						.orElse(null);
 			} else {
-				LOGGER.severe("******************* Loader Error: No normalized location found for " + location);
+				log.warning("******************* Loader Error: No normalized location found for " + location);
 			}
 		} catch (Exception e) {
 			dump();
 		}
-		if (matchingEvent == null) {
-			dump();
-		}
+//		if (matchingEvent == null) {
+//			dump();
+//		}
 		return matchingEvent != null ? matchingEvent.getTeam() : null;
 	}
 
@@ -270,27 +267,15 @@ public class IceSpreadsheet {
 		int cells = row.getPhysicalNumberOfCells();
 		int firstCell = row.getFirstCellNum();
 		for (int c = firstCell; c < cells; c++) {
-			System.err.print(c + ":" + row.getCell(c).toString() + ";");
+			log.finest(c + ":" + row.getCell(c).toString() + ";");
 		}
-		System.err.println();
 	}
 
 	public void dump() {
 		for (Event event : iceEvents) {
-			System.err.println(event.dump());
+			log.finest(event.dump());
 		}
 		ArenaMapper.getInstance().dumpErrors();
-	}
-
-	public static void main(String[] args) {
-		try {
-			IceSpreadsheet ish = new IceSpreadsheet();
-			SimpleDateFormat formater = new SimpleDateFormat("yyyy/MM/dd");
-			String team = ish.getShareTeam(formater.parse("2017/09/25"), "18:00", "Carleton University", "U19AA Cram");
-			System.err.println(team);
-		} catch (ParseException e) {
-			e.printStackTrace();
-		}
 	}
 
 }

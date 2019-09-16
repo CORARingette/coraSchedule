@@ -4,7 +4,6 @@ import java.io.FileInputStream;
 import java.util.Collections;
 import java.util.Hashtable;
 import java.util.List;
-import java.util.logging.Logger;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -16,9 +15,10 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
-public class Config {
-	private static final Logger LOGGER = Logger.getLogger(Config.class.getName());
+import lombok.extern.java.Log;
 
+@Log
+public class Config {
 	private Hashtable<String, ConfigItem> configItems = new Hashtable<String, ConfigItem>();
 
 	private final static Config instance = new Config();
@@ -43,26 +43,21 @@ public class Config {
 				String active = xPath.evaluate("active", teamNode);
 				boolean isActive = active.equals("true");
 				if (division == null || division.isEmpty()) {
-					LOGGER.severe("Missing config entry for team: " + team + ":" + url + ":" + map + ":" + division);
+					log.severe("Missing config entry for team: " + team + ":" + url + ":" + map + ":" + division);
 				}
-				configItems.put(team, new ConfigItem(team, url, map, division,isActive));
+				configItems.put(team, new ConfigItem(team, url, map, division, isActive));
 			}
 
-			System.err.println("Done");
 		} catch (Exception e) {
 			e.printStackTrace();
 			System.exit(-1);
 		}
 
 	}
-	
-	
 
 	public static Config getInstance() {
 		return instance;
 	}
-
-
 
 	public class ConfigItem {
 

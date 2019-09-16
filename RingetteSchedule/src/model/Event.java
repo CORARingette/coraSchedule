@@ -1,24 +1,34 @@
 package model;
 
 import java.util.Date;
-import java.util.logging.Logger;
 
 import lombok.Getter;
 import lombok.Setter;
+import lombok.extern.java.Log;
 import utils.DateTimeUtils;
 
+@Log
 public class Event implements Comparable<Event> {
 
-	private static final Logger LOGGER = Logger.getLogger(Event.class.getName());
+	@Getter
+	private final String team;
+	@Getter
+	private final Date date;
+	@Getter
+	private final String time;
 
-	@Getter private final String team;
-	@Getter private final Date date;
-	@Getter private final String time;
-
-	@Getter @Setter private String shareTeam;
-	@Getter @Setter private String gameNumber;
-	@Getter @Setter private String location;
-	@Getter @Setter private ShareValue shareValue;
+	@Getter
+	@Setter
+	private String shareTeam;
+	@Getter
+	@Setter
+	private String gameNumber;
+	@Getter
+	@Setter
+	private String location;
+	@Getter
+	@Setter
+	private ShareValue shareValue;
 
 	public Event(String team, String location, ShareValue shareValue, String shareTeam, Date date, String time,
 			String gameNumber) {
@@ -62,13 +72,17 @@ public class Event implements Comparable<Event> {
 		if (isFullIce()) {
 			return team + " - Full Ice";
 		} else {
-			return team + " shared with " + shareTeam;
+			if (shareTeam != null) {
+				return team + " shared with " + shareTeam;
+			} else {
+				return team + " - Full Ice (tentative)";
+			}
 		}
 	}
 
 	private String makeGameSummary() {
 		if (shareTeam == null) {
-			LOGGER.info("No game info found for: " + team + ":" + getDate());
+			log.warning("No game info found for: " + team + ":" + getDate());
 			return "Unknown Time: See league schedule for details";
 		} else {
 			return gameNumber + ": " + team + " (" + shareValue.getShortString() + ") vs. " + shareTeam;

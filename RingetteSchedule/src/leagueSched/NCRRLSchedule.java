@@ -9,10 +9,10 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
-import java.util.logging.Logger;
 
 import org.htmlparser.util.ParserException;
 
+import lombok.extern.java.Log;
 import net.fortuna.ical4j.data.CalendarBuilder;
 import net.fortuna.ical4j.model.Calendar;
 import net.fortuna.ical4j.model.ComponentList;
@@ -24,9 +24,9 @@ import net.fortuna.ical4j.model.property.Summary;
 import utils.Config;
 import utils.DateTimeUtils;
 
+@Log
 public class NCRRLSchedule extends AbstractLeagueSchedule {
 
-	private static final Logger LOGGER = Logger.getLogger(NCRRLSchedule.class.getName());
 
 	public NCRRLSchedule(String team) {
 		super(team);
@@ -54,7 +54,7 @@ public class NCRRLSchedule extends AbstractLeagueSchedule {
 				CalendarBuilder builder = new CalendarBuilder();
 
 				Calendar calendar = builder.build(sin);
-				System.err.println(calendar);
+
 				ComponentList<CalendarComponent> componentList = calendar.getComponents();
 				for (Object component : componentList) {
 					if (component instanceof VEvent) {
@@ -66,7 +66,7 @@ public class NCRRLSchedule extends AbstractLeagueSchedule {
 							Location location = vEvent.getLocation();
 							String gameNumberStr = vEvent.getUid().getValue().replaceFirst("EID", "");
 							String[] parts = gameNumberStr.split("-");
-							String gameNumber = parts[1];
+							String gameNumber = (parts.length > 1) ? parts[1]:"0";
 							String teamName = Config.getInstance().GetConfig(team).getMap();
 							String homeStr = parseHomeFromSummary(summary.getValue());
 							String visitorStr = parseVisitorFromSummary(summary.getValue());
@@ -85,7 +85,7 @@ public class NCRRLSchedule extends AbstractLeagueSchedule {
 				}
 			}
 		} catch (Exception e) {
-			System.err.println("Exception createing NCRRL Schedule for: " + team);
+			log.severe("Exception creating NCRRL Schedule for: " + team);
 			e.printStackTrace();
 		}
 	}
@@ -106,13 +106,13 @@ public class NCRRLSchedule extends AbstractLeagueSchedule {
 
 	public static void main(String[] args) throws ParserException {
 
-		NCRRLSchedule loader = new NCRRLSchedule("U10 Van Walleghem");
+		NCRRLSchedule loader = new NCRRLSchedule("U8 Cyr");
 		SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
 		try {
 
-			List<ScheduleRecord> records = loader.findEntriesForDay(formatter.parse("29/09/2018"));
+			List<ScheduleRecord> records = loader.findEntriesForDay(formatter.parse("16/02/2019"));
 			for (int i = 0; i < records.size(); i++) {
-				NCRRLSchedule.LOGGER.info(records.get(i).getHome() + ":" + records.get(i).getVisitor() + ":"
+				NCRRLSchedule.log.info(records.get(i).getHome() + ":" + records.get(i).getVisitor() + ":"
 						+ records.get(i).getGameDate() + ":" + records.get(i).getGameTime() + ":"
 						+ records.get(i).getGameNumber() + ":" + records.get(i).getLocation());
 			}
