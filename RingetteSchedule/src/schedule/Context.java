@@ -12,7 +12,7 @@ public class Context {
 
 	// This is the date of the first Saturday of the schedule which should be
 	// week 1
-	private String scheduleStartDateString = "2018/09/01";
+	private String scheduleStartDateString = "2019/08/31";
 	private String scheduleStartDateFormat = "yyyy/MM/dd";
 
 	private int processingEndWeek;

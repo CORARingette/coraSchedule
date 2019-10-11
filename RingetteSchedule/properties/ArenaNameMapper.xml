@@ -7,6 +7,7 @@
 	<entry key="Ancienne Lorette - Québec">Ancienne Lorette</entry>
 	<entry key="Arena Baribeau - 231 Magnus Rue E Gatineau, QC">Baribeau</entry>
 	<entry key="Arena Rochon (Masson)">Masson</entry>
+	<entry key="Masson - Centre sportif Robert-Rochon">Masson</entry>
 	<entry key="Ar Gatineau, QC J8P4Z7">Baribeau</entry>
 	<entry key="Ar Montr">Montreal</entry>
 	<entry key="Arnprio">Arnprior A</entry>
@@ -16,8 +17,7 @@
 	<entry key="Arena Jean Paul Sabourin">Jean Paul Sabourin</entry>
 	<entry key="ArÃ©na Baribeau - 231 Magnus Rue E Gatineau, QC J8P4Z7">Baribeau</entry>
 	<entry key="ArÃ©na Gilles-Chabot - 565 de Mortagne Boucherville, QC">Gilles Chabot - Boucherville</entry>
-	<entry
-		key="ArÃ©na Michel-Normandin - 3105 boul. Rome Brossard Brossard, QC">Michel-Normandin - Brossard</entry>
+	<entry key="ArÃ©na Michel-Normandin - 3105 boul. Rome Brossard Brossard, QC">Michel-Normandin - Brossard</entry>
 	<entry key="ArÃ©na Rolland  - 12000 boul. Rolland MontrÃ©al-Nord, QC">Rolland - Henri Bourassa</entry>
 	<entry key="Rolland - Montréal Nord">Rolland - Henri Bourassa</entry>
 	<entry key="Away Game">Away Game</entry>
@@ -98,6 +98,8 @@
 	<entry key="Carleton University - Ottawa">Carleton University</entry>
 	<entry key="Carleton University Arena A">Carleton University</entry>
 	<entry key="Carleton">Carleton University</entry>
+	<entry key="Cardelrec - West Ottawa">Goulbourn Rec Centre</entry>
+	<entry key="CARDELREC Recreation Complex - Rink A">Goulbourn Rec Centre</entry>
 	<entry key="Carp">Carp</entry>
 	<entry key="Cataraqui">Cataraqui</entry>
 	<entry key="Kingston Cataraqui Community Centre Kinsmen Rink">Cataraqui</entry>
@@ -106,12 +108,15 @@
 	<entry key="Centre Caztel - Sainte-Marie">Centre Caztel</entry>
 	<entry key="Cholette">Cholette</entry>
 	<entry key="Chesterville Arena">Chesterville Arena</entry>
+	<entry key="Chomedey - Laval">Chomedey</entry>
 	<entry key="Clarence">Clarence</entry>
+	<entry key="Clarence Creek Arena">Clarence</entry>
 	<entry key="Cobden">Cobden</entry>
 	<entry key="Cobden Arena">Cobden</entry>
 	<entry
 		key="Complexe Walter-Buswell -  220 boul. Arthur Sauve  Saint-Eustache, QC J7R2H9">St-Eustache</entry>
 	<entry key="CS Duval auto (Gilles Chabot)  - Boucherville">Gilles Chabot - Boucherville</entry>
+	<entry key="Gilles Chabot  - Boucherville">Gilles Chabot - Boucherville</entry>
 	<entry key="Cumberland">Cumberland</entry>
 	<entry key="D.D.O. Centre civique">D.D.O. Centre civique</entry>
 	<entry key="Delson">Delson</entry>
@@ -174,6 +179,7 @@
 	<entry key="L'Academie">CIHA - Rockland</entry>
 	<entry key="La Plaine - Forum">La Plaine - Forum</entry>
 	<entry key="Larry Robinson - Metcalfe">Metcalfe</entry>
+	<entry key="Larry Robinson - Arena">Metcalfe</entry>	
 	<entry key="Metcalfe Larry Robinson Arena">Metcalfe</entry>
 	<entry key="Magna Centre - 395 Mulock Drive Newmarket, ON">Magna Centre</entry>
 	<entry key="Marina Arena - 130 chemin Arena Cocagne, NB">Marina Arena</entry>
@@ -186,6 +192,7 @@
 	<entry key="Merivale">Merivale</entry>
 	<entry key="Howard Darwin Centennial Arena - Merivale Arena">Merivale</entry>
 	<entry key="Metcalfe">Metcalfe</entry>
+	<entry key="Stuart Holmes - Metcalfe">Metcalfe</entry>
 	<entry key="Michel Normandin - Montreal">Michel Normandin - Montreal</entry>
 	<entry key="Minto Barrhaven">Minto Recreation Complex (Barrhaven)</entry>
 	<entry key="Minto Rec N">Minto Recreation Complex (Barrhaven)</entry>
@@ -227,12 +234,14 @@
 	<entry key="RIM Park - 2001 University Ave. E. Waterloo, ON">RIM Park</entry>
 	<entry key="RJ Kennedy">RJ Kennedy</entry>
 	<entry key="Ray Friel 1 - Ottawa">RayFriel 1</entry>
+	<entry key="Ray Friel - Ottawa">RayFriel 1</entry>
 	<entry key="Ray Friel 1">RayFriel 1</entry>
 	<entry key="Ray Friel Recreation Complex - Arena 1">RayFriel 1</entry>
 	<entry key="Ray Friel 2">RayFriel 2</entry>
 	<entry key="Ray Friel Recreation Complex - Arena 2">RayFriel 2</entry>
 	<entry key="Ray Friel Centre - 1585 - 10th Line Rd. Orleans, ON">Ray Friel</entry>
 	<entry key="Ray Friel">Ray Friel</entry>
+	<entry key="Ray Friel Recreation Complex - Arena 3">Ray Friel</entry>
 	<entry key="Ray Kinsella Arena - RA Centre">RA Centre - Ray Kinsella Arena</entry>
 	<entry key="Raymond Bourque - St-Laurent">Raymond Bourque</entry>
 	<entry key="Renfrew">Renfrew</entry>
@@ -293,12 +302,15 @@
 	<entry key="St Laurent">St Laurent</entry>
 	<entry key="St laurent">St Laurent</entry>
 	<entry key="St. Laurent Complex">St Laurent</entry>
+	<entry key="St-Agapit Centre Sportif G.H. Vermette">Centre Sportif G.H. Vermette</entry>
+	<entry key="Saint-Anselme">Saint-Anselme</entry>
 	<entry key="St-Basile-Jean Rougeau">St-Basile-Jean Rougeau</entry>
 	<entry key="St-Bruno Michael-Bilodeau">St-Bruno Michael-Bilodeau</entry>
 	<entry key="St-Bruno - Michael-Bilodeau">St-Bruno Michael-Bilodeau</entry>
 	<entry key="Ste-Croix - Lotbiniere">Ste-Croix - Lotbiniere</entry>
 	<entry key="St-Eustache">St-Eustache</entry>
 	<entry key="St-Eustache Complexe Walter-Buswell">St-Eustache</entry>
+	<entry key="St-Eustache - Complexe Walter-Buswell">St-Eustache</entry>
 	<entry key="St-Henri- Lévis Québec">St-Henri Lévis</entry>
 	<entry key="St-Hilaire -1- Centre sportif Paul Lemieux">Centre Sportif Paul Lemieux St-Hilaire</entry>
 	<entry key="Gaétan Boucher - St-Hubert">Centre Sportif Gaetan Boucher</entry>
@@ -315,6 +327,8 @@
 	<entry key="Stade">Aréna Stade Pierre Lafontaine</entry>
 	<entry key="Ste-Julie 1">Ste-Julie</entry>
 	<entry key="Ste-Julie 3">Ste-Julie</entry>
+	<entry key="St-Romuald - Lévis">St-Romuald</entry>
+	<entry key="St-Henri- Lévis">St-Henri Lévis</entry>
 	<entry key="Stittsville">Stittsville</entry>
 	<entry key="Stuart Holmes Arena -5660 Osgoode Main St  Osgoode, ON">Osgoode</entry>
 	<entry key="TBA">TBD</entry>
@@ -325,10 +339,13 @@
 	<entry key="Tom Brown">Tom Brown</entry>
 	<entry key="Tom Brown Arena">Tom Brown</entry>
 	<entry key="Tom Graham Arena - 1300 Elgin Mills Rd. Richmond Hill, ON">Tom Graham Arena</entry>
+	<entry key="uOttawa Minto Sports Complex - Arena 2">University of Ottawa</entry>
 	<entry key="Val Bélair">Val Belair</entry>
+	<entry key="Val Bélair - Québec">Val Belair</entry>
 	<entry key="Val D'Espoir - St-Janvier">Val D'Espoire</entry>
 	<entry key="Vanier">Grandmaitre</entry>
 	<entry key="Vaudreuil - LSL">Vaudreuil</entry>
+	<entry key="Vaudreuil - Dorion">Vaudreuil</entry>
 	<entry key="W. Erskine Johnston (Carp) - West Ottawa">Carp</entry>
 	<entry key="Walkley">Walkley</entry>
 	<entry key="Walkley - Ottawa">Walkley</entry>

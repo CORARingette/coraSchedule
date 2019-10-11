@@ -71,7 +71,7 @@ public class IceSpreadsheet {
 						teamCellValue = teamCellValue.replaceAll("#", "-");
 
 						if (Config.getInstance().GetConfig(teamCellValue) != null) {
-							log.finest(cell.toString().trim() + ":" + new Integer(rowIndex));
+							log.finest(cell.toString().trim() + ":" + rowIndex);
 							String team = teamCellValue.trim();
 							List<Integer> rowList = teamsLookup.get(team);
 							if (rowList == null) {
@@ -215,9 +215,6 @@ public class IceSpreadsheet {
 		} catch (Exception e) {
 			dump();
 		}
-//		if (matchingEvent == null) {
-//			dump();
-//		}
 		return matchingEvent != null ? matchingEvent.getTeam() : null;
 	}
 
@@ -272,10 +269,19 @@ public class IceSpreadsheet {
 	}
 
 	public void dump() {
+		for (String team: teamsLookup.keySet())
+		{
+			log.fine(team);
+		}
 		for (Event event : iceEvents) {
-			log.finest(event.dump());
+			log.fine(event.dump());
 		}
 		ArenaMapper.getInstance().dumpErrors();
 	}
 
+	public static void main(String [] args)
+	{
+		IceSpreadsheet iss = new IceSpreadsheet();
+		iss.dump();
+	}
 }

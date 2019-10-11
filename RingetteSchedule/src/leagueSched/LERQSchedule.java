@@ -91,9 +91,9 @@ public class LERQSchedule extends AbstractLeagueSchedule {
 	 */
 	public static void main(String[] args) {
 		try {
-			LERQSchedule lerq = new LERQSchedule("U16AA Grant");
+			LERQSchedule lerq = new LERQSchedule("U16AA Wippel");
 			SimpleDateFormat formatter = new SimpleDateFormat("d-MMM-yy");
-			List<ScheduleRecord> records = lerq.findEntriesForDay(formatter.parse("30-Sep-18"));
+			List<ScheduleRecord> records = lerq.findEntriesForDay(formatter.parse("28-Sep-19"));
 			for (int i = 0; i < records.size(); i++) {
 				LERQSchedule.log.info(records.get(i).getHome() + ":" + records.get(i).getVisitor() + ":"
 						+ records.get(i).getLocation() + ":" + records.get(i).getGameDate() + ":"

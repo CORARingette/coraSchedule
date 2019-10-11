@@ -106,11 +106,11 @@ public class NCRRLSchedule extends AbstractLeagueSchedule {
 
 	public static void main(String[] args) throws ParserException {
 
-		NCRRLSchedule loader = new NCRRLSchedule("U8 Cyr");
+		NCRRLSchedule loader = new NCRRLSchedule("U12PPBlue Frechette");
 		SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
 		try {
 
-			List<ScheduleRecord> records = loader.findEntriesForDay(formatter.parse("16/02/2019"));
+			List<ScheduleRecord> records = loader.findEntriesForDay(formatter.parse("28/09/2019"));
 			for (int i = 0; i < records.size(); i++) {
 				NCRRLSchedule.log.info(records.get(i).getHome() + ":" + records.get(i).getVisitor() + ":"
 						+ records.get(i).getGameDate() + ":" + records.get(i).getGameTime() + ":"
