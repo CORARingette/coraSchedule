@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<teams>
+
+	<!-- Bunnies -->
+
+	<team>
+		<name>Paw Patrol (McBride-Alderwick)</name>
+		<map></map>
+		<url></url>
+		<division>FUN Squads</division>
+		<active>true</active>
+	</team>
+
+	<team>
+		<name>The Octonauts (Plouffe)</name>
+		<map></map>
+		<url></url>
+		<division>FUN Squads</division>
+		<active>true</active>
+	</team>
+	<team>
+		<name>The Incredibles (Enouy)</name>
+		<map></map>
+		<url></url>
+		<division>FUN Squads</division>
+		<active>true</active>
+	</team>
+	<team>
+		<name>Batgirls (Alexiou)</name>
+		<map></map>
+		<url></url>
+		<division>U10 Squads</division>
+		<active>true</active>
+	</team>
+	<team>
+		<name>Elastigirls (Gore)</name>
+		<map></map>
+		<url></url>
+		<division>U10 Squads</division>
+		<active>true</active>
+	</team>
+	<team>
+		<name>Lasergirls (Peltzer)</name>
+		<map></map>
+		<url></url>
+		<division>U10 Squads</division>
+		<active>true</active>
+	</team>
+	<team>
+		<name>Spidergirls (O'Donnell)</name>
+		<map></map>
+		<url></url>
+		<division>U10 Squads</division>
+		<active>true</active>
+	</team>
+	<team>
+		<name>Supergirls (Fukusaka)</name>
+		<map></map>
+		<url></url>
+		<division>U10 Squads</division>
+		<active>true</active>
+	</team>
+	<team>
+		<name>Wondergirls (Isaac-Rowan)</name>
+		<map></map>
+		<url></url>
+		<division>U10 Squads</division>
+		<active>true</active>
+	</team>
+	<team>
+		<name>Guardians of the Galaxy (Murphy)</name>
+		<map></map>
+		<url></url>
+		<division>U12 Squads</division>
+		<active>true</active>
+	</team>
+	<team>
+		<name>Justice League (Champoux)</name>
+		<map></map>
+		<url></url>
+		<division>U12 Squads</division>
+		<active>true</active>
+	</team>
+	<team>
+		<name>Teen Titans (Benoit)</name>
+		<map></map>
+		<url></url>
+		<division>U12 Squads</division>
+		<active>true</active>
+	</team>
+	<team>
+		<name>The Avengers (Stachon)</name>
+		<map></map>
+		<url></url>
+		<division>U12 Squads</division>
+		<active>true</active>
+	</team>
+	<team>
+		<name>Catwomen (Ruttan)</name>
+		<map></map>
+		<url></url>
+		<division>U12 Squads</division>
+		<active>true</active>
+	</team>
+	<team>
+		<name>Panthers (Camel-Toueg)</name>
+		<map></map>
+		<url></url>
+		<division>U12 Squads</division>
+		<active>true</active>
+	</team>
+	<team>
+		<name>The Defenders (Hanbidge)</name>
+		<map></map>
+		<url></url>
+		<division>U12 Squads</division>
+		<active>true</active>
+	</team>
+	<team>
+		<name>The Flurries (Waddell)</name>
+		<map></map>
+		<url></url>
+		<division>U12 Squads</division>
+		<active>true</active>
+	</team>
+	<team>
+		<name>Black Ice (Black)</name>
+		<map></map>
+		<url></url>
+		<division>U14 Squads</division>
+		<active>true</active>
+	</team>
+	<team>
+		<name>Ice Makers (Zubec)</name>
+		<map></map>
+		<url></url>
+		<division>U14 Squads</division>
+		<active>true</active>
+	</team>
+	<team>
+		<name>Icebergs (Pineo)</name>
+		<map></map>
+		<url></url>
+		<division>U14 Squads</division>
+		<active>true</active>
+	</team>
+	<team>
+		<name>Icicles (Khouri)</name>
+		<map></map>
+		<url></url>
+		<division>U14 Squads</division>
+		<active>true</active>
+	</team>
+	<team>
+		<name>Ice Blocks (Mann)</name>
+		<map></map>
+		<url></url>
+		<division>U14 Squads</division>
+		<active>true</active>
+	</team>
+	<team>
+		<name>Ice Cubes (Rempel)</name>
+		<map></map>
+		<url></url>
+		<division>U14 Squads</division>
+		<active>true</active>
+	</team>
+	<team>
+		<name>Ice Jams (Mackey)</name>
+		<map></map>
+		<url></url>
+		<division>U14 Squads</division>
+		<active>true</active>
+	</team>
+	<team>
+		<name>Chill (Fawcett)</name>
+		<map></map>
+		<url></url>
+		<division>U16 Squads</division>
+		<active>true</active>
+	</team>
+	<team>
+		<name>Storm (Lowe)</name>
+		<map></map>
+		<url></url>
+		<division>U16 Squads</division>
+		<active>true</active>
+	</team>
+	<team>
+		<name>Vortex (Zarull)</name>
+		<map></map>
+		<url></url>
+		<division>U16 Squads</division>
+		<active>true</active>
+	</team>
+	<team>
+		<name>Whiteout (White)</name>
+		<map></map>
+		<url></url>
+		<division>U16 Squads</division>
+		<active>true</active>
+	</team>
+	<team>
+		<name>Glaciators (Sarazin)</name>
+		<map></map>
+		<url></url>
+		<division>U16 Squads</division>
+		<active>true</active>
+	</team>
+	<team>
+		<name>Glaciers (Leblanc)</name>
+		<map></map>
+		<url></url>
+		<division>U19 Squads</division>
+		<active>true</active>
+	</team>
+	<team>
+		<name>PermaFrost (Wilcox)</name>
+		<map></map>
+		<url></url>
+		<division>U19 Squads</division>
+		<active>true</active>
+	</team>
+	<team>
+		<name>Tundra (Campbell)</name>
+		<map></map>
+		<url></url>
+		<division>U19 Squads</division>
+		<active>true</active>
+	</team>
+	<team>
+		<name>Blizzard ( Saunders-Quinn)</name>
+		<map></map>
+		<url></url>
+		<division>U19 Squads</division>
+		<active>true</active>
+	</team>
+	<team>
+		<name>Ottawa Ice NRL</name>
+		<map></map>
+		<url></url>
+		<division>Open</division>
+		<active>true</active>
+	</team>
+
+
+
+
+
+</teams>
