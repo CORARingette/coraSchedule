@@ -26,15 +26,19 @@ public final class DateTimeUtils {
 		int[] retVal = new int[2];
 
 		int i = timeString.indexOf(":");
-		if (i > -1) {
-			if (i == 1) {
-				retVal[PARSE_TIME_HOUR] = Integer.valueOf(timeString.substring(i - 1, i));
-				retVal[PARSE_TIME_MINUTE] = Integer.valueOf(timeString.substring(i + 1, i + 3));
+		try {
+			if (i > -1) {
+				if (i == 1) {
+					retVal[PARSE_TIME_HOUR] = Integer.valueOf(timeString.substring(i - 1, i));
+					retVal[PARSE_TIME_MINUTE] = Integer.valueOf(timeString.substring(i + 1, i + 3));
 
-			} else {
-				retVal[PARSE_TIME_HOUR] = Integer.valueOf(timeString.substring(i - 2, i));
-				retVal[PARSE_TIME_MINUTE] = Integer.valueOf(timeString.substring(i + 1, i + 3));
+				} else {
+					retVal[PARSE_TIME_HOUR] = Integer.valueOf(timeString.substring(i - 2, i));
+					retVal[PARSE_TIME_MINUTE] = Integer.valueOf(timeString.substring(i + 1, i + 3));
+				}
 			}
+		} catch (NumberFormatException e) {
+			e.printStackTrace();
 		}
 
 		return retVal;

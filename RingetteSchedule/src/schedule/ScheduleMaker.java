@@ -1,6 +1,8 @@
 package schedule;
 
 
+import ice.ArenaMapper;
+import ice.IceSpreadsheet;
 import lombok.extern.java.Log;
 import processing.teamSnap.TeamSnapEventGenerator;
 
@@ -30,7 +32,7 @@ public class ScheduleMaker {
 		generator.reconcile();
 
 		// dump out errors for fixing before running
-		ArenaMapper.getInstance().dumpErrors();
+		//ArenaMapper.getInstance().dumpErrors();
 
 		ScheduleMaker.log.info("Done.");
 	}

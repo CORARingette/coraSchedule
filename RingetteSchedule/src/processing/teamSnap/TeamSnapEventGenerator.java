@@ -5,6 +5,10 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map.Entry;
+
+import ice.ArenaMapper;
+import ice.IceSpreadsheet;
+
 import java.util.Optional;
 import java.util.Scanner;
 import java.util.Set;
@@ -13,8 +17,6 @@ import lombok.Cleanup;
 import lombok.extern.java.Log;
 import model.Event;
 import processing.AbstractTeamEventProcessor;
-import schedule.ArenaMapper;
-import schedule.IceSpreadsheet;
 import teamsnap.entities.Division;
 import teamsnap.entities.DivisionEvent;
 import teamsnap.entities.DivisionLocation;

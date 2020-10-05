@@ -26,11 +26,12 @@ public class LeagueScheduleFactory {
 				schedule = new LERQSchedule(team);
 			} else if (url != null && url.contains("http://www.nationalringetteleague.ca")) {
 				schedule = new NRLSchedule(team);
+			} else {
+				// default, create an empty schedule
+				schedule = new EmptySchedule(team);
 			}
 
-			if (schedule != null) {
-				leagueScheduleLookup.put(team, schedule);
-			}
+			leagueScheduleLookup.put(team, schedule);
 		}
 		return schedule;
 	}

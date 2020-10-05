@@ -55,7 +55,16 @@ public class Event implements Comparable<Event> {
 	}
 
 	public Date getFullDateTime() {
-		return date != null && time != null ? DateTimeUtils.makeFullDateFromDateAndTime(date, time) : new Date();
+
+		Date fullDate = null;
+		try {
+			fullDate = date != null && time != null ? DateTimeUtils.makeFullDateFromDateAndTime(date, time)
+					: new Date();
+		} catch (Exception e) {
+			this.dump();
+			e.printStackTrace();
+		}
+		return fullDate;
 	}
 
 	public String getSummary() {

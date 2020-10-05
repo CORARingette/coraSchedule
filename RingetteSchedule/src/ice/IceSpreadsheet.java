@@ -1,4 +1,4 @@
-package schedule;
+package ice;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -26,6 +26,7 @@ public class IceSpreadsheet {
 	private final int ROW_DATE = 3;
 	private final int START_COLUMN = 32;
 	private final int COLUMNS_PER_WEEK = 14;
+	private final int TEAM_LIST_COLUMN = 1;
 
 	// NOTE, this is only true for ice analysis
 	private final boolean includeHomeGames = false;
@@ -65,7 +66,7 @@ public class IceSpreadsheet {
 			if (row != null) {
 				int cells = row.getPhysicalNumberOfCells();
 				if (cells > 0) {
-					XSSFCell cell = row.getCell(0);
+					XSSFCell cell = row.getCell(TEAM_LIST_COLUMN);
 					if (cell != null) {
 						String teamCellValue = cell.toString().trim();
 						teamCellValue = teamCellValue.replaceAll("#", "-");
@@ -237,7 +238,7 @@ public class IceSpreadsheet {
 		if (iceInfo.matches(".*[ 12]*[0-9]:[0-5][0-9]")) {
 			int i = iceInfo.trim().lastIndexOf(" ");
 			if (i > -1) {
-				location = iceInfo.substring(0, i);
+				location = iceInfo.substring(0, i).trim();
 			}
 		} else {
 			location = iceInfo;

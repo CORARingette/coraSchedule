@@ -5,7 +5,10 @@ import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 
+import ice.ArenaMapper;
+import ice.IceSpreadsheet;
 import leagueSched.AbstractLeagueSchedule;
+import leagueSched.EmptySchedule;
 import leagueSched.LERQSchedule;
 import leagueSched.LeagueScheduleFactory;
 import leagueSched.NCRRLSchedule;
@@ -14,9 +17,7 @@ import lombok.extern.java.Log;
 import model.Event;
 import model.GameType;
 import model.ShareValue;
-import schedule.ArenaMapper;
 import schedule.Context;
-import schedule.IceSpreadsheet;
 import utils.Config;
 
 @Log
@@ -40,9 +41,8 @@ public abstract class AbstractTeamEventProcessor {
 	public void doProcessing(String team) {
 
 		AbstractLeagueSchedule schedule = LeagueScheduleFactory.getInstance().getLeagueSchedule(team);
-		if (schedule == null) {
-			log.warning("Cannot process team: " + team + ", no league schedule found");
-			return;
+		if (schedule instanceof EmptySchedule) {
+			log.warning("Empty schedule created for team: " + team + ", no league schedule configured or found");
 		}
 
 		preProcess(team);

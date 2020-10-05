@@ -57,6 +57,7 @@
 	<entry key="Bell Sensplex - Scotiabank">Sensplex 3 - Scotiabank</entry>
 	<entry key="Bell Sensplex - Canadian Tire">Sensplex 2 - Citizen</entry>
 	<entry key="Bell Sensplex - Canadian Tire Arena">Sensplex 2 - Citizen</entry>
+	<entry key="BSP-Cdn Tire">Sensplex 2 - Citizen</entry>
 	<entry key="Bell Sensplex - Bradley's Insurance">Sensplex 4 - Palladium</entry>
 	<entry key="Bell Sensplex - Bradley's Insurance Arena">Sensplex 4 - Palladium</entry>
 	<entry key="Bell Sensplex - Recharge with Milk Arena">Sensplex 3 - Scotiabank</entry>
@@ -64,6 +65,7 @@
 	<entry key="Bell Centennial">Bell</entry>
 	<entry key="BellSensplex 1 M">Sensplex 1 - Mattamy</entry>
 	<entry key="BellSensplex 2 C">Sensplex 2 - Citizen</entry>
+	<entry key="Sensplex 2 - Citizen">Sensplex 2 - Citizen</entry>
 	<entry key="BellSensplex 3 S">Sensplex 3 - Scotiabank</entry>
 	<entry key="BellSensplex 4 P">Sensplex 4 - Palladium</entry>
 	<entry key="Belltown Dome">Belltown Dome</entry>
@@ -93,6 +95,7 @@
 	<entry key="Campeau Arena">Campeau</entry>
 	<entry key="Campeau - Gatineau">Campeau</entry>
 	<entry key="Carleton A">Carleton University</entry>
+	<entry key="Carleton B">Carleton University</entry>
 	<entry key="Carleton University Ice House -   University Dr. Ottawa, ON">Carleton University</entry>
 	<entry key="Carleton University">Carleton University</entry>
 	<entry key="Carleton University - Ottawa">Carleton University</entry>
@@ -102,6 +105,7 @@
 	<entry key="CARDELREC Recreation Complex - Rink A">Goulbourn Rec Centre</entry>
 	<entry key="Carp">Carp</entry>
 	<entry key="Cataraqui">Cataraqui</entry>
+	<entry key="Kingston Cataraqui Community Centre Cataraqui Rink">Cataraqui</entry>
 	<entry key="Kingston Cataraqui Community Centre Kinsmen Rink">Cataraqui</entry>
 	<entry key="Cavanagh Sensplex">Cavanagh Sensplex</entry>
 	<entry key="Centre Caztel">Centre Caztel</entry>
@@ -136,6 +140,7 @@
 	<entry key="GCRA Barrett East (Fred G Barrett Arena)">Barrett East</entry>
 	<entry key="GCRA Barrett West (Fred G Barrett Arena)">Barrett West</entry>
 	<entry key="GCRA Bob MacQuarrie - Roger Senecal">Orleans Rec - Senecal</entry>
+	<entry key="Bob MacQuarrie">Orleans Rec - Senecal</entry>
 	<entry key="GCRA Bob MacQuarrie - Manley">Orleans</entry>
 	<entry key="Gilles Chabot - Boucherville">Gilles Chabot - Boucherville</entry>
 	<entry key="Gilles Chabot - Boucherville change de nom pour CS Duval auto">Complexe Sportif Duval Auto</entry>
@@ -186,6 +191,7 @@
 	<entry key="Mascouche">Mascouche</entry>
 	<entry key="Masson">Masson</entry>
 	<entry key="McNabb">McNabb</entry>
+	<entry key="McNab">McNabb</entry>
 	<entry key="McNabb Arena">McNabb</entry>
 	<entry key="McDonald Coll. - LSL">Aréna MacDonald</entry>
 	<entry key="Memramcook Arena">Arena Eugene Leblanc</entry>

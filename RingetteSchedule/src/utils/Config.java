@@ -28,7 +28,7 @@ public class Config {
 			DocumentBuilderFactory builderFactory = DocumentBuilderFactory.newInstance();
 			DocumentBuilder builder = builderFactory.newDocumentBuilder();
 
-			Document document = builder.parse(new FileInputStream("properties\\TeamConfig.2019-2020.xml"));
+			Document document = builder.parse(new FileInputStream("properties\\TeamConfig.2020-2021-Squads.xml"));
 
 			XPath xPath = XPathFactory.newInstance().newXPath();
 
@@ -43,7 +43,7 @@ public class Config {
 				String active = xPath.evaluate("active", teamNode);
 				boolean isActive = active.equals("true");
 				if (division == null || division.isEmpty()) {
-					log.severe("Missing config entry for team: " + team + ":" + url + ":" + map + ":" + division);
+					log.severe("Missing division entry for team: " + team + ":" + url + ":" + map + ":" + division);
 				}
 				configItems.put(team, new ConfigItem(team, url, map, division, isActive));
 			}

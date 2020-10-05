@@ -48,7 +48,7 @@
 	<team>
 		<name>U9 Isaac</name>
 		<map>Ottawa - Isaac</map>
-		<url>http://ncrrl.on.ca/schedules/143?ical=0&amp;n=U9_Novice_East&amp;nocache</url>
+		<url>http://ncrrl.on.ca/schedules/143?ical=0&amp;n=U9_Novice_East&amp;nocache|http://ncrrl.on.ca/schedules/144?ical=0&amp;n=U9_Novice_West&amp;nocache</url>
 		<division>U9</division>
 		<active>true</active>
 	</team>
@@ -89,7 +89,7 @@
 	<team>
 		<name>U10 Waddell</name>
 		<map>Ottawa - Waddell</map>
-		<url>http://ncrrl.on.ca/schedules/145?ical=0&amp;n=U10_Novice_East&amp;nocache</url>
+		<url>http://ncrrl.on.ca/schedules/145?ical=0&amp;n=U10_Novice_East&amp;nocache|http://ncrrl.on.ca/schedules/146?ical=0&amp;n=U10_Novice_West&amp;nocache</url>
 		<division>U10</division>
 		<active>true</active>
 	</team>
@@ -107,7 +107,7 @@
 	<team>
 		<name>U12Reg Hart</name>
 		<map>Ottawa - Hart</map>
-		<url>http://ncrrl.on.ca/schedules/114?ical=0&amp;n=U12_Regional_Blue&amp;nocache</url>
+		<url>http://ncrrl.on.ca/schedules/114?ical=0&amp;n=U12_Regional_Blue&amp;nocache|http://ncrrl.on.ca/schedules/115?ical=0&amp;n=U12_Regional_Red&amp;nocache</url>
 		<division>U12</division>
 		<active>true</active>
 	</team>

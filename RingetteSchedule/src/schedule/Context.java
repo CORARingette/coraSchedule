@@ -7,12 +7,12 @@ import java.util.Date;
 
 public class Context {
 
-	public static final boolean loadNCRRL = true;
-	public static final boolean loadLERQ = true;
+	public static final boolean loadNCRRL = false;
+	public static final boolean loadLERQ = false;
 
 	// This is the date of the first Saturday of the schedule which should be
 	// week 1
-	private String scheduleStartDateString = "2019/08/31";
+	private String scheduleStartDateString = "2020/08/15";
 	private String scheduleStartDateFormat = "yyyy/MM/dd";
 
 	private int processingEndWeek;
