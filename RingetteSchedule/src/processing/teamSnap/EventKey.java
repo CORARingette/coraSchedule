@@ -3,6 +3,7 @@ package processing.teamSnap;
 import java.util.Date;
 
 import model.Event;
+import model.ShareValue;
 import teamsnap.entities.DivisionEvent;
 import utils.DateTimeUtils;
 
@@ -22,7 +23,7 @@ public class EventKey {
 		this.team = iceEvent.getTeam();
 		this.location = iceEvent.getLocation();
 		this.eventDate = DateTimeUtils.makeFullDateFromDateAndTime(iceEvent.getDate(), iceEvent.getTime());
-		this.eventType = iceEvent.isGame() ? EventType.Game : EventType.Practice;
+		this.eventType = ShareValue.isGame(iceEvent.getShareValue()) ? EventType.Game : EventType.Practice;
 		source = iceEvent;
 	}
 

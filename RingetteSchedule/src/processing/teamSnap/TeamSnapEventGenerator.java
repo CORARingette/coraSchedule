@@ -16,6 +16,7 @@ import java.util.Set;
 import lombok.Cleanup;
 import lombok.extern.java.Log;
 import model.Event;
+import model.ShareValue;
 import processing.AbstractTeamEventProcessor;
 import teamsnap.entities.Division;
 import teamsnap.entities.DivisionEvent;
@@ -97,7 +98,7 @@ public class TeamSnapEventGenerator extends AbstractTeamEventProcessor {
 		for (EventKey eventToAdd : eventsToAdd) {
 			Event event = (Event) eventToAdd.getSource();
 			log.info("Adding new event::" + event.getTeam() + ":" + event.getLocation() + ":" + event.getFullDateTime()
-					+ ":" + event.isGame() + ":" + event.getSummary());
+					+ ":" + ShareValue.isGame(event.getShareValue()) + ":" + event.getSummary());
 		}
 
 		for (EventKey eventToRemove : eventsToRemove) {
@@ -130,7 +131,7 @@ public class TeamSnapEventGenerator extends AbstractTeamEventProcessor {
 			DivisionLocation location = teamSnap.getLocationByName(event.getLocation());
 			DivisionEvent divisionEvent = new DivisionEvent(Integer.valueOf(division.getDivisionId()),
 					Integer.valueOf(team.getTeamId()), Integer.valueOf(location.getLocationId()), event.getSummary(),
-					event.getFullDateTime(), event.isGame());
+					event.getFullDateTime(), ShareValue.isGame(event.getShareValue()));
 			divisionEvent.create();
 		}
 

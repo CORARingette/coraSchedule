@@ -56,7 +56,7 @@ public abstract class AbstractTeamEventProcessor {
 
 		for (Event iceEvent : IceSpreadsheet.getInstance().getIceEvents(team)) {
 
-			if (iceEvent.isPractice() && !iceEvent.isFullIce()) {
+			if (ShareValue.isPractice(iceEvent.getShareValue()) && !ShareValue.isFullIce(iceEvent.getShareValue())) {
 				iceEvent.setShareTeam(IceSpreadsheet.getInstance().getShareTeam(iceEvent.getDate(), iceEvent.getTime(),
 						iceEvent.getLocation(), team));
 				if (iceEvent.getShareTeam() == null)
@@ -72,7 +72,7 @@ public abstract class AbstractTeamEventProcessor {
 				records = schedule.findEntriesForDay(iceEvent.getDate());
 			}
 
-			if (iceEvent.isGame()) {
+			if (ShareValue.isGame(iceEvent.getShareValue())) {
 				// look up records that match
 				if (records.size() > 0) {
 					// for each daily event, we need a schedule record

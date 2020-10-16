@@ -42,17 +42,11 @@ public class Event implements Comparable<Event> {
 		this.location = location;
 	}
 
-	public boolean isGame() {
-		return shareValue != null && (shareValue == ShareValue.HOME || shareValue == ShareValue.VISITOR);
-	}
 
-	public boolean isPractice() {
-		return shareValue != null && (shareValue == ShareValue.HALF || shareValue == ShareValue.FULL);
-	}
 
-	public boolean isFullIce() {
-		return shareValue != null && shareValue == ShareValue.FULL;
-	}
+
+
+
 
 	public Date getFullDateTime() {
 
@@ -68,9 +62,9 @@ public class Event implements Comparable<Event> {
 	}
 
 	public String getSummary() {
-		if (isGame()) {
+		if (ShareValue.isGame(shareValue)) {
 			return makeGameSummary();
-		} else if (isPractice()) {
+		} else if (ShareValue.isPractice(shareValue)) {
 			return makePracticeSummary();
 		} else {
 			return team + "Other event";
@@ -78,7 +72,7 @@ public class Event implements Comparable<Event> {
 	}
 
 	private String makePracticeSummary() {
-		if (isFullIce()) {
+		if (ShareValue.isFullIce(shareValue)) {
 			return team + " - Full Ice";
 		} else {
 			if (shareTeam != null) {

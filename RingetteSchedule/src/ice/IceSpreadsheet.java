@@ -28,7 +28,7 @@ public class IceSpreadsheet {
 	private final int COLUMNS_PER_WEEK = 14;
 	private final int TEAM_LIST_COLUMN = 1;
 
-	// NOTE, this is only true for ice analysis
+	// NOTE, this is only true for when this code gets used for ice analysis
 	private final boolean includeHomeGames = false;
 
 	private final static String WORKBOOK_FILENAME = "Master.xlsx";
@@ -110,11 +110,10 @@ public class IceSpreadsheet {
 								XSSFCell shareCell = row.getCell(column);
 
 								ShareValue shareValue = shareCell != null
-										? ShareValue.fromShortString(shareCell.toString()) : ShareValue.OTHER;
-								// load only practices, games will be loaded
-								// from league schedules
-								if (shareValue == ShareValue.FULL || shareValue == ShareValue.HALF
-										|| (includeHomeGames && shareValue == ShareValue.HOME)) {
+										? ShareValue.fromShortString(shareCell.toString())
+										: ShareValue.OTHER;
+								// load only practices, games will be loaded from league schedules
+								if (shareValue.isToLoad() || (includeHomeGames && shareValue == ShareValue.HOME)) {
 
 									XSSFCell iceCell = row.getCell((int) (column - 1));
 									if (iceCell != null && !iceCell.toString().isEmpty()) {
@@ -270,8 +269,7 @@ public class IceSpreadsheet {
 	}
 
 	public void dump() {
-		for (String team: teamsLookup.keySet())
-		{
+		for (String team : teamsLookup.keySet()) {
 			log.fine(team);
 		}
 		for (Event event : iceEvents) {
@@ -280,8 +278,7 @@ public class IceSpreadsheet {
 		ArenaMapper.getInstance().dumpErrors();
 	}
 
-	public static void main(String [] args)
-	{
+	public static void main(String[] args) {
 		IceSpreadsheet iss = new IceSpreadsheet();
 		iss.dump();
 	}
