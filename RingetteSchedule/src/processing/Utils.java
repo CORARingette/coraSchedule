@@ -1,5 +1,6 @@
 package processing;
 
+import model.ShareValue;
 import teamsnap.entities.EventType;
 
 public class Utils {
@@ -11,11 +12,11 @@ public class Utils {
 		return location;
 	}
 
-
 	public static EventType getEventTypeFromShareValue(String shareValue) {
-		if (shareValue.equals("H") || shareValue.equals("V")) {
+		if (shareValue.equals(ShareValue.HOME.getShortString())
+				|| shareValue.equals(ShareValue.VISITOR.getShortString())) {
 			return EventType.GAME;
-		} else if (shareValue.equals("X")) {
+		} else if (shareValue.equals(ShareValue.OTHER.getShortString())) {
 			return EventType.OTHER;
 		} else {
 			return EventType.PRACTICE;
