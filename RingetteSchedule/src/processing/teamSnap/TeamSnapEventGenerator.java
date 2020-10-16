@@ -102,7 +102,7 @@ public class TeamSnapEventGenerator extends AbstractTeamEventProcessor {
 
 		for (EventKey eventToRemove : eventsToRemove) {
 			DivisionEvent divisionEvent = (DivisionEvent) eventToRemove.getSource();
-			log.info("Deleting existing event: " + divisionEvent.getName() + ":" + divisionEvent.getLocationId() + ":"
+			log.info("Deleting existing event: " + divisionEvent.getName() + ":" + divisionEvent.getLocation() + ":"
 					+ divisionEvent.getCalendarStartDate().getTime());
 		}
 
