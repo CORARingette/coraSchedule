@@ -1,6 +1,7 @@
 package utils;
 
 import java.io.FileInputStream;
+import java.nio.file.Paths;
 import java.util.Collections;
 import java.util.Hashtable;
 import java.util.List;
@@ -28,7 +29,7 @@ public class Config {
 			DocumentBuilderFactory builderFactory = DocumentBuilderFactory.newInstance();
 			DocumentBuilder builder = builderFactory.newDocumentBuilder();
 
-			Document document = builder.parse(new FileInputStream("properties\\TeamConfig.2020-2021-Squads.xml"));
+			Document document = builder.parse(new FileInputStream(Paths.get("properties", "TeamConfig.2020-2021-Squads.xml").toString()));
 
 			XPath xPath = XPathFactory.newInstance().newXPath();
 
