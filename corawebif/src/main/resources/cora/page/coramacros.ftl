@@ -1,3 +1,17 @@
+<#macro errormessages>
+   <!-- Avoid the message if none present: -->
+    <#if error??>
+ 	   	 <div class="container">
+	      <div class="panel panel-primary">
+      <p style="color:red;">${error}</p>
+      
+	      </div>
+	     </div>
+    </#if>
+    
+</#macro>
+
+
 <#macro page>
 
 	<!DOCTYPE html>
@@ -38,7 +52,8 @@
 	    </li>
 	  </ul>
 	</nav>
-
+	
+<@errormessages/>
 
 		<#--  Enclosed content -->
 		<#nested>  
@@ -47,3 +62,4 @@
 	</body>
 	</html>
 </#macro>
+

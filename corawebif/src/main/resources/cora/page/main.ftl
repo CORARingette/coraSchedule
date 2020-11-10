@@ -12,4 +12,5 @@
 		    <a href="uploadnewschedule" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Upload New Schedule Spreadsheet</a>
 	
 	      </div>
+	     </div>
 </@coramacros.page>

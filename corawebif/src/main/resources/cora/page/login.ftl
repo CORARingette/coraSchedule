@@ -1,4 +1,7 @@
-	<!DOCTYPE html>
+<#-- @ftlvariable name="error" type="cora.page.CwPageView" -->
+<#import "coramacros.ftl" as coramacros>
+
+		<!DOCTYPE html>
 	<html lang="en">
 	<head>
 	  <title>Bootstrap Example</title>
@@ -30,9 +33,10 @@
     </form>
 
 
-  </div>
-</div>
+    <@coramacros.errormessages/>
 
+    </div>
+</div>
 
 	</body>
 	</html>
