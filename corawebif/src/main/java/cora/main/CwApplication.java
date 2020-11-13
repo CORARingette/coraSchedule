@@ -3,16 +3,12 @@ package cora.main;
 import java.security.Key;
 
 import org.dhatim.dropwizard.jwt.cookie.authentication.JwtCookieAuthBundle;
+import org.glassfish.jersey.media.multipart.MultiPartFeature;
 
 import cora.auth.CwAuthConst;
 import cora.auth.CwAuthMissingAuthRedirectFilter;
-import cora.page.CwPageProfile;
-import cora.page.CwPageUploadConfirm;
-import cora.page.CwPageUploadDone;
-import cora.page.CwPageUploadNewSchedule;
-import cora.page.CwPageUploadWait;
 import cora.page.CwPages;
-import cora.page.CwfPageUploadRejected;
+import cora.page.CwPagesAuth;
 import io.dropwizard.Application;
 import io.dropwizard.Configuration;
 import io.dropwizard.assets.AssetsBundle;
@@ -53,17 +49,20 @@ public class CwApplication extends Application<CwConfiguration> {
 
 		// Registering pages
 		jersey.register(new CwAuthMissingAuthRedirectFilter());
-		jersey.register(new CwPageUploadNewSchedule());
-		jersey.register(new CwPageUploadConfirm());
-		jersey.register(new CwPageUploadDone());
-		jersey.register(new CwfPageUploadRejected());
-		jersey.register(new CwPageUploadWait());
 		jersey.register(new CwPages());
-		jersey.register(new CwPageProfile());
+		jersey.register(new CwPagesAuth());
+
+		jersey.register(MultiPartFeature.class);
 
 		// Health checks
 		environment.healthChecks().register("APIHealthCheck", new CwHealthCheckTeamSnap());
 
+		String args[] = {
+				"/usr/local/Homebrew/opt/openjdk/bin/java",
+				"-cp",
+				"/Users/andrewmcgregor/git/coraSchedule/corawebif/target/classes",
+				"cora.mock.CwMockAppl"};
+		CwRunner.makeGlobalRunner(args);
 	}
 
 }

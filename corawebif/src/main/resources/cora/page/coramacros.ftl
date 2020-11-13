@@ -1,9 +1,9 @@
 <#macro errormessages>
    <!-- Avoid the message if none present: -->
-    <#if error??>
+    <#if message??>
  	   	 <div class="container">
 	      <div class="panel panel-primary">
-      <p style="color:red;">${error}</p>
+            <p style="color:red;">${message}</p>
       
 	      </div>
 	     </div>
@@ -53,10 +53,10 @@
 	  </ul>
 	</nav>
 	
-<@errormessages/>
+      <@errormessages/>
 
-		<#--  Enclosed content -->
-		<#nested>  
+	  <#--  Enclosed content -->
+	  <#nested>  
 
 
 	</body>

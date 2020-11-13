@@ -9,10 +9,10 @@
 	    <p> Choose an Excel file to upload.  You will be asked to confirm the changes.</p>
 	    <br>
 	    
-		<form>
+		<form enctype="multipart/form-data">
 		  <div class="form-group">
 		    <label for="exampleFormControlFile1">Example file input</label>
-		    <input type="file" class="form-control-file" id="exampleFormControlFile1">
+		    <input type="file" class="form-control-file" id="file" name="file">
 		  </div>
 		
 		  <button type="submit" formmethod="post" class="btn btn-primary btn-lg active">Start Processing</button>
