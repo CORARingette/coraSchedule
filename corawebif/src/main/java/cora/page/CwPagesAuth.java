@@ -20,6 +20,9 @@ import org.dhatim.dropwizard.jwt.cookie.authentication.JwtCookiePrincipal;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import cora.auth.CwAuthHolder;
+import cora.auth.CwPassword;
+
 @Path("/")
 public class CwPagesAuth {
 
@@ -46,9 +49,22 @@ public class CwPagesAuth {
 			@FormParam("username") String username, //
 			@FormParam("password") String password) {
 
+		CwAuthHolder authHolder = CwAuthHolder.getGlobalHolder();
+		
 		// Validate credentials
 		try {
-			if (password.equals("p")) {
+			String hashedPassword = authHolder.getHashedPassword(username);
+			if (hashedPassword == null) {
+				// If wrong, delay and make login page with message
+				Thread.sleep(1000);
+				logger_ms.warn("Invalid username: {}", username);
+				URI uri = UriBuilder.fromUri("/login").queryParam(CwPageView.MESSAGE_PARAM, "Invalid credentials").build();
+				return Response.seeOther(uri).build();				
+			}
+			
+			CwPassword passwordHolder = CwPassword.fromHashedPassword(hashedPassword);
+			
+			if (passwordHolder.checkPassword(password)) {
 				// If OK, save token and redirect to main page
 				DefaultJwtCookiePrincipal principal = new DefaultJwtCookiePrincipal(username);
 				principal.addInContext(requestContext);

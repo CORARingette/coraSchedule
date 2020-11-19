@@ -2,6 +2,7 @@ package cora.main;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -142,6 +143,7 @@ public class CwRunner {
 	public void startRun() throws IOException {
 		ProcessBuilder builder = new ProcessBuilder(args_m);
 		logger_ms.info("Starting scheduler tool to run...");
+		builder.directory(new File("/tmp"));
 		process_m = builder.start();
 		clear();
 		

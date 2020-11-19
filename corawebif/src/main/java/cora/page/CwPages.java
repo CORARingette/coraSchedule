@@ -89,6 +89,7 @@ public class CwPages {
 				runner.readyToConfirm(), 
 				runner.isDone(),
 				!runner.isDone(),
+				!(runner.isDone() || runner.readyToConfirm()),
 				String.join("\n", runner.getLatestStdOut()),
 				String.join("\n", runner.getLatestStdErr()))
 				.setMessage(message);

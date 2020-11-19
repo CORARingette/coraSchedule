@@ -7,26 +7,27 @@
     	   <h2>Processing New Schedule</h2>
 	    </div>
 	    
-    <div style="display:none;" id="myDiv" class="animate-bottom">
-        <meta http-equiv="refresh" content="3;url=uploadwait" />
-    </div>
-
-    <script>
-        var myVar;
-
-        function myFunction() {
-            myVar = setInterval(showPage, 1000);
-        }
-
-        function showPage() {
-            document.getElementById("loader").style.display = "none";
-            document.getElementById("myDiv").style.display = "block";
-        }
-    </script>
 	    
 	    
 	    <#if showConfirm>
 	    	<a href="uploadconfirm" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Accept Changes</a>
+		</#if>
+	    <#if doRefresh>
+		    <div style="display:none;" id="myDiv" class="animate-bottom">
+		        <meta http-equiv="refresh" content="3;url=uploadwait" />
+		    </div>
+		    <script>
+		        var myVar;
+		
+		        function myFunction() {
+		            myVar = setInterval(showPage, 1000);
+		        }
+		
+		        function showPage() {
+		            document.getElementById("loader").style.display = "none";
+		            document.getElementById("myDiv").style.display = "block";
+		        }
+		    </script>
 		</#if>
 	    <#if showDone>
 	    	<p>Schedule updating has completed</p>

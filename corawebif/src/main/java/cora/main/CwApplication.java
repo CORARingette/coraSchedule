@@ -1,11 +1,13 @@
 package cora.main;
 
+import java.io.File;
 import java.security.Key;
 
 import org.dhatim.dropwizard.jwt.cookie.authentication.JwtCookieAuthBundle;
 import org.glassfish.jersey.media.multipart.MultiPartFeature;
 
 import cora.auth.CwAuthConst;
+import cora.auth.CwAuthHolder;
 import cora.auth.CwAuthMissingAuthRedirectFilter;
 import cora.page.CwPages;
 import cora.page.CwPagesAuth;
@@ -19,6 +21,25 @@ import io.dropwizard.views.ViewBundle;
 
 public class CwApplication extends Application<CwConfiguration> {
 
+	public String[] getScheduleToolArgs() {
+		String javaPath = System.getenv("CW_JAVA_PATH");
+		if (javaPath == null)
+			javaPath = "/usr/local/Homebrew/opt/openjdk/bin/java";
+		String classPath = System.getenv("CW_CLASS_PATH");
+		if (classPath == null)
+			classPath = "/Users/andrewmcgregor/git/coraSchedule/corawebif/target/classes";
+		String mainClass = System.getenv("CW_MAIN_CLASS");
+		if (mainClass == null)
+			mainClass = "cora.mock.CwMockAppl";
+
+		String args[] = {
+					javaPath,
+					"-cp",
+					classPath,
+					mainClass};
+			return args;
+			
+		}
 
 	public static void main(final String[] args) throws Exception {
 		new CwApplication().run(args);
@@ -44,7 +65,7 @@ public class CwApplication extends Application<CwConfiguration> {
 	}
 
 	@Override
-	public void run(final CwConfiguration configuration, final Environment environment) {
+	public void run(final CwConfiguration configuration, final Environment environment) throws Exception {
 		JerseyEnvironment jersey = environment.jersey();
 
 		// Registering pages
@@ -57,12 +78,14 @@ public class CwApplication extends Application<CwConfiguration> {
 		// Health checks
 		environment.healthChecks().register("APIHealthCheck", new CwHealthCheckTeamSnap());
 
-		String args[] = {
-				"/usr/local/Homebrew/opt/openjdk/bin/java",
-				"-cp",
-				"/Users/andrewmcgregor/git/coraSchedule/corawebif/target/classes",
-				"cora.mock.CwMockAppl"};
-		CwRunner.makeGlobalRunner(args);
+		CwRunner.makeGlobalRunner(getScheduleToolArgs());
+		
+		String authPath = System.getenv("CW_AUTH_PATH");
+		if (authPath == null) {
+			System.err.println("Env var CW_AUTH_PATH not set.");
+			System.exit(1);
+		}
+		CwAuthHolder.setGlobalHolder(new CwAuthHolder(new File(authPath)));
 	}
 
 }

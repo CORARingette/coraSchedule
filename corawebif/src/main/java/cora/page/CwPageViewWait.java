@@ -6,16 +6,22 @@ public class CwPageViewWait extends CwPageView {
 	boolean showConfirm_m = false;
 	boolean showDone_m = false;
 	boolean showCancel_m = false;
+	private boolean doRefresh_m;
 	
-	public CwPageViewWait(String templateName, boolean showConfirm, boolean showDone, boolean showCancel, String stdout, String stderr) {
+	public CwPageViewWait(String templateName, boolean showConfirm, boolean showDone, boolean showCancel, boolean doRefresh, String stdout, String stderr) {
 		super(templateName);
 		showConfirm_m = showConfirm;
 		showDone_m = showDone;
 		showCancel_m = showCancel;
 		stdout_m = stdout;
 		stderr_m = stderr;
+		doRefresh_m = doRefresh;
 	}
 	
+	public boolean getDoRefresh() {
+		return doRefresh_m;
+	}
+
 	public String getStdout() {
 		return stdout_m;
 	}
