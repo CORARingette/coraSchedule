@@ -21,7 +21,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import cora.auth.CwAuthHolder;
-import cora.auth.CwPassword;
+import cora.auth.CwAuthPassword;
 
 @Path("/")
 public class CwPagesAuth {
@@ -62,7 +62,7 @@ public class CwPagesAuth {
 				return Response.seeOther(uri).build();				
 			}
 			
-			CwPassword passwordHolder = CwPassword.fromHashedPassword(hashedPassword);
+			CwAuthPassword passwordHolder = CwAuthPassword.fromHashedPassword(hashedPassword);
 			
 			if (passwordHolder.checkPassword(password)) {
 				// If OK, save token and redirect to main page

@@ -16,20 +16,20 @@
 	</head>
 	<body>
 	
-<div class="wrapper fadeInDown">
+<div class="wrapper">
   <div id="formContent">
     <!-- Tabs Titles -->
 
     <!-- Icon -->
-    <div class="fadeIn first">
+    <div>
       <img src="/assets/ice-bear-purple.jpg" id="icon" alt="User Icon" />
     </div>
 
     <!-- Login Form -->
     <form autocomplete="on" method="post">
-      <input type="text" id="login" class="second" name="username" placeholder="username" autocomplete="username">
-      <input type="password" id="password" class="third" name="password" placeholder="password" autocomplete="current-password">
-      <input type="submit" class="fadeIn fourth" value="Log In">
+      <input type="text" id="login" name="username" placeholder="username" autocomplete="username">
+      <input type="password" id="password"name="password" placeholder="password" autocomplete="current-password">
+      <input type="submit" value="Log In">
     </form>
 
 

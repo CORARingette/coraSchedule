@@ -142,8 +142,11 @@ public class CwRunner {
 
 	public void startRun() throws IOException {
 		ProcessBuilder builder = new ProcessBuilder(args_m);
+		String filePath = System.getenv("CW_FILE_PATH");
+		
 		logger_ms.info("Starting scheduler tool to run...");
-		builder.directory(new File("/tmp"));
+		// Set working folder
+		builder.directory(new File(filePath, "working"));
 		process_m = builder.start();
 		clear();
 		
@@ -167,4 +170,16 @@ public class CwRunner {
 		return stderr_m;
 	}
 
+	public List<String> mergeAndfilterStrings(List<String> stdout, List<String> strerr, boolean readyToConfirm) {
+		List<String> outputs = new ArrayList<String> ();
+		for (String s: stdout) {
+			if (!s.contains(CONFIRM_STRING)) {
+				outputs.add(s);
+			}
+		}
+		outputs.addAll(strerr);
+		if (readyToConfirm)
+			outputs.add("Click 'Accept Changes' to accept the changes or 'Cancel' to decline the changes");
+		return outputs;
+	}
 }

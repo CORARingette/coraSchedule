@@ -19,6 +19,7 @@ import javax.ws.rs.core.UriBuilder;
 
 import org.glassfish.jersey.media.multipart.FormDataContentDisposition;
 import org.glassfish.jersey.media.multipart.FormDataParam;
+import org.joda.time.Instant;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -50,10 +51,15 @@ public class CwPages {
 			@FormDataParam("file") FormDataContentDisposition fileDetail) {
 		// Upload the file
 
+
 		try {
-			java.nio.file.Path outputPath = FileSystems.getDefault().getPath("/tmp", "xxx");
+			String filePath = System.getenv("CW_FILE_PATH");
+			java.nio.file.Path outputPath = FileSystems.getDefault().getPath(filePath, "working", "Master.xlsx");
 			Files.deleteIfExists(outputPath);
 			Files.copy(uploadedInputStream, outputPath);
+			String date_tag = Instant.now().toString().replace( "-" , "" ).replace( ":" , "" ).replaceAll("\\..*", "");
+			java.nio.file.Path outputPath2 = FileSystems.getDefault().getPath(filePath, "uploads", String.format("Master-%s.xlsx", date_tag));
+			Files.copy(uploadedInputStream, outputPath2);
 		} catch (IOException e) {
 			logger_ms.error("Error in file upload", e);
 			URI uri = UriBuilder.fromUri("/").queryParam(CwPageView.MESSAGE_PARAM, "Error uploading file").build();
@@ -82,16 +88,45 @@ public class CwPages {
 	}
 
 	@GET
+	@Path("/rerunschedule")
+	@Produces(MediaType.TEXT_PLAIN)
+	public Response postNewSchedule() {
+		// Upload the file
+
+
+		try {
+			// Launch the external process
+			CwRunner runner = CwRunner.getGlobalRunner();
+			if (!runner.isAvailable()) {
+				runner.terminateRunningProcess();
+			}
+
+			runner.startRun();
+
+		} catch (Exception e) {
+			logger_ms.error("Error in schedule launch", e);
+			URI uri = UriBuilder.fromUri("/").queryParam(CwPageView.MESSAGE_PARAM, "Error launching scheduling tool")
+					.build();
+			return Response.seeOther(uri).build();
+		}
+
+		// Redirect to the "waiting for completion" page
+		URI uri = UriBuilder.fromUri("/uploadwait").build();
+		return Response.seeOther(uri).build();
+	}
+
+	@GET
 	@Path("/uploadwait")
 	public Object getUploadWait(@QueryParam(CwPageView.MESSAGE_PARAM) String message) {
 		CwRunner runner = CwRunner.getGlobalRunner();
+		boolean readyToConfirm = runner.readyToConfirm();
 		return new CwPageViewWait("wait.ftl", 
-				runner.readyToConfirm(), 
+				readyToConfirm, 
 				runner.isDone(),
 				!runner.isDone(),
-				!(runner.isDone() || runner.readyToConfirm()),
-				String.join("\n", runner.getLatestStdOut()),
-				String.join("\n", runner.getLatestStdErr()))
+				!(runner.isDone() || readyToConfirm),
+				String.join("\n", runner.mergeAndfilterStrings(runner.getLatestStdOut(), runner.getLatestStdErr(), readyToConfirm)),
+				"")
 				.setMessage(message);
 	}
 

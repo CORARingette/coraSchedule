@@ -34,6 +34,7 @@ public class CwApplication extends Application<CwConfiguration> {
 
 		String args[] = {
 					javaPath,
+					"-Djava.util.logging.config.file=properties/logging.properties",
 					"-cp",
 					classPath,
 					mainClass};
@@ -80,12 +81,12 @@ public class CwApplication extends Application<CwConfiguration> {
 
 		CwRunner.makeGlobalRunner(getScheduleToolArgs());
 		
-		String authPath = System.getenv("CW_AUTH_PATH");
+		String authPath = System.getenv("CW_FILE_PATH");
 		if (authPath == null) {
-			System.err.println("Env var CW_AUTH_PATH not set.");
+			System.err.println("Env var CW_FILE_PATH not set.");
 			System.exit(1);
 		}
-		CwAuthHolder.setGlobalHolder(new CwAuthHolder(new File(authPath)));
+		CwAuthHolder.setGlobalHolder(new CwAuthHolder(new File(authPath, "auth_info.json")));
 	}
 
 }

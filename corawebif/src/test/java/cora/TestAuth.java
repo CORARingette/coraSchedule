@@ -9,7 +9,7 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import cora.auth.CwAuthHolder;
-import cora.auth.CwPassword;
+import cora.auth.CwAuthPassword;
 
 public class TestAuth {
 
@@ -21,7 +21,7 @@ public class TestAuth {
 		String password = "MyNameIsLegion";
 		try {
 			String digest1 = "98273498273498273498";
-			CwPassword badCwPassword = CwPassword.fromHashedPassword(digest1);
+			CwAuthPassword badCwPassword = CwAuthPassword.fromHashedPassword(digest1);
 			badCwPassword.checkPassword(password);
 			fail("Exception expected");
 		} catch (Exception e) {
@@ -30,12 +30,12 @@ public class TestAuth {
 
 		// Check that we can hash a password and then check the hash against the
 		// original password
-		CwPassword hashedPassword = CwPassword.generateFromPassword(password);
+		CwAuthPassword hashedPassword = CwAuthPassword.generateFromPassword(password);
 		assert (hashedPassword.checkPassword(password));
 		assert (!hashedPassword.checkPassword(password + "x"));
 
 		// Check that the comparison fails against a different has
-		hashedPassword = CwPassword.generateFromPassword(password + "xx");
+		hashedPassword = CwAuthPassword.generateFromPassword(password + "xx");
 		assert (!hashedPassword.checkPassword(password));
 	}
 
@@ -52,7 +52,7 @@ public class TestAuth {
 		assert (authHolder.getHashedPassword("u1").equals(hashedP1));
 		assert (authHolder.getHashedPassword("u2") == null);
 		
-		CwPassword p1 = CwPassword.fromHashedPassword(hashedP1);
+		CwAuthPassword p1 = CwAuthPassword.fromHashedPassword(hashedP1);
 		assert(p1.checkPassword("p1"));
 	}
 }

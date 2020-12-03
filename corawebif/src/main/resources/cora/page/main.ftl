@@ -10,6 +10,7 @@
 		    those schedules loaded into TeamSnap.</p>
 		    <br>
 		    <a href="uploadnewschedule" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Upload New Schedule Spreadsheet</a>
+		    <a href="rerunschedule" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Update Schedule From Last Spreadsheet</a>
 	
 	      </div>
 	     </div>
