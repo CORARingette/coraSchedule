@@ -11,7 +11,7 @@
 	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 	  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-	  <link href="/assets/css/loginstyle.css" rel="stylesheet">
+	  <link href="/corawebif/assets/css/loginstyle.css" rel="stylesheet">
 
 	</head>
 	<body>
@@ -22,7 +22,7 @@
 
     <!-- Icon -->
     <div>
-      <img src="/assets/ice-bear-purple.jpg" id="icon" alt="User Icon" />
+      <img src="/corawebif/assets/ice-bear-purple.jpg" id="icon" alt="User Icon" />
     </div>
 
     <!-- Login Form -->

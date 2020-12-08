@@ -37,7 +37,7 @@ public class CwAuthMissingAuthRedirectFilter implements ContainerRequestFilter {
 
 	static {
 		try {
-			loginUri = new URI("/login");
+			loginUri = new URI("/corawebif/login");
 		} catch (URISyntaxException e) {
 		}
 	}
@@ -47,7 +47,7 @@ public class CwAuthMissingAuthRedirectFilter implements ContainerRequestFilter {
 	public void filter(ContainerRequestContext requestContext) throws IOException {
 		Map<String, Cookie> cookies = requestContext.getCookies();
 
-		if (requestContext.getUriInfo().getPath().equals("login"))
+		if (requestContext.getUriInfo().getPath().equals("corawebif/login"))
 			return;
 
 		if (!cookies.containsKey(SESSION_TOKEN)) {

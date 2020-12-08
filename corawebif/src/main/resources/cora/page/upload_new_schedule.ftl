@@ -16,7 +16,7 @@
 		  </div>
 		
 		  <button type="submit" formmethod="post" class="btn btn-primary btn-lg active">Start Processing</button>
-		  <a href="/" class="btn btn-primary btn-lg active">Cancel</a>
+		  <a href="/corawebif" class="btn btn-primary btn-lg active">Cancel</a>
 		  
 		</form>
       </div>

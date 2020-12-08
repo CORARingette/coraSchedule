@@ -58,7 +58,7 @@ public class CwApplication extends Application<CwConfiguration> {
 	@Override
 	public void initialize(final Bootstrap<CwConfiguration> bootstrap) {
 		bootstrap.addBundle(new ViewBundle<CwConfiguration>());
-		bootstrap.addBundle(new AssetsBundle("/assets", "/assets"));
+		bootstrap.addBundle(new AssetsBundle("/assets", "/corawebif/assets"));
 
 		// See https://github.com/dhatim/dropwizard-jwt-cookie-authentication
 		bootstrap.addBundle(JwtCookieAuthBundle.getDefault().withKeyProvider(CwApplication::keySupplier));

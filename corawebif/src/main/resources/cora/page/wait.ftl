@@ -31,7 +31,7 @@
 		</#if>
 	    <#if showDone>
 	    	<p>Schedule updating has completed</p>
-	    	<a href="/" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Return to Main</a>
+	    	<a href="/corawebif" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Return to Main</a>
 		</#if>
 	
 	    <#if stderr != "">

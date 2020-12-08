@@ -12,7 +12,7 @@ public class CwAuthUnauthHandler implements UnauthorizedHandler {
 	@Override
 	public Response buildResponse(String prefix, String realm) {
 		try {
-			return Response.temporaryRedirect(new URI("/login")).build();
+			return Response.temporaryRedirect(new URI("/corawebif/login")).build();
 		} catch (URISyntaxException e) {
 			return null;
 		}

@@ -23,7 +23,7 @@ import org.slf4j.LoggerFactory;
 import cora.auth.CwAuthHolder;
 import cora.auth.CwAuthPassword;
 
-@Path("/")
+@Path("/corawebif")
 public class CwPagesAuth {
 
 	private static Logger logger_ms = LoggerFactory.getLogger(CwPagesAuth.class.getName());
@@ -58,7 +58,7 @@ public class CwPagesAuth {
 				// If wrong, delay and make login page with message
 				Thread.sleep(1000);
 				logger_ms.warn("Invalid username: {}", username);
-				URI uri = UriBuilder.fromUri("/login").queryParam(CwPageView.MESSAGE_PARAM, "Invalid credentials").build();
+				URI uri = UriBuilder.fromUri("/corawebif/login").queryParam(CwPageView.MESSAGE_PARAM, "Invalid credentials").build();
 				return Response.seeOther(uri).build();				
 			}
 			
@@ -69,17 +69,17 @@ public class CwPagesAuth {
 				DefaultJwtCookiePrincipal principal = new DefaultJwtCookiePrincipal(username);
 				principal.addInContext(requestContext);
 				logger_ms.info("User logged in as {}", username);
-				URI uri = UriBuilder.fromUri("/").build();
+				URI uri = UriBuilder.fromUri("/corawebif").build();
 				return Response.seeOther(uri).build();
 			} else {
 				// If wrong, delay and make login page with message
 				Thread.sleep(1000);
 				logger_ms.warn("Invalid password for user {}", username);
-				URI uri = UriBuilder.fromUri("/login").queryParam(CwPageView.MESSAGE_PARAM, "Invalid credentials").build();
+				URI uri = UriBuilder.fromUri("/corawebif/login").queryParam(CwPageView.MESSAGE_PARAM, "Invalid credentials").build();
 				return Response.seeOther(uri).build();
 			}
 		} catch (InterruptedException e) {
-			URI uri = UriBuilder.fromUri("/login").build();
+			URI uri = UriBuilder.fromUri("/corawebif/login").build();
 			return Response.seeOther(uri).build();
 		}
 

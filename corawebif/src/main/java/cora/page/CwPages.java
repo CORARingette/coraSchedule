@@ -25,7 +25,7 @@ import org.slf4j.LoggerFactory;
 
 import cora.main.CwRunner;
 
-@Path("/")
+@Path("/corawebif")
 @PermitAll
 public class CwPages {
 
@@ -62,7 +62,7 @@ public class CwPages {
 			Files.copy(uploadedInputStream, outputPath2);
 		} catch (IOException e) {
 			logger_ms.error("Error in file upload", e);
-			URI uri = UriBuilder.fromUri("/").queryParam(CwPageView.MESSAGE_PARAM, "Error uploading file").build();
+			URI uri = UriBuilder.fromUri("/corawebif").queryParam(CwPageView.MESSAGE_PARAM, "Error uploading file").build();
 			return Response.seeOther(uri).build();
 		}
 
@@ -77,13 +77,13 @@ public class CwPages {
 
 		} catch (Exception e) {
 			logger_ms.error("Error in schedule launch", e);
-			URI uri = UriBuilder.fromUri("/").queryParam(CwPageView.MESSAGE_PARAM, "Error launching scheduling tool")
+			URI uri = UriBuilder.fromUri("/corawebif").queryParam(CwPageView.MESSAGE_PARAM, "Error launching scheduling tool")
 					.build();
 			return Response.seeOther(uri).build();
 		}
 
 		// Redirect to the "waiting for completion" page
-		URI uri = UriBuilder.fromUri("/uploadwait").build();
+		URI uri = UriBuilder.fromUri("/corawebif/uploadwait").build();
 		return Response.seeOther(uri).build();
 	}
 
@@ -105,13 +105,13 @@ public class CwPages {
 
 		} catch (Exception e) {
 			logger_ms.error("Error in schedule launch", e);
-			URI uri = UriBuilder.fromUri("/").queryParam(CwPageView.MESSAGE_PARAM, "Error launching scheduling tool")
+			URI uri = UriBuilder.fromUri("/corawebif").queryParam(CwPageView.MESSAGE_PARAM, "Error launching scheduling tool")
 					.build();
 			return Response.seeOther(uri).build();
 		}
 
 		// Redirect to the "waiting for completion" page
-		URI uri = UriBuilder.fromUri("/uploadwait").build();
+		URI uri = UriBuilder.fromUri("/corawebif/uploadwait").build();
 		return Response.seeOther(uri).build();
 	}
 
@@ -135,7 +135,7 @@ public class CwPages {
 	public Response getUploadConfirm(@QueryParam(CwPageView.MESSAGE_PARAM) String message) {
 		CwRunner.getGlobalRunner().sendInput("YES");
 
-		return Response.seeOther(UriBuilder.fromUri("/uploadwait").build()).build();
+		return Response.seeOther(UriBuilder.fromUri("/corawebif/uploadwait").build()).build();
 	}
 
 	@GET
@@ -148,7 +148,7 @@ public class CwPages {
 		else {
 			runner.terminateRunningProcess();
 		}
-		return Response.seeOther(UriBuilder.fromUri("/uploadwait").build()).build();
+		return Response.seeOther(UriBuilder.fromUri("/corawebif/uploadwait").build()).build();
 	}
 
 	@GET
