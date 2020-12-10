@@ -113,7 +113,7 @@ public class TeamSnapEventGenerator extends AbstractTeamEventProcessor {
 	}
 
 	private boolean confirmApplyChanges() {
-		System.out.println("Confirm that you want to apply changes (enter YES) (NOT REALLY)");
+		System.out.println("Confirm that you want to apply changes (enter YES)");
 		@Cleanup
 		Scanner scanner = new Scanner(System.in);
 		return scanner.nextLine().trim().equals("YES");
@@ -121,14 +121,6 @@ public class TeamSnapEventGenerator extends AbstractTeamEventProcessor {
 
 	private void applyChanges() {
 
-		log.info("SKIPPING ADDING EVENTS");
-		try {
-			Thread.sleep(1000);
-			return;
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
-		
 		log.info("Adding events");
 
 		for (EventKey eventToAdd : eventsToAdd) {
@@ -181,9 +173,6 @@ public class TeamSnapEventGenerator extends AbstractTeamEventProcessor {
 		if (confirmApplyChanges()) {
 			log.info("Applying changes...");
 			applyChanges();
-			log.info("Done applying changes.");
-		} else {
-			log.info("Changes not applied.");
 		}
 
 	}

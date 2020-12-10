@@ -32,8 +32,10 @@ public class CwPagesAuth {
 	@Produces(MediaType.TEXT_HTML)
 	@GET
 	public Response logout(@Context ContainerRequestContext requestContext) {
+		logger_ms.info("User logged out");
+
 		JwtCookiePrincipal.removeFromContext(requestContext);
-		URI uri = UriBuilder.fromUri("/login").queryParam(CwPageView.MESSAGE_PARAM, "User logged out").build();
+		URI uri = UriBuilder.fromUri("/corawebif/login").queryParam(CwPageView.MESSAGE_PARAM, "User logged out").build();
 		return Response.seeOther(uri).build();
 	}
 

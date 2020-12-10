@@ -39,16 +39,16 @@
 	  <!-- Links -->
 	  <ul class="navbar-nav">
 	    <li class="nav-item">
-	      <a class="nav-link" href="/">CORA Schedule Uploader</a>
+	      <a class="nav-link" href="/corawebif">CORA Schedule Uploader</a>
 	    </li>
 	  </ul>
 	  
 	  <ul class="navbar-nav ml-auto">
 	    <li class="nav-item">
-	      <a class="nav-link" href="/profile">Profile</a>
+	      <a class="nav-link" href="/corawebif/profile">Profile</a>
 	    </li>
 	    <li class="nav-item">
-	      <a class="nav-link" href="/logout">Logout</a>
+	      <a class="nav-link" href="/corawebif/logout">Logout</a>
 	    </li>
 	  </ul>
 	</nav>
