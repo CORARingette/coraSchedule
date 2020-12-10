@@ -10,6 +10,7 @@ import java.io.OutputStreamWriter;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Map;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -147,6 +148,17 @@ public class CwRunner {
 		logger_ms.info("Starting scheduler tool to run...");
 		// Set working folder
 		builder.directory(new File(filePath, "working"));
+		
+		// Set environment variables
+        Map<String, String> envs = builder.environment();
+        String auth_url = System.getenv("CW_TS_AUTH_URL");
+        if (auth_url == null) {
+        	System.err.println("The environment variable CW_TS_AUTH_URL must be set to the TeamSnap authorization URL");
+        	System.exit(1);
+        }
+        envs.put("CW_TS_AUTH_URL", auth_url);
+        
+		
 		process_m = builder.start();
 		clear();
 		
