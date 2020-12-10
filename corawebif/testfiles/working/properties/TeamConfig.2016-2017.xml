@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<teams>
+
+	<!-- Bunnies -->
+
+	<team>
+		<name>Jr Bunnies</name>
+		<map></map>
+		<url></url>
+		<division>Bunnies</division>
+		<active>false</active>
+	</team>
+
+
+	<team>
+		<name>Jr Bunnies Seely</name>
+		<map></map>
+		<division></division>
+		<active>true</active>
+	</team>
+	<team>
+		<name>Sr Bunnies Craig</name>
+		<map></map>
+		<division></division>
+		<active>true</active>
+	</team>
+	<team>
+		<name>U8 Novice Bourke </name>
+		<map></map>
+		<division></division>
+		<active>true</active>
+	</team>
+	<team>
+		<name>U8 Novice Sammon</name>
+		<map></map>
+		<division></division>
+		<active>true</active>
+	</team>
+	<team>
+		<name>U9 Novice Benoit</name>
+		<map></map>
+		<division></division>
+		<active>true</active>
+	</team>
+	<team>
+		<name>U9 Novice Potvin </name>
+		<map></map>
+		<division></division>
+		<active>true</active>
+	</team>
+	<team>
+		<name>U10 Novice Bickerton</name>
+		<map></map>
+		<division></division>
+		<active>true</active>
+	</team>
+	<team>
+		<name>U10 Novice Van Wallegham</name>
+		<map></map>
+		<division></division>
+		<active>true</active>
+	</team>
+	<team>
+		<name>U12 P Prov Blue Zarull</name>
+		<map></map>
+		<division></division>
+		<active>true</active>
+	</team>
+	<team>
+		<name>U12 P Prov Red Cameron</name>
+		<map></map>
+		<division></division>
+		<active>true</active>
+	</team>
+	<team>
+		<name>U12 Reg Lannon</name>
+		<map></map>
+		<division></division>
+		<active>true</active>
+	</team>
+	<team>
+		<name>U12 Reg Stachon</name>
+		<map></map>
+		<division></division>
+		<active>true</active>
+	</team>
+	<team>
+		<name>U14 Tween AA Kushner</name>
+		<map></map>
+		<division></division>
+		<active>true</active>
+	</team>
+	<team>
+		<name>U14 Tween A Wippel</name>
+		<map></map>
+		<division></division>
+		<active>true</active>
+	</team>
+	<team>
+		<name>U14 Tween B Sarazin</name>
+		<map></map>
+		<division></division>
+		<active>true</active>
+	</team>
+	<team>
+		<name>U14 Tween C Herdman</name>
+		<map></map>
+		<division></division>
+		<active>true</active>
+	</team>
+	<team>
+		<name>U16 Junior AA Gurtler</name>
+		<map></map>
+		<division></division>
+		<active>true</active>
+	</team>
+	<team>
+		<name>U16 Junior A Lowe</name>
+		<map></map>
+		<division></division>
+		<active>true</active>
+	</team>
+	<team>
+		<name>U16 Junior B Bergmans</name>
+		<map></map>
+		<division></division>
+		<active>true</active>
+	</team>
+	<team>
+		<name>U16 Junior B McKillip</name>
+		<map></map>
+		<division></division>
+		<active>true</active>
+	</team>
+	<team>
+		<name>U19 Belle AA Cram</name>
+		<map></map>
+		<division></division>
+		<active>true</active>
+	</team>
+	<team>
+		<name>U19 Belle A Soulard</name>
+		<map></map>
+		<division></division>
+		<active>true</active>
+	</team>
+	<team>
+		<name>U19 Belle B Mackey</name>
+		<map></map>
+		<division></division>
+		<active>true</active>
+	</team>
+
+</teams>

@@ -1,83 +1,161 @@
 package cora.page;
 
+import java.io.IOException;
+import java.io.InputStream;
 import java.net.URI;
+import java.nio.file.FileSystems;
+import java.nio.file.Files;
 
 import javax.annotation.security.PermitAll;
-import javax.ws.rs.FormParam;
+import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
-import javax.ws.rs.container.ContainerRequestContext;
-import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.UriBuilder;
 
-import org.dhatim.dropwizard.jwt.cookie.authentication.DefaultJwtCookiePrincipal;
-import org.dhatim.dropwizard.jwt.cookie.authentication.JwtCookiePrincipal;
+import org.glassfish.jersey.media.multipart.FormDataContentDisposition;
+import org.glassfish.jersey.media.multipart.FormDataParam;
+import org.joda.time.Instant;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
-@Path("/")
+import cora.main.CwRunner;
+
+@Path("/corawebif")
+@PermitAll
 public class CwPages {
 
-	@Path("/logout")
-	@Produces(MediaType.TEXT_HTML)
-	@GET
-	public Response logout(@Context ContainerRequestContext requestContext) {
-		JwtCookiePrincipal.removeFromContext(requestContext);
-		URI uri = UriBuilder.fromUri("/login").queryParam(CwPageView.MESSAGE_PARAM, "User logged out").build();
-		return Response.seeOther(uri).build();
-	}
-
-	@GET
-	@Path("/login")
-	public CwPageView getLogin(@QueryParam(CwPageView.MESSAGE_PARAM) String message) {
-		return new CwPageView("login.ftl").setMessage(message);
-	}
-
-	@POST
-	@Path("/login")
-	public Response validateLogin(@Context ContainerRequestContext requestContext, //
-			@FormParam("username") String username, //
-			@FormParam("password") String password) {
-
-		// Validate credentials
-		try {
-			if (password.equals("p")) {
-				// If OK, save token and redirect to main page
-				DefaultJwtCookiePrincipal principal = new DefaultJwtCookiePrincipal(username);
-				principal.addInContext(requestContext);
-
-				URI uri = UriBuilder.fromUri("/").build();
-				return Response.seeOther(uri).build();
-			} else {
-				// If wrong, delay and make login page with message
-				Thread.sleep(1000);
-				URI uri = UriBuilder.fromUri("/login").queryParam(CwPageView.MESSAGE_PARAM, "Invalid credentials").build();
-				return Response.seeOther(uri).build();
-			}
-		} catch (InterruptedException e) {
-			URI uri = UriBuilder.fromUri("/login").build();
-			return Response.seeOther(uri).build();
-		}
-
-	}
+	private static Logger logger_ms = LoggerFactory.getLogger(CwPages.class.getName());
 
 	@GET
 	@Path("/")
-	@PermitAll
 	public CwPageView getMain(@QueryParam(CwPageView.MESSAGE_PARAM) String message) {
 		return new CwPageView("main.ftl").setMessage(message);
 	}
 
-
 	@GET
-	@Path("/profile")
-	@PermitAll
-	public CwPageView getProfile(@QueryParam(CwPageView.MESSAGE_PARAM) String message) {
-		return new CwPageView("profile.ftl").setMessage(message);
+	@Path("/uploadnewschedule")
+	public CwPageView getUploadNewSchedule(@QueryParam(CwPageView.MESSAGE_PARAM) String message) {
+		return new CwPageView("upload_new_schedule.ftl").setMessage(message);
 	}
 
+	@POST
+	@Path("/uploadnewschedule")
+	@Consumes(MediaType.MULTIPART_FORM_DATA)
+	@Produces(MediaType.TEXT_PLAIN)
+	public Response postNewSchedule(@FormDataParam("file") InputStream uploadedInputStream,
+			@FormDataParam("file") FormDataContentDisposition fileDetail) {
+		// Upload the file
+
+
+		try {
+			String filePath = System.getenv("CW_FILE_PATH");
+			java.nio.file.Path outputPath = FileSystems.getDefault().getPath(filePath, "working", "Master.xlsx");
+			Files.deleteIfExists(outputPath);
+			Files.copy(uploadedInputStream, outputPath);
+			String date_tag = Instant.now().toString().replace( "-" , "" ).replace( ":" , "" ).replaceAll("\\..*", "");
+			java.nio.file.Path outputPath2 = FileSystems.getDefault().getPath(filePath, "uploads", String.format("Master-%s.xlsx", date_tag));
+			Files.copy(uploadedInputStream, outputPath2);
+		} catch (IOException e) {
+			logger_ms.error("Error in file upload", e);
+			URI uri = UriBuilder.fromUri("/corawebif").queryParam(CwPageView.MESSAGE_PARAM, "Error uploading file").build();
+			return Response.seeOther(uri).build();
+		}
+
+		try {
+			// Launch the external process
+			CwRunner runner = CwRunner.getGlobalRunner();
+			if (!runner.isAvailable()) {
+				runner.terminateRunningProcess();
+			}
+
+			runner.startRun();
+
+		} catch (Exception e) {
+			logger_ms.error("Error in schedule launch", e);
+			URI uri = UriBuilder.fromUri("/corawebif").queryParam(CwPageView.MESSAGE_PARAM, "Error launching scheduling tool")
+					.build();
+			return Response.seeOther(uri).build();
+		}
+
+		// Redirect to the "waiting for completion" page
+		URI uri = UriBuilder.fromUri("/corawebif/uploadwait").build();
+		return Response.seeOther(uri).build();
+	}
+
+	@GET
+	@Path("/rerunschedule")
+	@Produces(MediaType.TEXT_PLAIN)
+	public Response postNewSchedule() {
+		// Upload the file
+
+
+		try {
+			// Launch the external process
+			CwRunner runner = CwRunner.getGlobalRunner();
+			if (!runner.isAvailable()) {
+				runner.terminateRunningProcess();
+			}
+
+			runner.startRun();
+
+		} catch (Exception e) {
+			logger_ms.error("Error in schedule launch", e);
+			URI uri = UriBuilder.fromUri("/corawebif").queryParam(CwPageView.MESSAGE_PARAM, "Error launching scheduling tool")
+					.build();
+			return Response.seeOther(uri).build();
+		}
+
+		// Redirect to the "waiting for completion" page
+		URI uri = UriBuilder.fromUri("/corawebif/uploadwait").build();
+		return Response.seeOther(uri).build();
+	}
+
+	@GET
+	@Path("/uploadwait")
+	public Object getUploadWait(@QueryParam(CwPageView.MESSAGE_PARAM) String message) {
+		CwRunner runner = CwRunner.getGlobalRunner();
+		boolean readyToConfirm = runner.readyToConfirm();
+		return new CwPageViewWait("wait.ftl", 
+				readyToConfirm, 
+				runner.isDone(),
+				!runner.isDone(),
+				!(runner.isDone() || readyToConfirm),
+				String.join("\n", runner.mergeAndfilterStrings(runner.getLatestStdOut(), runner.getLatestStdErr(), readyToConfirm)),
+				"")
+				.setMessage(message);
+	}
+
+	@GET
+	@Path("/uploadconfirm")
+	public Response getUploadConfirm(@QueryParam(CwPageView.MESSAGE_PARAM) String message) {
+		CwRunner.getGlobalRunner().sendInput("YES");
+
+		return Response.seeOther(UriBuilder.fromUri("/corawebif/uploadwait").build()).build();
+	}
+
+	@GET
+	@Path("/uploadcancel")
+	public Response getUploadCancel(@QueryParam(CwPageView.MESSAGE_PARAM) String message) {
+		CwRunner runner = CwRunner.getGlobalRunner();
+		if (runner.readyToConfirm()) {
+			CwRunner.getGlobalRunner().sendInput("NO");
+		}
+		else {
+			runner.terminateRunningProcess();
+		}
+		return Response.seeOther(UriBuilder.fromUri("/corawebif/uploadwait").build()).build();
+	}
+
+	@GET
+	@Path("/uploaddone")
+	public CwPageView getUploadDone(@QueryParam(CwPageView.MESSAGE_PARAM) String message) {
+
+		return new CwPageView("done.ftl").setMessage(message);
+	}
 
 }

@@ -18,8 +18,13 @@ public class Authorization {
 	private Authorization() {
 
 		try {
+            String auth_url = System.getenv("CW_TS_AUTH_URL");
+            if (auth_url == null) {
+            	System.err.println("The environment variable CW_TS_AUTH_URL must be set to the TeamSnap authorization URL");
+            	System.exit(1);
+            }
 			HttpResponse<JsonNode> authResponse = Unirest
-					.post("https://auth.teamsnap.com/oauth/token?password=C1a2m3p4&grant_type=password&scope=read+write&client_secret=520f0361a747cf1fa78c915cc8c3736015cffd638c6826eae010f14951ab781b&client_id=51892d7a5d4737e1f0e4941f5e2a38e394e71c6b8c53483109e7f9736b21b52f&username=rkw850%40yahoo.ca")
+					.post(auth_url)
 					.asJson();
 			log.fine(authResponse.getBody().toString());
 			ObjectMapper mapper = new ObjectMapper();

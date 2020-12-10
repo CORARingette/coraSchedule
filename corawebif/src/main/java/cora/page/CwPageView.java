@@ -15,6 +15,7 @@ public class CwPageView extends View {
 		message_m = message;
 		return this;
 	}
+
 	public String getMessage() {
 		return message_m;
 	}
