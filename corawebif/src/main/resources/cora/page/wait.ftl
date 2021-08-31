@@ -9,9 +9,6 @@
 	    
 	    
 	    
-	    <#if showConfirm>
-	    	<a href="uploadconfirm" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Accept Changes</a>
-		</#if>
 	    <#if doRefresh>
 		    <div style="display:none;" id="myDiv" class="animate-bottom">
 		        <meta http-equiv="refresh" content="3;url=uploadwait" />
@@ -29,9 +26,16 @@
 		        }
 		    </script>
 		</#if>
+	    <#if showConfirm>
+	    	<a href="/corawebif/uploadconfirm" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Accept Changes</a>
+		</#if>
 	    <#if showDone>
+	      <#if showError>
+	    	<p>Schedule updating has failed</p>
+		  <#else>
 	    	<p>Schedule updating has completed</p>
-	    	<a href="/corawebif" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Return to Main</a>
+		  </#if>
+        	<a href="/corawebif" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Return to Main</a>
 		</#if>
 	
 	    <#if stderr != "">
@@ -44,7 +48,7 @@
 		</#if>
 
 	    <#if showCancel>
-		    <a href="uploadcancel" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Cancel</a>
+		    <a href="/corawebif/uploadcancel" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Cancel</a>
 		</#if>
 
 	    <div style="overflow:auto;border:8px solid purple;padding:2%">
@@ -53,6 +57,21 @@
 			</pre>
 	    </div>
 
+	    <#if showConfirm>
+	    	<a href="/corawebif/uploadconfirm" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Accept Changes</a>
+		</#if>
+	    <#if showDone>
+	      <#if showError>
+	    	<p>Schedule updating has failed</p>
+		  <#else>
+	    	<p>Schedule updating has completed</p>
+		  </#if>
+	    	<a href="/corawebif" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Return to Main</a>
+		</#if>
+		
+	    <#if showCancel>
+		    <a href="/corawebif/uploadcancel" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Cancel</a>
+		</#if>
 
       </div>
     </body>

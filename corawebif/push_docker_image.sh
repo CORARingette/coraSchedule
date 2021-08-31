@@ -8,6 +8,7 @@ cd ../RingetteSchedule
 mvn package
 cd ../corawebif
 cp ../RingetteSchedule/target/RingetteSchedule-0.0.1-SNAPSHOT-jar-with-dependencies.jar rs_jar
+cp ../RingetteSchedule/properties/* testfiles/working/properties
 
 # Build corawebif package to container and push
 rm -r target

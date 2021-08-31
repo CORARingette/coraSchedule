@@ -120,9 +120,14 @@ public class CwPages {
 	public Object getUploadWait(@QueryParam(CwPageView.MESSAGE_PARAM) String message) {
 		CwRunner runner = CwRunner.getGlobalRunner();
 		boolean readyToConfirm = runner.readyToConfirm();
+		boolean showError = false;
+		if (runner.isDone())
+			if (runner.getExitCode() != 0) // Can't call getExitCode() if not done!
+				showError = true;
 		return new CwPageViewWait("wait.ftl", 
 				readyToConfirm, 
 				runner.isDone(),
+				showError,
 				!runner.isDone(),
 				!(runner.isDone() || readyToConfirm),
 				String.join("\n", runner.mergeAndfilterStrings(runner.getLatestStdOut(), runner.getLatestStdErr(), readyToConfirm)),
