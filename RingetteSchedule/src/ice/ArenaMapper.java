@@ -41,7 +41,7 @@ public class ArenaMapper {
 
 	public void dumpErrors() {
 		for (String location : arenaMapperErrors) {
-			String arenaEntry = "Arena name '" + location + "' not found in ArenaNameMapper.xml: <entry key=\"" + location + "\"></entry>";
+			String arenaEntry = "Arena name '" + location + "' not found in ArenaNameMapper.xml or in TeamSnap: <entry key=\"" + location + "\"></entry>";
 			log.severe(arenaEntry);
 		}
 	}
