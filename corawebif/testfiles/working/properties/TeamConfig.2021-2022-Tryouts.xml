@@ -118,5 +118,12 @@
 		<division>U19</division>
 		<active>true</active>
 	</team>
+	<team>
+		<name>Goalie U19AA and U16AA Tryout</name>
+		<map></map>
+		<url></url>
+		<division>U19</division>
+		<active>true</active>
+	</team>
 
 </teams>

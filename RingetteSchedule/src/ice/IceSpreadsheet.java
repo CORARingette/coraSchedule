@@ -24,7 +24,7 @@ public class IceSpreadsheet {
 	// sheet config
 	private final int ROW_COMMENT = 1;
 	private final int ROW_DATE = 3;
-	private final int START_COLUMN = 32;
+	private final int START_COLUMN = 5; // Start in first date column in spreadsheet (columns indexed from 0)
 	private final int COLUMNS_PER_WEEK = 14;
 	private final int TEAM_LIST_COLUMN = 1;
 

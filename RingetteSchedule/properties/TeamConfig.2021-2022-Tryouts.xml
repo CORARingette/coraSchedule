@@ -13,14 +13,14 @@
 	</team>
 
 	<team>
-		<name>Tryouts U10B</name>
+		<name>Tryouts U10A</name>
 		<map></map>
 		<url></url>
 		<division>U10</division>
 		<active>true</active>
 	</team>
 	<team>
-		<name>Tryouts U10A</name>
+		<name>Tryouts U10B</name>
 		<map></map>
 		<url></url>
 		<division>U10</division>
@@ -113,6 +113,13 @@
 	</team>
 	<team>
 		<name>Tryouts U19 Regional</name>
+		<map></map>
+		<url></url>
+		<division>U19</division>
+		<active>true</active>
+	</team>
+	<team>
+		<name>Goalie U19AA and U16AA Tryout</name>
 		<map></map>
 		<url></url>
 		<division>U19</division>
