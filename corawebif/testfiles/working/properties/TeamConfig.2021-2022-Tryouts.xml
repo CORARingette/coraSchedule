@@ -13,14 +13,14 @@
 	</team>
 
 	<team>
-		<name>Tryouts U10B</name>
+		<name>Tryouts U10A</name>
 		<map></map>
 		<url></url>
 		<division>U10</division>
 		<active>true</active>
 	</team>
 	<team>
-		<name>Tryouts U10A</name>
+		<name>Tryouts U10B</name>
 		<map></map>
 		<url></url>
 		<division>U10</division>
@@ -70,6 +70,13 @@
 		<active>true</active>
 	</team>
 	<team>
+		<name>U14AA Frechette</name>
+		<map></map>
+		<url></url>
+		<division>U14</division>
+		<active>true</active>
+	</team>
+	<team>
 		<name>Tryouts U14AA</name>
 		<map></map>
 		<url></url>
@@ -91,7 +98,14 @@
 		<active>true</active>
 	</team>
 	<team>
-		<name>Tryouts U16A</name>
+		<name>Tryouts U16AA</name>
+		<map></map>
+		<url></url>
+		<division>U16</division>
+		<active>true</active>
+	</team>
+	<team>
+		<name>U16AA Wippel</name>
 		<map></map>
 		<url></url>
 		<division>U16</division>

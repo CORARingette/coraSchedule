@@ -78,7 +78,7 @@ public class Event implements Comparable<Event> {
 			if (shareTeam != null) {
 				return team + " shared with " + shareTeam;
 			} else {
-				return team + " - Full Ice (tentative)";
+				return team + " - guaranteed 1/2 ice, possible full ice";
 			}
 		}
 	}
