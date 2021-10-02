@@ -87,7 +87,7 @@ public class IceSpreadsheet {
 			}
 
 		}
-		log.info("Teams: " + teamsLookup.size());
+		log.info("Teams found in spreadsheet loaded: " + teamsLookup.size());
 	}
 
 	private void load() {

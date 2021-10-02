@@ -29,7 +29,7 @@ public class Config {
 			DocumentBuilderFactory builderFactory = DocumentBuilderFactory.newInstance();
 			DocumentBuilder builder = builderFactory.newDocumentBuilder();
 
-			Document document = builder.parse(new FileInputStream(Paths.get("properties", "TeamConfig.2021-2022-Tryouts.xml").toString()));
+			Document document = builder.parse(new FileInputStream(Paths.get("properties", "TeamConfig.2021-2022.xml").toString()));
 
 			XPath xPath = XPathFactory.newInstance().newXPath();
 

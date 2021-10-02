@@ -210,7 +210,7 @@ public class TeamSnapEventGenerator extends AbstractTeamEventProcessor {
 			DivisionEvent de = (DivisionEvent) existingScheduleEvent.getSource();
 			if (Config.getInstance().GetConfig(de.getTeam().getName()) == null
 					|| !IceSpreadsheet.getInstance().isValidTeam(de.getTeam().getName())) {
-				log.severe("Team not found in configuration: " + de.getTeam().getName());
+				log.severe("Team '" + de.getTeam().getName() + "' in TeamSnap was not found in the TeamConfig XML file");
 				ok = false;
 				break;
 			}
