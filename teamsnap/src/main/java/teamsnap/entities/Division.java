@@ -30,6 +30,7 @@ public class Division extends BaseEntity {
 				DivisionEvent event = new DivisionEvent(eventItem);
 				Team team = teams.stream().filter(t -> t.getTeamId().equals(event.getTeamId())).findAny().orElse(null);
 				event.setTeam(team);
+				@SuppressWarnings("unused")
 				Team opponent = teams.stream().filter(t -> t.getTeamId().equals(event.getTeamId())).findAny().orElse(null);
 				DivisionLocation location = league.getLocations().stream()
 						.filter(l -> l.getLocationId().equals(event.getLocationId())).findAny().orElse(null);

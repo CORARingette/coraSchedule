@@ -1,24 +1,10 @@
 package leagueSched;
 
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-import java.net.URL;
-import java.net.URLConnection;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
 import java.util.List;
 
-import org.htmlparser.Parser;
-import org.htmlparser.Tag;
-import org.htmlparser.Text;
-import org.htmlparser.filters.TagNameFilter;
-import org.htmlparser.util.NodeList;
-import org.htmlparser.visitors.NodeVisitor;
-
 import lombok.extern.java.Log;
-import utils.Config;
-import utils.DateTimeUtils;
 
 @Log
 public class EmptySchedule extends AbstractLeagueSchedule {

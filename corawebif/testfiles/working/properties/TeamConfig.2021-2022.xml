@@ -7,29 +7,23 @@
 		<name>FUN1</name>
 		<map>FUN1</map>
 		<url>http://nothing</url>
-		<division>Bunnies</division>
-		<active>false</active>
+		<division>FUNdamentals</division>
+		<active>true</active>
 	</team>
 	<team>
 		<name>FUN2</name>
 		<map>FUN2</map>
 		<url>http://nothing</url>
-		<division>Bunnies</division>
-		<active>false</active>
-	</team>
-	<team>
-		<name>FUN3</name>
-		<map>FUN3</map>
-		<url>http://nothing</url>
-		<division>Bunnies</division>
-		<active>false</active>
+		<division>FUNdamentals</division>
+		<active>true</active>
 	</team>
 
 	<!-- U10 -->
 	<team>
 		<name>U10 O'Donnell-Bohemier</name>
-		<map>Ottawa - O'Donnell-Bohemier</map>
-		<url></url>
+		<map>Ottawa - O'Donnell-Bohémier</map>
+		<url>http://ncrrl.on.ca/schedules/?div=145&amp;ical=0&amp;n=U10&amp;nocache
+		</url>
 		<division>U10</division>
 		<active>true</active>
 	</team>
@@ -37,7 +31,8 @@
 	<team>
 		<name>U10 Alderwick</name>
 		<map>Ottawa - Alderwick</map>
-		<url></url>
+		<url>http://ncrrl.on.ca/schedules/?div=145&amp;ical=0&amp;n=U10&amp;nocache
+		</url>
 		<division>U10</division>
 		<active>true</active>
 	</team>
@@ -45,7 +40,8 @@
 	<team>
 		<name>U10 Gore</name>
 		<map>Ottawa - Gore</map>
-		<url></url>
+		<url>http://ncrrl.on.ca/schedules/?div=145&amp;ical=0&amp;n=U10&amp;nocache
+		</url>
 		<division>U10</division>
 		<active>true</active>
 	</team>
@@ -53,7 +49,8 @@
 	<team>
 		<name>U10 Marchand</name>
 		<map>Ottawa - Marchand</map>
-		<url></url>
+		<url>http://ncrrl.on.ca/schedules/?div=145&amp;ical=0&amp;n=U10&amp;nocache
+		</url>
 		<division>U10</division>
 		<active>true</active>
 	</team>
@@ -61,7 +58,8 @@
 	<team>
 		<name>U10 Houston</name>
 		<map>Ottawa - Houston</map>
-		<url></url>
+		<url>http://ncrrl.on.ca/schedules/?div=145&amp;ical=0&amp;n=U10&amp;nocache
+		</url>
 		<division>U10</division>
 		<active>true</active>
 	</team>
@@ -71,7 +69,8 @@
 	<team>
 		<name>U12A Stass</name>
 		<map>Ottawa - Stass</map>
-		<url></url>
+		<url>http://ncrrl.on.ca/schedules/?div=149&amp;ical=0&amp;n=U12_A&amp;nocache
+		</url>
 		<division>U12</division>
 		<active>true</active>
 	</team>
@@ -79,44 +78,50 @@
 	<team>
 		<name>U12A Benoit</name>
 		<map>Ottawa - Benoit</map>
-		<url></url>
+		<url>http://ncrrl.on.ca/schedules/?div=149&amp;ical=0&amp;n=U12_A&amp;nocache
+		</url>
 		<division>U12</division>
 		<active>true</active>
 	</team>
 
 	<team>
-		<name>U12B Isaac</name>
-		<map>Ottawa - Isaac</map>
-		<url></url>
+		<name>U12B Isaac-Rowan</name>
+		<map>Ottawa - Isaac-Rowan</map>
+		<url>http://ncrrl.on.ca/schedules/?div=150&amp;ical=0&amp;n=U12_B&amp;nocache
+		</url>
 		<division>U12</division>
 		<active>true</active>
 	</team>
 
 	<team>
 		<name>U12B Lannon</name>
-		<map>Ottawa - Lannnon</map>
-		<url></url>
+		<map>Ottawa - Lannon</map>
+		<url>http://ncrrl.on.ca/schedules/?div=150&amp;ical=0&amp;n=U12_B&amp;nocache
+		</url>
 		<division>U12</division>
 		<active>true</active>
 	</team>
 	<team>
-		<name>U12B Waddell</name>
-		<map>Ottawa - Waddell</map>
-		<url></url>
+		<name>U12B Reilly</name>
+		<map>Ottawa - Reilly</map>
+		<url>http://ncrrl.on.ca/schedules/?div=150&amp;ical=0&amp;n=U12_B&amp;nocache
+		</url>
 		<division>U12</division>
 		<active>true</active>
 	</team>
 	<team>
 		<name>U12C Dubois</name>
 		<map>Ottawa - Dubois</map>
-		<url></url>
+		<url>http://ncrrl.on.ca/schedules/?div=151&amp;ical=0&amp;n=U12_C&amp;nocache
+		</url>
 		<division>U12</division>
 		<active>true</active>
 	</team>
 	<team>
-		<name>U12B Peltzer</name>
+		<name>U12C Peltzer</name>
 		<map>Ottawa - Peltzer</map>
-		<url></url>
+		<url>http://ncrrl.on.ca/schedules/?div=151&amp;ical=0&amp;n=U12_C&amp;nocache
+		</url>
 		<division>U12</division>
 		<active>true</active>
 	</team>
@@ -127,7 +132,8 @@
 	<team>
 		<name>U14AA Frechette</name>
 		<map>Ottawa - Frechette</map>
-		<url></url>
+		<url>http://ncrrl.on.ca/schedules/?div=116&amp;ical=0&amp;n=U14_AA&amp;nocache
+		</url>
 		<division>U14</division>
 		<active>true</active>
 	</team>
@@ -135,7 +141,38 @@
 	<team>
 		<name>U14A Stachon</name>
 		<map>Ottawa - Stachon</map>
-		<url></url>
+		<url>http://ncrrl.on.ca/schedules/?div=117&amp;ical=0&amp;n=U14_A&amp;nocache
+		</url>
+		<division>U14</division>
+		<active>true</active>
+	</team>
+
+
+	<team>
+		<name>U14B Mann</name>
+		<map>Ottawa - Mann</map>
+		<url>http://ncrrl.on.ca/schedules/?div=118&amp;ical=0&amp;n=U14_B&amp;nocache
+		</url>
+		<division>U14</division>
+		<active>true</active>
+	</team>
+
+
+	<team>
+		<name>U14B D'Amours</name>
+		<map>Ottawa - D'Amours</map>
+		<url>http://ncrrl.on.ca/schedules/?div=118&amp;ical=0&amp;n=U14_B&amp;nocache
+		</url>
+		<division>U14</division>
+		<active>true</active>
+	</team>
+
+
+	<team>
+		<name>U14C Row</name>
+		<map>Ottawa</map>
+		<url>http://ncrrl.on.ca/schedules/?div=119&amp;ical=0&amp;n=U14_C&amp;nocache
+		</url>
 		<division>U14</division>
 		<active>true</active>
 	</team>
@@ -145,8 +182,9 @@
 
 	<team>
 		<name>U16AA Wippel</name>
-		<map>Ottawa ICE</map>
-		<url></url>
+		<map>Ottawa - Wippel</map>
+		<url>http://ncrrl.on.ca/schedules/?div=140&amp;ical=0&amp;n=U16_AA&amp;nocache
+		</url>
 		<division>U16</division>
 		<active>true</active>
 	</team>
@@ -154,7 +192,26 @@
 	<team>
 		<name>U16A Wolf</name>
 		<map>Ottawa - Wolf</map>
-		<url></url>
+		<url>http://ncrrl.on.ca/schedules/?div=125&amp;ical=0&amp;n=U16_A&amp;nocache
+		</url>
+		<division>U16</division>
+		<active>true</active>
+	</team>
+
+	<team>
+		<name>U16B Mackey</name>
+		<map>Ottawa - Mackey</map>
+		<url>http://ncrrl.on.ca/schedules/?div=126&amp;ical=0&amp;n=U16_B&amp;nocache
+		</url>
+		<division>U16</division>
+		<active>true</active>
+	</team>
+
+	<team>
+		<name>U16B Brutesco-Zubec</name>
+		<map>Ottawa - Zubec-Brutesco</map>
+		<url>http://ncrrl.on.ca/schedules/?div=126&amp;ical=0&amp;n=U16_B&amp;nocache
+		</url>
 		<division>U16</division>
 		<active>true</active>
 	</team>
@@ -167,7 +224,8 @@
 	<team>
 		<name>U19B Bickerton</name>
 		<map>Ottawa - Bickerton</map>
-		<url></url>
+		<url>http://ncrrl.on.ca/schedules/?div=134&amp;ical=0&amp;n=U19_B&amp;nocache
+		</url>
 		<division>U19</division>
 		<active>true</active>
 	</team>
@@ -175,7 +233,28 @@
 	<team>
 		<name>U19B Stroz</name>
 		<map>Ottawa - Stroz</map>
-		<url></url>
+		<url>http://ncrrl.on.ca/schedules/?div=134&amp;ical=0&amp;n=U19_B&amp;nocache
+		</url>
+		<division>U19</division>
+		<active>true</active>
+	</team>
+
+
+	<team>
+		<name>U19A Campbell</name>
+		<map>Ottawa - Campbell</map>
+		<url>http://ncrrl.on.ca/schedules/?div=140&amp;ical=0&amp;n=U19_A&amp;nocache
+		</url>
+		<division>U19</division>
+		<active>true</active>
+	</team>
+
+
+	<team>
+		<name>U19AA Cram</name>
+		<map>Ottawa - Cram</map>
+		<url>http://ncrrl.on.ca/schedules/?div=132&amp;ical=0&amp;n=U19_AA&amp;nocache
+		</url>
 		<division>U19</division>
 		<active>true</active>
 	</team>

@@ -90,6 +90,7 @@ public class IceSpreadsheet {
 		log.info("Teams found in spreadsheet loaded: " + teamsLookup.size());
 	}
 
+	@SuppressWarnings("unused")
 	private void load() {
 
 		log.fine("Loading Started...");

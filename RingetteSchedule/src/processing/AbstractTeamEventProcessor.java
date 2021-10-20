@@ -34,6 +34,9 @@ public abstract class AbstractTeamEventProcessor {
 			if (Config.getInstance().GetConfig(team).isActive()) {
 				doProcessing(team);
 			}
+			else {
+				log.warning("TEAM '" + team + "' IS DISABLED");
+			}
 		}
 
 	}
@@ -115,6 +118,7 @@ public abstract class AbstractTeamEventProcessor {
 		}
 	}
 
+	@SuppressWarnings("unused")
 	private void processUnmatchedEvents(String team, AbstractLeagueSchedule schedule,
 			List<ScheduleRecord> usedCalendarEvents) {
 		if (schedule instanceof NCRRLSchedule && !Context.loadNCRRL) {

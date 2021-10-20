@@ -7,7 +7,7 @@ import java.util.Date;
 
 public class Context {
 
-	public static final boolean loadNCRRL = false;
+	public static final boolean loadNCRRL = true;
 	public static final boolean loadLERQ = false;
 
 	// This is the date of the first Saturday of the schedule which should be
