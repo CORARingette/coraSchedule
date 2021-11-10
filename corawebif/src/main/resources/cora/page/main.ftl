@@ -11,6 +11,7 @@
 		    <br>
 		    <a href="/corawebif/uploadnewschedule" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Upload New Schedule Spreadsheet</a>
 		    <a href="/corawebif/rerunschedule" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Update Schedule From Last Spreadsheet</a>
+		    <a href="/corawebif/downloadlastschedule" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Download Last Schedule Uploaded</a>
 	
 	      </div>
 	     </div>

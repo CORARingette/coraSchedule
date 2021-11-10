@@ -5,6 +5,7 @@ import java.io.InputStream;
 import java.net.URI;
 import java.nio.file.FileSystems;
 import java.nio.file.Files;
+import java.nio.file.Paths;
 
 import javax.annotation.security.PermitAll;
 import javax.ws.rs.Consumes;
@@ -13,8 +14,10 @@ import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
+import javax.ws.rs.WebApplicationException;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
+import javax.ws.rs.core.StreamingOutput;
 import javax.ws.rs.core.UriBuilder;
 
 import org.glassfish.jersey.media.multipart.FormDataContentDisposition;
@@ -91,8 +94,6 @@ public class CwPages {
 	@Path("/rerunschedule")
 	@Produces(MediaType.TEXT_PLAIN)
 	public Response postNewSchedule() {
-		// Upload the file
-
 
 		try {
 			// Launch the external process
@@ -114,6 +115,38 @@ public class CwPages {
 		URI uri = UriBuilder.fromUri("/corawebif/uploadwait").build();
 		return Response.seeOther(uri).build();
 	}
+
+	@GET
+	@Path("/downloadlastschedule")
+	@Produces(MediaType.TEXT_PLAIN)
+	public Response downloadLastSchedule() {
+
+        StreamingOutput fileStream =  new StreamingOutput() 
+        {
+            @Override
+            public void write(java.io.OutputStream output) throws IOException 
+            {
+                try
+                {
+        			String filePath = System.getenv("CW_FILE_PATH");
+        			java.nio.file.Path path = FileSystems.getDefault().getPath(filePath, "working", "Master.xlsx");
+
+                    byte[] data = Files.readAllBytes(path);
+                    output.write(data);
+                    output.flush();
+                } 
+                catch (Exception e) 
+                {
+        			logger_ms.error("Error downloading file", e);
+                    throw new WebApplicationException("File Not Found !!");
+                }
+            }
+        };
+        return Response
+                .ok(fileStream, MediaType.APPLICATION_OCTET_STREAM)
+                .header("content-disposition","attachment; filename = Master.xlsx")
+                .build();
+    }
 
 	@GET
 	@Path("/uploadwait")
