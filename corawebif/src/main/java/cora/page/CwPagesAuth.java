@@ -57,7 +57,7 @@ public class CwPagesAuth {
 		try {
 			String hashedPassword = authHolder.getHashedPassword(username);
 			if (hashedPassword == null) {
-				// If wrong, delay and make login page with message
+				// If wrong, delay and make login page with message - delay is to reduce brute force attacks
 				Thread.sleep(1000);
 				logger_ms.warn("Invalid username: {}", username);
 				URI uri = UriBuilder.fromUri("/corawebif/login").queryParam(CwPageView.MESSAGE_PARAM, "Invalid credentials").build();

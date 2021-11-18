@@ -5,7 +5,6 @@ import java.io.InputStream;
 import java.net.URI;
 import java.nio.file.FileSystems;
 import java.nio.file.Files;
-import java.nio.file.Paths;
 
 import javax.annotation.security.PermitAll;
 import javax.ws.rs.Consumes;
