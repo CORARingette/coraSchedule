@@ -11,7 +11,14 @@
 		<active>true</active>
 	</team>
 	<team>
-		<name>FUN2</name>
+		<name>FUN2 Murphy</name>
+		<map>FUN2</map>
+		<url>http://nothing</url>
+		<division>FUNdamentals</division>
+		<active>true</active>
+	</team>
+	<team>
+		<name>FUN2 Lugtigheid</name>
 		<map>FUN2</map>
 		<url>http://nothing</url>
 		<division>FUNdamentals</division>
