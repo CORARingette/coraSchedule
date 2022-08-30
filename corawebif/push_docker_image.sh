@@ -2,6 +2,8 @@
 
 set -e
 
+source ~/CORA_Website/BUILDER_CRED.sh
+
 aws ecr get-login-password --region ca-central-1 | docker login --username AWS --password-stdin 353923860258.dkr.ecr.ca-central-1.amazonaws.com
 # Build ringette schedule JAR and copy over
 cd ../RingetteSchedule

@@ -1,10 +1,18 @@
 package cora.page;
 
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URI;
 import java.nio.file.FileSystems;
 import java.nio.file.Files;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Properties;
+import java.util.Set;
 
 import javax.annotation.security.PermitAll;
 import javax.ws.rs.Consumes;
@@ -87,6 +95,54 @@ public class CwPages {
 		// Redirect to the "waiting for completion" page
 		URI uri = UriBuilder.fromUri("/corawebif/uploadwait").build();
 		return Response.seeOther(uri).build();
+	}
+
+	@GET
+	@Path("/viewarenalist")
+	public Object getArenaList(@QueryParam(CwPageView.MESSAGE_PARAM) String message) {
+		
+		
+		//List<CwPageArenaNames> lst = new ArrayList<CwPageArenaNames>();
+		//lst.add(new CwPageArenaNames("arena_a", Arrays.asList("a", " arena a")));
+		//lst.add(new CwPageArenaNames("arena_b", Arrays.asList("b", " arena b")));
+		Properties nameMapper = new Properties();
+		String authPath = System.getenv("CW_FILE_PATH");
+		String path = authPath + "/working/properties/ArenaNameMapper.xml";
+		Map<String, CwPageArenaNames> mapOfCanonicalNameToNames = new HashMap<> ();
+		
+		try {
+			nameMapper.loadFromXML(new FileInputStream(path));
+		    Set<String> keys = nameMapper.stringPropertyNames();
+		    for (String allowedName : keys) {
+		    	String canonicalName = nameMapper.getProperty(allowedName);
+		    	CwPageArenaNames nameList;
+		    	if (!mapOfCanonicalNameToNames.containsKey(canonicalName)) {
+		    		nameList = new CwPageArenaNames(canonicalName);
+		    		mapOfCanonicalNameToNames.put(canonicalName, nameList);
+		    	}
+		    	else
+		    		nameList = mapOfCanonicalNameToNames.get(canonicalName);
+		    	nameList.nameList_m.add(allowedName);
+		    } // for
+		    
+		    // Sort list of keys
+		    List<String> keyList = new ArrayList<> (mapOfCanonicalNameToNames.keySet());
+		    Collections.sort(keyList);
+		    List<CwPageArenaNames> lst = new ArrayList<CwPageArenaNames>();
+		    for (String key : keyList) {
+		    	List<String> nameList = mapOfCanonicalNameToNames.get(key).nameList_m;
+		    	Collections.sort(nameList);
+				lst.add(new CwPageArenaNames(key, nameList));
+		    }
+		    
+			return new CwPageArenaList("view_arena_list.ftl").setArenaInfo(lst);
+		} catch (IOException e) {
+			logger_ms.error("Error in loading ArenaMapper.xml from " + path + " file", e);
+			URI uri = UriBuilder.fromUri("/corawebif").queryParam(CwPageView.MESSAGE_PARAM, "Error launching scheduling tool")
+					.build();
+			return Response.seeOther(uri).build();
+		}
+
 	}
 
 	@GET
