@@ -98,6 +98,13 @@
 		<active>true</active>
 	</team>
 	<team>
+		<name>U19A Leblanc</name>
+		<map></map>
+		<url></url>
+		<division>U19</division>
+		<active>true</active>
+	</team>
+	<team>
 		<name>U19AA Cram (22-23)</name>
 		<map></map>
 		<url></url>
