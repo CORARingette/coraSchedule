@@ -56,14 +56,21 @@
 		<active>true</active>
 	</team>
 	<team>
-		<name>Tryouts U14C Regional</name>
+		<name>U14C</name>
 		<map></map>
 		<url></url>
 		<division>U14</division>
 		<active>true</active>
 	</team>
 	<team>
-		<name>Tryouts U14B Regional</name>
+		<name>U14B O'Donnell</name>
+		<map></map>
+		<url></url>
+		<division>U14</division>
+		<active>true</active>
+	</team>
+	<team>
+		<name>U14B Derry</name>
 		<map></map>
 		<url></url>
 		<division>U14</division>
@@ -84,6 +91,20 @@
 		<active>true</active>
 	</team>
 	<team>
+		<name>U16B Brutesco</name>
+		<map></map>
+		<url></url>
+		<division>U16</division>
+		<active>true</active>
+	</team>
+	<team>
+		<name>U16 Sortouts</name>
+		<map></map>
+		<url></url>
+		<division>U16</division>
+		<active>true</active>
+	</team>
+	<team>
 		<name>U16A Grant (NEW)</name>
 		<map></map>
 		<url></url>
@@ -95,6 +116,13 @@
 		<map></map>
 		<url></url>
 		<division>U16</division>
+		<active>true</active>
+	</team>
+	<team>
+		<name>U19 Sortouts</name>
+		<map></map>
+		<url></url>
+		<division>U19</division>
 		<active>true</active>
 	</team>
 	<team>

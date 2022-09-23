@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<teams>
+
+	<!-- Bunnies -->
+
+	<team>
+		<name>FUN1</name>
+		<map></map>
+		<url></url>
+		<division>FUNdamentals</division>
+		<active>true</active>
+	</team>
+	<team>
+		<name>FUN2</name>
+		<map></map>
+		<url></url>
+		<division>FUNdamentals</division>
+		<active>true</active>
+	</team>
+
+	<team>
+		<name>U10 Sammon</name>
+		<map></map>
+		<url></url>
+		<division>FUN3 (U10)</division>
+		<active>true</active>
+	</team>
+	<team>
+		<name>U10 Murphy</name>
+		<map></map>
+		<url></url>
+		<division>FUN3 (U10)</division>
+		<active>true</active>
+	</team>
+	<team>
+		<name>U10 Marchand</name>
+		<map></map>
+		<url></url>
+		<division>FUN3 (U10)</division>
+		<active>true</active>
+	</team>
+	<team>
+		<name>U10 Doherty</name>
+		<map></map>
+		<url></url>
+		<division>FUN3 (U10)</division>
+		<active>true</active>
+	</team>
+
+	<team>
+		<name>U12A Isaac-Rowan</name>
+		<map></map>
+		<url></url>
+		<division>U12</division>
+		<active>true</active>
+	</team>
+	<team>
+		<name>U12A Reilly</name>
+		<map></map>
+		<url></url>
+		<division>U12</division>
+		<active>true</active>
+	</team>
+	<team>
+		<name>U12B Gore</name>
+		<map></map>
+		<url></url>
+		<division>U12</division>
+		<active>true</active>
+	</team>
+	<team>
+		<name>U12B Bohemier</name>
+		<map></map>
+		<url></url>
+		<division>U12</division>
+		<active>true</active>
+	</team>
+	<team>
+		<name>U12C Alderwick</name>
+		<map></map>
+		<url></url>
+		<division>U12</division>
+		<active>true</active>
+	</team>
+	<team>
+		<name>U12C Peltzer</name>
+		<map></map>
+		<url></url>
+		<division>U12</division>
+		<active>true</active>
+	</team>
+	<team>
+		<name>U12C Nelson</name>
+		<map></map>
+		<url></url>
+		<division>U12</division>
+		<active>true</active>
+	</team>
+	<team>
+		<name>U14C</name>
+		<map></map>
+		<url></url>
+		<division>U14</division>
+		<active>true</active>
+	</team>
+	<team>
+		<name>U14B O'Donnell</name>
+		<map></map>
+		<url></url>
+		<division>U14</division>
+		<active>true</active>
+	</team>
+	<team>
+		<name>U14B Derry</name>
+		<map></map>
+		<url></url>
+		<division>U14</division>
+		<active>true</active>
+	</team>
+	<team>
+		<name>U14AA Frechette (22-23)</name>
+		<map></map>
+		<url></url>
+		<division>U14</division>
+		<active>true</active>
+	</team>
+	<team>
+		<name>U14A Mackey (22-23)</name>
+		<map></map>
+		<url></url>
+		<division>U14</division>
+		<active>true</active>
+	</team>
+	<team>
+		<name>U16B Brutesco</name>
+		<map></map>
+		<url></url>
+		<division>U16</division>
+		<active>true</active>
+	</team>
+	<team>
+		<name>U16B Raponi</name>
+		<map></map>
+		<url></url>
+		<division>U16</division>
+		<active>true</active>
+	</team>
+	<team>
+		<name>U16B Merrizzi</name>
+		<map></map>
+		<url></url>
+		<division>U16</division>
+		<active>true</active>
+	</team>
+	<team>
+		<name>U16A Grant (NEW)</name>
+		<map></map>
+		<url></url>
+		<division>U16</division>
+		<active>true</active>
+	</team>
+	<team>
+		<name>U16AA Wippel (22-23)</name>
+		<map></map>
+		<url></url>
+		<division>U16</division>
+		<active>true</active>
+	</team>
+	<team>
+		<name>U19B Hearn</name>
+		<map></map>
+		<url></url>
+		<division>U19</division>
+		<active>true</active>
+	</team>
+	<team>
+		<name>U19A Leblanc</name>
+		<map></map>
+		<url></url>
+		<division>U19</division>
+		<active>true</active>
+	</team>
+	<team>
+		<name>U19AA Cram (22-23)</name>
+		<map></map>
+		<url></url>
+		<division>U19</division>
+		<active>true</active>
+	</team>
+	<team>
+		<name>Ottawa Blizzard</name>
+		<map></map>
+		<url></url>
+		<division>U19</division>
+		<active>false</active>
+	</team>
+</teams>
