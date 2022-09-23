@@ -75,6 +75,7 @@ public abstract class AbstractTeamEventProcessor {
 				records = schedule.findEntriesForDay(iceEvent.getDate());
 			}
 
+			// This is very rarely used. 99% of games are handled below in processUnmatchedEvents()
 			if (ShareValue.isGame(iceEvent.getShareValue())) {
 				// look up records that match
 				if (records.size() > 0) {

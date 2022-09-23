@@ -72,6 +72,7 @@
 	<entry key="Blainville">Blainville</entry>
 	<entry key="Bob Birnie Arena - 96 ave. Douglas Shand Pointe Claire, QC">Pointe-Claire - LSL</entry>
 	<entry key="Pointe-Claire - Bob Birnie">Pointe-Claire - LSL</entry>
+	<entry key="Bob Birnie - Pointe-Claire">Pointe-Claire - LSL</entry>
 	<entry key="Boisbriand">Boisbriand</entry>
 	<entry key="Bouctouche Forum">Bouctouche Forum</entry>
 	<entry key="Branchaud Briere - 499 Boulevard Labrosse Gatineau, QC">Branchaud-Briere</entry>
@@ -111,6 +112,7 @@
 	<entry key="Centre Caztel">Centre Caztel</entry>
 	<entry key="Centre Caztel - Sainte-Marie">Centre Caztel</entry>
 	<entry key="Centre Slush Puppie">Centre Slush Puppie</entry>
+	<entry key="Centre Slush Puppie - Gatineau">Centre Slush Puppie</entry>
 	<entry key="Cholette">Cholette</entry>
 	<entry key="Chesterville Arena">Chesterville Arena</entry>
 	<entry key="Chomedey - Laval">Chomedey</entry>
@@ -144,6 +146,7 @@
 	<entry key="GCRA Barrett West (Fred G Barrett Arena)">Barrett West</entry>
 	<entry key="GCRA Bob MacQuarrie - Roger Senecal">Orleans Rec - Senecal</entry>
 	<entry key="Bob MacQuarrie">Orleans Rec - Senecal</entry>
+	<entry key="Bob Macquarrie - Ottawa">Orleans Rec - Senecal</entry>
 	<entry key="GCRA Bob MacQuarrie - Manley">Orleans</entry>
 	<entry key="Gilles Chabot - Boucherville">Gilles Chabot - Boucherville</entry>
 	<entry key="Gilles Chabot - Boucherville change de nom pour CS Duval auto">Complexe Sportif Duval Auto</entry>
@@ -161,6 +164,7 @@
 	<entry key="Goulbourn Rec">Goulbourn Rec Centre</entry>
 	<entry key="Grandmaitre (Vanier) - Ottawa">Grandmaitre</entry>
 	<entry key="Grandmaitre">Grandmaitre</entry>
+	<entry key="Grandmaitre - Ottawa">Grandmaitre</entry>
 	<entry key="Hespeler Arena - 640 Ellis Rd. W Cambridge, ON">Hespeler Arena</entry>
 	<entry key="Iceland  705 Matheson Blvd. E Mississauga, ON">Iceland Mississauga</entry>
 	<entry key="Invista - Rona">Invista Rona</entry>
@@ -201,6 +205,7 @@
 	<entry key="McNabb">McNabb</entry>
 	<entry key="McNab">McNabb</entry>
 	<entry key="McNabb Arena">McNabb</entry>
+	<entry key="McNabb - Ottawa">McNabb</entry>
 	<entry key="McDonald Coll. - LSL">Aréna MacDonald</entry>
 	<entry key="Memramcook Arena">Arena Eugene Leblanc</entry>
 	<entry key="Merivale">Merivale</entry>
@@ -280,9 +285,12 @@
 	<entry key="Richcraft Sensplex - Hockey Eastern Ontario (HEO) Arena">Richcraft-HEO</entry>
 	<entry key="Richcraft Sensplex - HEO Arena">Richcraft-HEO</entry>
 	<entry key="Rich Sensplex HEO">Richcraft-HEO</entry>
+	<entry key="Rodrigue Gilbert">Rodrigue-Gilbert</entry>
 	<entry key="HEO Arena">Richcraft-HEO</entry>
 	<entry key="Milkup Arena">Richcraft-Milkup</entry>
 	<entry key="Richcraft-Milkup">Richcraft-Milkup</entry>
+	<entry key="Richcraft Milkup">Richcraft-Milkup</entry>
+	<entry key="Milkup Richcraft - Ottawa">Richcraft-Milkup</entry>
 	<entry key="Richcraft-Cdn Ti">Richcraft-Canadian Tire</entry>
 	<entry key="Richmond - West Ottawa">Richmond</entry>
 	<entry key="Richmond Memorial Community Centre">Richmond</entry>
@@ -313,7 +321,8 @@
 	<entry key="Sensplex-Mattamy">Sensplex 1 - Mattamy</entry>
 	<entry key="Sensplex-Palladi">Sensplex 2 - Citizen</entry>
 	<entry key="Sportium - Ste-Catherine">Sportium Ste. - Catherine</entry>
-	<entry key="Sportsplex 1 - Nepean">Nepean Sportsplex Rink 1</entry>
+	<entry key="Sportium - Ste-Catherine">Sportium Ste. - Catherine</entry>
+	<entry key="Slush Puppy D - Gatineau">Centre Slush Puppie</entry>
 	<entry key="Sportsplex 1 - Ottawa">Nepean Sportsplex Rink 1</entry>
 	<entry key="Sportsplex 1">Nepean Sportsplex Rink 1</entry>
 	<entry key="Nepean Sportsplex Arena 1">Nepean Sportsplex Rink 1</entry>
