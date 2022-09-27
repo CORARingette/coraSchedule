@@ -114,7 +114,7 @@ public class LERQSchedule extends AbstractLeagueSchedule {
 	public static void main(String[] args) {
 		try {
 			String team = "U16AA Wippel (22-23)";
-			String date = "26-Nov-22";
+			String date = "27-Nov-22";
 			LERQSchedule lerq = new LERQSchedule(team);
 			SimpleDateFormat formatter = new SimpleDateFormat("d-MMM-yy");
 			List<ScheduleRecord> records = lerq.findEntriesForDay(formatter.parse(date));
@@ -142,7 +142,8 @@ public class LERQSchedule extends AbstractLeagueSchedule {
 			conn.setRequestProperty("User-Agent",
 					"Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.95 Safari/537.11");
 
-			BufferedReader rd = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+			// We need to use the ISO-8859-1 encoding to have the accented arena names processed correctly
+			BufferedReader rd = new BufferedReader(new InputStreamReader(conn.getInputStream(), "ISO-8859-1"));
 			StringBuffer sb = new StringBuffer();
 			String line;
 			while ((line = rd.readLine()) != null) {
