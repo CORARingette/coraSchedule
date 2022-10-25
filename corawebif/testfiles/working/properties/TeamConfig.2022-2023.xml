@@ -79,57 +79,57 @@
 	<team>
 		<name>U12C Alderwick</name>
 		<map>Ottawa - Alderwick</map>
-		<url>https://ncrrl.on.ca/schedules/?div=156&amp;ical=0&amp;n=U16_B&amp;nocache</url>
+		<url>https://ncrrl.on.ca/schedules/?div=151&amp;ical=0&amp;n=U16_B&amp;nocache</url>
 		<division>U12</division>
 		<active>true</active>
 	</team>
 	<team>
 		<name>U12C Peltzer</name>
 		<map>Ottawa - Peltzer</map>
-		<url>https://ncrrl.on.ca/schedules/?div=156&amp;ical=0&amp;n=U16_B&amp;nocache</url>
+		<url>https://ncrrl.on.ca/schedules/?div=151&amp;ical=0&amp;n=U16_B&amp;nocache</url>
 		<division>U12</division>
 		<active>true</active>
 	</team>
 	<team>
 		<name>U12C Nelson</name>
 		<map>Ottawa - Nelson</map>
-		<url>https://ncrrl.on.ca/schedules/?div=155&amp;ical=0&amp;n=U16_B&amp;nocache</url>
+		<url>https://ncrrl.on.ca/schedules/?div=151&amp;ical=0&amp;n=U12_C&amp;nocache</url>
 		<division>U12</division>
 		<active>true</active>
 	</team>
 	
 	<team>
-		<name>U14C</name>
-		<map>Ottawa</map>
-		<url>https://ncrrl.on.ca/schedules/?div=119&amp;ical=0&amp;n=U16_B&amp;nocache</url>
+		<name>U14C Falconer</name>
+		<map>Ottawa - Falconer</map>
+		<url>https://ncrrl.on.ca/schedules/?div=119&amp;ical=0&amp;n=U14_C&amp;nocache</url>
 		<division>U14</division>
 		<active>true</active>
 	</team>
 	<team>
 		<name>U14B O'Donnell</name>
 		<map>Ottawa - O'Donnell</map>
-		<url>https://ncrrl.on.ca/schedules/?div=118&amp;ical=0&amp;n=U16_B&amp;nocache</url>
+		<url>https://ncrrl.on.ca/schedules/?div=118&amp;ical=0&amp;n=U14_B&amp;nocache</url>
 		<division>U14</division>
 		<active>true</active>
 	</team>
 	<team>
 		<name>U14B Derry</name>
 		<map>Ottawa - Derry</map>
-		<url>https://ncrrl.on.ca/schedules/?div=118&amp;ical=0&amp;n=U16_B&amp;nocache</url>
+		<url>https://ncrrl.on.ca/schedules/?div=118&amp;ical=0&amp;n=U14_B&amp;nocache</url>
 		<division>U14</division>
 		<active>true</active>
 	</team>
 	<team>
 		<name>U14AA Frechette (22-23)</name>
-		<map></map>
-		<url></url>
+		<map>Ottawa</map>
+		<url>https://membres.ringuette-quebec.qc.ca/cedules_liste_web.asp?ligues_id=88&amp;NbrAfficher=1000</url>
 		<division>U14</division>
 		<active>true</active>
 	</team>
 	<team>
 		<name>U14A Mackey (22-23)</name>
 		<map>Ottawa - Mackey</map>
-		<url>https://ncrrl.on.ca/schedules/?div=117&amp;ical=0&amp;n=U16_B&amp;nocache</url>
+		<url>https://ncrrl.on.ca/schedules/?div=117&amp;ical=0&amp;n=U14_A&amp;nocache</url>
 		<division>U14</division>
 		<active>true</active>
 	</team>
@@ -156,8 +156,8 @@
 	</team>
 	<team>
 		<name>U16A Grant (NEW)</name>
-		<map></map>
-		<url></url>
+		<map>Ottawa</map>
+		<url>https://membres.ringuette-quebec.qc.ca/cedules_liste_web.asp?ligues_id=89&amp;NbrAfficher=1000</url>
 		<division>U16</division>
 		<active>true</active>
 	</team>
@@ -171,14 +171,14 @@
 	<team>
 		<name>U19B Hearn</name>
 		<map>Ottawa - Hearn</map>
-		<url>https://ncrrl.on.ca/schedules/?div=134&amp;ical=0&amp;n=U16_B&amp;nocache</url>
+		<url>https://ncrrl.on.ca/schedules/?div=134&amp;ical=0&amp;n=U19_B&amp;nocache</url>
 		<division>U19</division>
 		<active>true</active>
 	</team>
 	<team>
 		<name>U19A Leblanc</name>
-		<map></map>
-		<url></url>
+		<map>Ottawa</map>
+		<url>https://membres.ringuette-quebec.qc.ca/cedules_liste_web.asp?ligues_id=90&amp;NbrAfficher=1000</url>
 		<division>U19</division>
 		<active>true</active>
 	</team>

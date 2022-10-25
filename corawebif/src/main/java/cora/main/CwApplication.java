@@ -11,6 +11,7 @@ import cora.auth.CwAuthHolder;
 import cora.auth.CwAuthMissingAuthRedirectFilter;
 import cora.page.CwPages;
 import cora.page.CwPagesAuth;
+import cora.page.CwPagesEmail;
 import io.dropwizard.Application;
 import io.dropwizard.Configuration;
 import io.dropwizard.assets.AssetsBundle;
@@ -73,6 +74,7 @@ public class CwApplication extends Application<CwConfiguration> {
 		jersey.register(new CwAuthMissingAuthRedirectFilter());
 		jersey.register(new CwPages());
 		jersey.register(new CwPagesAuth());
+		jersey.register(new CwPagesEmail());
 
 		jersey.register(MultiPartFeature.class);
 

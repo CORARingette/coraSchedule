@@ -50,6 +50,9 @@ public class CwAuthMissingAuthRedirectFilter implements ContainerRequestFilter {
 		if (requestContext.getUriInfo().getPath().equals("corawebif/login"))
 			return;
 
+		if (requestContext.getUriInfo().getPath().startsWith("corawebif/email"))
+			return;
+
 		if (!cookies.containsKey(SESSION_TOKEN)) {
 			requestContext.abortWith(Response.seeOther(loginUri).build());
 			return;
