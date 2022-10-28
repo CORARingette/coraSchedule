@@ -12,12 +12,27 @@
 		<active>true</active>
 	</team>
 	<team>
-		<name>FUN2</name>
-		<map></map>
-		<url></url>
+		<name>FUN2 Deschenes</name>
+		<map>Ottawa - Deschennes</map>
+		<url>http://ncrrl.on.ca/team/?tid=948&amp;ical=1&amp;n=Ottawa-Deschennes&amp;nocache</url>
 		<division>FUNdamentals</division>
 		<active>true</active>
 	</team>
+	<team>
+		<name>FUN2 Peltzer</name>
+		<map>Ottawa - Peltzer</map>
+		<url>http://ncrrl.on.ca/team/?tid=946&amp;ical=1&amp;n=Ottawa-Peltzer&amp;nocache</url>
+		<division>FUNdamentals</division>
+		<active>true</active>
+	</team>
+	<team>
+		<name>FUN2 Alderwick</name>
+		<map>Ottawa - Alderwick</map>
+		<url>http://ncrrl.on.ca/team/?tid=947&amp;ical=1&amp;n=Ottawa-Alderwick&amp;nocache</url>
+		<division>FUNdamentals</division>
+		<active>true</active>
+	</team>
+
 
 	<team>
 		<name>U10 Sammon</name>

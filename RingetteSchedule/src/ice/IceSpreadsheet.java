@@ -74,12 +74,17 @@ public class IceSpreadsheet {
 						if (Config.getInstance().GetConfig(teamCellValue) != null) {
 							log.finest(cell.toString().trim() + ":" + rowIndex);
 							String team = teamCellValue.trim();
+							//System.out.println("Team is " + team);
 							List<Integer> rowList = teamsLookup.get(team);
 							if (rowList == null) {
 								rowList = new ArrayList<Integer>();
 								teamsLookup.put(team, rowList);
 							}
 							rowList.add(Integer.valueOf(rowIndex));
+						}
+						else {
+							//System.out.println("Ignoring team " + teamCellValue);
+							
 						}
 					}
 

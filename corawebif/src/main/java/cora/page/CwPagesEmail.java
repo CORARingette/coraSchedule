@@ -86,7 +86,10 @@ public class CwPagesEmail {
 		// Send email
 		try {
 			// The HTML body of the email.
-			String bodyHTML = "<html>" + "<head></head>" + "<body>" + "<h2>Message from CORA Website:</h2>"
+			String bodyHTML = "<html>" + "<head></head>" + "<body>" 
+					+ "<h2>Message from CORA Website Contact Page:</h2>"
+					+ "<p> Sender email address: " + sourceemail + "</p>"
+					+ "<br>"
 					+ "<p>" + StringEscapeUtils.escapeHtml4(message) + "</p>" + "</body>" + "</html>";
 
 			CoraSendEmail coraMailer = new CoraSendEmail(Region.CA_CENTRAL_1);

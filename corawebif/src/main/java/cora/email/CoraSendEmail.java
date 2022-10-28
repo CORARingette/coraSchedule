@@ -87,7 +87,7 @@ public class CoraSendEmail {
 		EmailContent emailContent = EmailContent.builder().simple(msg).build();
 
 		SendEmailRequest emailRequest = SendEmailRequest.builder().destination(destination).content(emailContent)
-				.fromEmailAddress(sender).build();
+				.fromEmailAddress("corawebnet@gmail.com").replyToAddresses(sender).build();
 
 		try {
 			System.out.println("Attempting to send an email through Amazon SES " + "using the AWS SDK for Java...");
