@@ -216,7 +216,7 @@ public class IceSpreadsheet {
 						&& date.equals(e.getDate()) && time.equals(e.getTime()) && !team.equals(e.getTeam())).findAny()
 						.orElse(null);
 			} else {
-				log.warning("******************* Loader Error: No normalized location found for " + location);
+				log.warning("******************* Loader Error: No normalized location found for " + location + ".  Add rink name to ArenaMapper.xml");
 			}
 		} catch (Exception e) {
 			dump();
