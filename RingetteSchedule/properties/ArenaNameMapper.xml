@@ -50,6 +50,7 @@
 	<entry key="Bell Sensplex 3">Sensplex 3 - Scotiabank</entry>
 	<entry key="Bell Sensplex 4">Sensplex 4 - Palladium</entry>
 	<entry key="Bell Sensplex-Ma">Sensplex 1 - Mattamy</entry>
+	<entry key="Bell Sensplex - Mattamy Arena">Sensplex 1 - Mattamy</entry>
 	<entry key="Bell Sensplex - Palladium">Sensplex 4 - Palladium</entry>
 	<entry key="Bell Sensplex - Palladium Insurance">Sensplex 4 - Palladium</entry>
 	<entry key="Bell Sensplex - Scotiabank">Sensplex 3 - Scotiabank</entry>
@@ -59,6 +60,7 @@
 	<entry key="Bell Sensplex - Bradley's Insurance">Sensplex 4 - Palladium</entry>
 	<entry key="Bell Sensplex - Bradley's Insurance Arena">Sensplex 4 - Palladium</entry>
 	<entry key="Bell Sensplex - Recharge with Milk Arena">Sensplex 3 - Scotiabank</entry>
+	<entry key="Bell Sensplex - Milk Up Arena">Sensplex 3 - Scotiabank</entry>
 	<entry key="Bell">Bell</entry>
 	<entry key="Bell Centennial">Bell</entry>
 	<entry key="BellSensplex 1 M">Sensplex 1 - Mattamy</entry>
@@ -152,6 +154,7 @@
 	<entry key="GCRA Bob MacQuarrie - Roger Senecal">Orleans Rec - Senecal</entry>
 	<entry key="Bob MacQuarrie">Orleans Rec - Senecal</entry>
 	<entry key="Bob Macquarrie - Ottawa">Orleans Rec - Senecal</entry>
+	<entry key="Gatineau Pierre Lafontaine">Gatineau Pierre Lafontaine</entry> 
 	<entry key="GCRA Bob MacQuarrie - Manley">Orleans</entry>
 	<entry key="Gilles Chabot - Boucherville">Gilles Chabot - Boucherville</entry>
 	<entry key="Gilles Chabot - Boucherville change de nom pour CS Duval auto">Complexe Sportif Duval Auto</entry>
@@ -178,7 +181,7 @@
 	<entry key="Invista Rona">Invista Rona</entry>
 	<entry key="Invista Transit">Invista Centre</entry>
 	<entry key="Isatis St-Hyacinthe">Isatis St-Hyacinthe</entry>
-	<entry key="Isatis - St-Constant">Isatis St-Hyacinthe</entry>
+	<entry key="Isatis - St-Constant">Isatis St-Constant</entry>
 	<entry key="Centre des Glaces Intact A">Intact Centre</entry>
 	<entry key="Jack Charron Arena">Jack Charron Arena</entry>
 	<entry key="Jim Durrell Complex Peplinski Arena">Peplinski</entry>
