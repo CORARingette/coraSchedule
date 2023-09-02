@@ -1,7 +1,6 @@
 package schedule;
 
 
-import ice.ArenaMapper;
 import ice.IceSpreadsheet;
 import lombok.extern.java.Log;
 import processing.teamSnap.TeamSnapEventGenerator;

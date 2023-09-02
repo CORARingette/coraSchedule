@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<teams>
+
+	<!-- Bunnies -->
+
+	<team>
+		<name>FUNdamentals</name>
+		<map></map>
+		<url></url>
+		<division>FUNdamentals</division>
+		<active>true</active>
+	</team>
+
+	<team>
+		<name>Tryouts U10A</name>
+		<map></map>
+		<url></url>
+		<division>U10</division>
+		<active>true</active>
+	</team>
+	<team>
+		<name>Tryouts U10B</name>
+		<map></map>
+		<url></url>
+		<division>U10</division>
+		<active>true</active>
+	</team>
+
+	<team>
+		<name>Tryouts U12A</name>
+		<map></map>
+		<url></url>
+		<division>U12</division>
+		<active>true</active>
+	</team>
+	<team>
+		<name>Tryouts U12B</name>
+		<map></map>
+		<url></url>
+		<division>U12</division>
+		<active>true</active>
+	</team>
+	<team>
+		<name>Tryouts U12C</name>
+		<map></map>
+		<url></url>
+		<division>U12</division>
+		<active>true</active>
+	</team>
+	<team>
+		<name>Tryouts U12D</name>
+		<map></map>
+		<url></url>
+		<division>U12</division>
+		<active>true</active>
+	</team>
+	<team>
+		<name>Tryouts U14C Regional</name>
+		<map></map>
+		<url></url>
+		<division>U14</division>
+		<active>true</active>
+	</team>
+	<team>
+		<name>Tryouts U14B Regional</name>
+		<map></map>
+		<url></url>
+		<division>U14</division>
+		<active>true</active>
+	</team>
+	<team>
+		<name>U14AA Frechette</name>
+		<map></map>
+		<url></url>
+		<division>U14</division>
+		<active>true</active>
+	</team>
+	<team>
+		<name>Tryouts U14AA</name>
+		<map></map>
+		<url></url>
+		<division>U14</division>
+		<active>true</active>
+	</team>
+	<team>
+		<name>Tryouts U14A</name>
+		<map></map>
+		<url></url>
+		<division>U14</division>
+		<active>true</active>
+	</team>
+	<team>
+		<name>Tryouts U16AA</name>
+		<map></map>
+		<url></url>
+		<division>U16</division>
+		<active>true</active>
+	</team>
+	<team>
+		<name>Tryouts U16AA</name>
+		<map></map>
+		<url></url>
+		<division>U16</division>
+		<active>true</active>
+	</team>
+	<team>
+		<name>U16AA Wippel</name>
+		<map></map>
+		<url></url>
+		<division>U16</division>
+		<active>true</active>
+	</team>
+	<team>
+		<name>Tryouts U16 Regional</name>
+		<map></map>
+		<url></url>
+		<division>U16</division>
+		<active>true</active>
+	</team>
+	<team>
+		<name>Tryouts U19AA/A</name>
+		<map></map>
+		<url></url>
+		<division>U19</division>
+		<active>true</active>
+	</team>
+	<team>
+		<name>Tryouts U19 Regional</name>
+		<map></map>
+		<url></url>
+		<division>U19</division>
+		<active>true</active>
+	</team>
+	<team>
+		<name>Goalie U19AA and U16AA Tryout</name>
+		<map></map>
+		<url></url>
+		<division>U19</division>
+		<active>true</active>
+	</team>
+
+</teams>

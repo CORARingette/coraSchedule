@@ -47,11 +47,14 @@ public class TeamSnapEventGenerator extends AbstractTeamEventProcessor {
 	HashMap<Event, DivisionEvent> eventsToUpdate = new HashMap<Event, DivisionEvent>();
 
 	public TeamSnapEventGenerator() {
+		Config configInst = Config.getInstance();
 		teamSnap = new League();
 		allEvents = teamSnap.getAllEvents();
 		for (DivisionEvent divisionEvent : allEvents) {
-			if (Config.getInstance().GetConfig(divisionEvent.getTeam().getName()) != null
-					&& Config.getInstance().GetConfig(divisionEvent.getTeam().getName()).isActive()) {
+			Team team = divisionEvent.getTeam();
+			if ((team != null) 
+					&& configInst.GetConfig(team.getName()) != null
+					&& configInst.GetConfig(team.getName()).isActive()) {
 				existingScheduleEvents.add(new EventKey(divisionEvent));
 			}
 		}
@@ -210,7 +213,7 @@ public class TeamSnapEventGenerator extends AbstractTeamEventProcessor {
 			DivisionEvent de = (DivisionEvent) existingScheduleEvent.getSource();
 			if (Config.getInstance().GetConfig(de.getTeam().getName()) == null
 					|| !IceSpreadsheet.getInstance().isValidTeam(de.getTeam().getName())) {
-				log.severe("Team not found in configuration: " + de.getTeam().getName());
+				log.severe("Team '" + de.getTeam().getName() + "' in TeamSnap was not found either in the TeamConfig XML file or in the spreadshhet");
 				ok = false;
 				break;
 			}

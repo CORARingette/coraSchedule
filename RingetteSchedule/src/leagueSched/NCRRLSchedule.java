@@ -30,7 +30,11 @@ public class NCRRLSchedule extends AbstractLeagueSchedule {
 
 	public NCRRLSchedule(String team) {
 		super(team);
-
+		// Avoids a problem with the system saying that it cannot find a cache implementation
+		System.setProperty("net.fortuna.ical4j.timezone.cache.impl", "net.fortuna.ical4j.util.MapTimeZoneCache");
+		// Avoid a problem with ICS lines being split across lines 
+		System.setProperty("ical4j.unfolding.relaxed", "true");
+		
 		try {
 			String urlList = Config.getInstance().GetConfig(team).getUrl();
 			String[] urls = urlList.split("\\|");
@@ -49,6 +53,7 @@ public class NCRRLSchedule extends AbstractLeagueSchedule {
 				}
 				rd.close();
 
+				//log.warning(sb.toString());
 				StringReader sin = new StringReader(sb.toString());
 
 				CalendarBuilder builder = new CalendarBuilder();

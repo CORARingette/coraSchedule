@@ -22,7 +22,7 @@ public class LeagueScheduleFactory {
 
 			if (url != null && (url.contains("ncrrl"))) {
 				schedule = new NCRRLSchedule(team);
-			} else if (url != null && url.contains("http://membres.ringuette-quebec.qc.ca")) {
+			} else if (url != null && url.contains("https://membres.ringuette-quebec.qc.ca")) {
 				schedule = new LERQSchedule(team);
 			} else if (url != null && url.contains("http://www.nationalringetteleague.ca")) {
 				schedule = new NRLSchedule(team);
