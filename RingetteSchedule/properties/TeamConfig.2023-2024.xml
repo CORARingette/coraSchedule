@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<teams>
+
+	<team>
+		<name>Ottawa Ice - U14A</name>
+		<map>Ottawa - Mackey</map>
+		<url></url>
+		<division>U14</division>
+		<active>true</active>
+	</team>
+	<team>
+		<name>Ottawa Ice - U14AA</name>
+		<map>Ottawa</map>
+		<url></url>
+		<division>U14</division>
+		<active>true</active>
+	</team>
+	<team>
+		<name>Ottawa Ice - U16A</name>
+		<map>Ottawa</map>
+		<url></url>
+		<division>U16</division>
+		<active>true</active>
+	</team>
+	<team>
+		<name>Ottawa Ice - U16AA</name>
+		<map>Ottawa</map>
+		<url></url>
+		<division>U16</division>
+		<active>true</active>
+	</team>
+	<team>
+		<name>Ottawa Ice - U19AA</name>
+		<map>Ottawa</map>
+		<url></url>
+		<division>U19</division>
+		<active>true</active>
+	</team>
+</teams>

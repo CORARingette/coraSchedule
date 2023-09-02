@@ -37,7 +37,7 @@
 	<team>
 		<name>U10 Sammon</name>
 		<map>Ottawa - Sammon</map>
-		<url>https://ncrrl.on.ca/schedules/?div=109&amp;ical=0&amp;n=U16_B&amp;nocache</url>
+		<url>https://ncrrl.on.ca/schedules/?div=108&amp;ical=0&amp;n=U16_B&amp;nocache</url>
 		<division>FUN3 (U10)</division>
 		<active>true</active>
 	</team>
@@ -87,7 +87,7 @@
 	<team>
 		<name>U12B Bohemier</name>
 		<map>Ottawa - Bohémier</map>
-		<url>https://ncrrl.on.ca/schedules/?div=154&amp;ical=0&amp;n=U16_B&amp;nocache</url>
+		<url>https://ncrrl.on.ca/schedules/?div=150&amp;ical=0&amp;n=U16_B&amp;nocache</url>
 		<division>U12</division>
 		<active>true</active>
 	</team>
@@ -130,7 +130,7 @@
 	<team>
 		<name>U14B Derry</name>
 		<map>Ottawa - Derry</map>
-		<url>https://ncrrl.on.ca/schedules/?div=118&amp;ical=0&amp;n=U14_B&amp;nocache</url>
+		<url>https://ncrrl.on.ca/schedules/?div=120&amp;ical=0&amp;n=U14_B&amp;nocache</url>  NEEED WORKD
 		<division>U14</division>
 		<active>true</active>
 	</team>
@@ -158,14 +158,14 @@
 	<team>
 		<name>U16B Raponi</name>
 		<map>Ottawa - Raponi</map>
-		<url>https://ncrrl.on.ca/schedules/?div=126&amp;ical=0&amp;n=U16_B&amp;nocache</url>
+		<url>https://ncrrl.on.ca/schedules/?div=127&amp;ical=0&amp;n=U16_B&amp;nocache</url>
 		<division>U16</division>
 		<active>true</active>
 	</team>
 	<team>
 		<name>U16B Merizzi</name>
 		<map>Ottawa - Merizzi</map>
-		<url>https://ncrrl.on.ca/schedules/?div=126&amp;ical=0&amp;n=U16_B&amp;nocache</url>
+		<url>https://ncrrl.on.ca/schedules/?div=127&amp;ical=0&amp;n=U16_B&amp;nocache</url>
 		<division>U16</division>
 		<active>true</active>
 	</team>
