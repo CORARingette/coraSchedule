@@ -3,6 +3,80 @@
 <teams>
 
 	<team>
+		<name>FUN1</name>
+		<map></map>
+		<url></url>
+		<division>FUNdamentals</division>
+		<active>true</active>
+	</team>
+	<team>
+		<name>Ottawa Ice - FUN3 - Korah</name>
+		<map>Ottawa Ice - FUN3 - Korah</map>
+		<url></url>
+		<division>FUN3</division>
+		<active>true</active>
+	</team>
+	<team>
+		<name>U10 Ottawa Ice - FUN3 - Murphy</name>
+		<map>U10 Ottawa Ice - FUN3 - Murphy</map>
+		<url></url>
+		<division>FUN3</division>
+		<active>true</active>
+	</team>
+	<team>
+		<name>Ottawa Ice - FUN3 - Kong</name>
+		<map>Ottawa Ice - FUN3 - Kong</map>
+		<url></url>
+		<division>FUN3</division>
+		<active>true</active>
+	</team>
+	<team>
+		<name>Ottawa Ice - FUN3 - Doherty</name>
+		<map>Ottawa Ice - FUN3 - Doherty</map>
+		<url></url>
+		<division>FUN3</division>
+		<active>true</active>
+	</team>
+
+
+	<team>
+		<name>Ottawa Ice - U12A - Gore</name>
+		<map>Ottawa Ice - U12A - Gore</map>
+		<url></url>
+		<division>U12</division>
+		<active>true</active>
+	</team>
+
+
+	<team>
+		<name>Ottawa Ice - U14C - Peltzer</name>
+		<map>Ottawa Ice - U14C - Peltzer</map>
+		<url></url>
+		<division>U14</division>
+		<active>true</active>
+	</team>
+	<team>
+		<name>Ottawa Ice - U14C - Nelson</name>
+		<map>Ottawa Ice - U14C - Nelson</map>
+		<url></url>
+		<division>U14</division>
+		<active>true</active>
+	</team>
+	<team>
+		<name>Ottawa Ice - U14B - Isaac-Rowan</name>
+		<map>Ottawa Ice - U14B - Isaac-Rowan</map>
+		<url></url>
+		<division>U14</division>
+		<active>true</active>
+	</team>
+	<team>
+		<name>Ottawa Ice - U14B - Dubois</name>
+		<map>Ottawa Ice - U14B - Dubois</map>
+		<url></url>
+		<division>U14</division>
+		<active>true</active>
+	</team>
+	<team>
 		<name>Ottawa Ice - U14A</name>
 		<map>Ottawa - Mackey</map>
 		<url></url>
@@ -14,6 +88,22 @@
 		<map>Ottawa</map>
 		<url></url>
 		<division>U14</division>
+		<active>true</active>
+	</team>
+	
+	
+	<team>
+		<name>Ottawa Ice - U16B - Myers</name>
+		<map>Ottawa Ice - U16B - Myers</map>
+		<url></url>
+		<division>U16</division>
+		<active>true</active>
+	</team>
+	<team>
+		<name>Ottawa Ice - U16B - Derry</name>
+		<map>Ottawa Ice - U16B - Derry</map>
+		<url></url>
+		<division>U16</division>
 		<active>true</active>
 	</team>
 	<team>
@@ -28,6 +118,23 @@
 		<map>Ottawa</map>
 		<url></url>
 		<division>U16</division>
+		<active>true</active>
+	</team>
+	
+	
+	
+	<team>
+		<name>Ottawa Ice - U19B - Hearn</name>
+		<map>Ottawa Ice - U19B - Hearn</map>
+		<url></url>
+		<division>U19</division>
+		<active>true</active>
+	</team>
+	<team>
+		<name>Ottawa Ice - U19B - Mackey</name>
+		<map>Ottawa Ice - U19B - Mackey</map>
+		<url></url>
+		<division>U19</division>
 		<active>true</active>
 	</team>
 	<team>
