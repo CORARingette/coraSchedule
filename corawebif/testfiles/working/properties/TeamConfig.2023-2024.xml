@@ -17,8 +17,8 @@
 		<active>true</active>
 	</team>
 	<team>
-		<name>U10 Ottawa Ice - FUN3 - Murphy</name>
-		<map>U10 Ottawa Ice - FUN3 - Murphy</map>
+		<name>Ottawa Ice - FUN3 - Murphy</name>
+		<map>Ottawa Ice - FUN3 - Murphy</map>
 		<url></url>
 		<division>FUN3</division>
 		<active>true</active>
@@ -42,6 +42,20 @@
 	<team>
 		<name>Ottawa Ice - U12A - Gore</name>
 		<map>Ottawa Ice - U12A - Gore</map>
+		<url></url>
+		<division>U12</division>
+		<active>true</active>
+	</team>
+	<team>
+		<name>Ottawa Ice - U12B - Alderwick</name>
+		<map>Ottawa Ice - U12B - Alderwick</map>
+		<url></url>
+		<division>U12</division>
+		<active>true</active>
+	</team>
+	<team>
+		<name>Ottawa Ice - U12A - Bohemier</name>
+		<map>Ottawa Ice - U12A - Bohemier</map>
 		<url></url>
 		<division>U12</division>
 		<active>true</active>
