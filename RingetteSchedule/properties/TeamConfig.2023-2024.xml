@@ -47,6 +47,13 @@
 		<active>true</active>
 	</team>
 	<team>
+		<name>Ottawa Ice - U12A - Bohemier</name>
+		<map>Ottawa Ice - U12A - Bohemier</map>
+		<url></url>
+		<division>U12</division>
+		<active>true</active>
+	</team>
+	<team>
 		<name>Ottawa Ice - U12B - Alderwick</name>
 		<map>Ottawa Ice - U12B - Alderwick</map>
 		<url></url>
@@ -54,13 +61,26 @@
 		<active>true</active>
 	</team>
 	<team>
-		<name>Ottawa Ice - U12A - Bohemier</name>
-		<map>Ottawa Ice - U12A - Bohemier</map>
+		<name>Ottawa Ice - U12B - Dale</name>
+		<map>Ottawa Ice - U12B - Dale</map>
 		<url></url>
 		<division>U12</division>
 		<active>true</active>
 	</team>
-
+	<team>
+		<name>Ottawa Ice - U12C - Winer</name>
+		<map>Ottawa Ice - U12C - Winer</map>
+		<url></url>
+		<division>U12</division>
+		<active>true</active>
+	</team>
+	<team>
+		<name>Ottawa Ice - U12C - Killough</name>
+		<map>Ottawa Ice - U12C - Killough</map>
+		<url></url>
+		<division>U12</division>
+		<active>true</active>
+	</team>
 
 	<team>
 		<name>Ottawa Ice - U14C - Peltzer</name>
@@ -146,8 +166,8 @@
 	</team>
 	<team>
 		<name>Ottawa Ice - U19B - Mackey</name>
-		<map>Ottawa Ice - U19B - Mackey</map>
-		<url></url>
+		<map>U19B Ottawa Ice - U19B - Mackey</map>
+		<url>https://ncrrl.com/teamical/203293?nocache</url>
 		<division>U19</division>
 		<active>true</active>
 	</team>
