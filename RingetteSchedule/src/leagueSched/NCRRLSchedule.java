@@ -53,7 +53,8 @@ public class NCRRLSchedule extends AbstractLeagueSchedule {
 				}
 				rd.close();
 
-				//log.warning(sb.toString());
+				// Uncomment to view text from league website
+				// log.warning(sb.toString());
 				StringReader sin = new StringReader(sb.toString());
 
 				CalendarBuilder builder = new CalendarBuilder();
@@ -67,13 +68,14 @@ public class NCRRLSchedule extends AbstractLeagueSchedule {
 						DtStart start = vEvent.getStartDate();
 						Date startDate = start.getDate();
 						Summary summary = vEvent.getSummary();
-						if (summary.getValue().contains("[Game - NCRRL]")) {
-							Location location = vEvent.getLocation();
-							String gameNumberStr = vEvent.getUid().getValue().replaceFirst("EID", "");
-							String[] parts = gameNumberStr.split("-");
-							String gameNumber = (parts.length > 1) ? parts[1]:"0";
+						if (summary.getValue().contains("Ottawa")) {
+							// Not working anymore after NCRRL moved to RAMP
+							String gameNumber = "Game";
+							//String[] parts = gameNumberStr.split("-");
+							//String gameNumber = (parts.length > 1) ? parts[1]:"0";
 							String teamName = Config.getInstance().GetConfig(team).getMap();
 							String homeStr = parseHomeFromSummary(summary.getValue());
+							Location location = new Location(parseLocationFromSummary(summary.getValue()));
 							String visitorStr = parseVisitorFromSummary(summary.getValue());
 							if (homeStr.equals(teamName) || visitorStr.equals(teamName)) {
 								ScheduleRecord event = new ScheduleRecord();
@@ -96,17 +98,18 @@ public class NCRRLSchedule extends AbstractLeagueSchedule {
 	}
 
 	private String parseVisitorFromSummary(String value) {
-		String[] values = value.split("]");
-		String game = values[1].trim();
-		String[] teams = game.split("vs");
-		return teams[0].trim();
+		String[] values = value.split("@");
+		return values[0].trim();
 	}
 
 	private String parseHomeFromSummary(String value) {
-		String[] values = value.split("]");
-		String game = values[1].trim();
-		String[] teams = game.split("vs");
-		return teams[1].trim();
+		String[] values = value.split("@");
+		return values[1].trim();
+	}
+
+	private String parseLocationFromSummary(String value) {
+		String[] values = value.split("@");
+		return values[2].trim();
 	}
 
 	public static void main(String[] args) throws ParserException {
