@@ -119,8 +119,8 @@
 	</team>
 	<team>
 		<name>Ottawa Ice - U14AA</name>
-		<map>Ottawa</map>
-		<url></url>
+		<map>Ottawa Ice - U14AA - Stachon</map>
+		<url>https://ncrrl.com/teamical/203241?nocache</url>
 		<division>U14</division>
 		<active>true</active>
 	</team>
@@ -149,8 +149,8 @@
 	</team>
 	<team>
 		<name>Ottawa Ice - U16AA</name>
-		<map>Ottawa</map>
-		<url></url>
+		<map>CORA</map>
+		<url>https://membres.ringuette-quebec.qc.ca/cedules_liste_web.asp?ligues_id=86&amp;NbrAfficher=1000</url>
 		<division>U16</division>
 		<active>true</active>
 	</team>
@@ -173,15 +173,8 @@
 	</team>
 	<team>
 		<name>Ottawa Ice - U19AA</name>
-		<map>Ottawa</map>
-		<url></url>
-		<division>U19</division>
-		<active>true</active>
-	</team>
-	<team>
-		<name>Ottawa Ice</name>
-		<map>Ottawa</map>
-		<url></url>
+		<map>CORA</map>
+		<url>https://membres.ringuette-quebec.qc.ca/cedules_liste_web.asp?ligues_id=87&amp;NbrAfficher=1000</url>
 		<division>U19</division>
 		<active>true</active>
 	</team>

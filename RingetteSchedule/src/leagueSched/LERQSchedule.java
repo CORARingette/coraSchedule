@@ -51,7 +51,7 @@ public class LERQSchedule extends AbstractLeagueSchedule {
 					if (started) {
 						String gameNumber = cells.elementAt(0).toPlainTextString().trim();
 						String dateStr = cells.elementAt(1).toPlainTextString().trim();
-						String timeStr = cells.elementAt(2).toPlainTextString().trim();
+						String timeStr = cells.elementAt(2).toPlainTextString().trim().replace('h', ':');
 						String arena = cells.elementAt(3).toPlainTextString().trim();
 						String home = cells.elementAt(4).toPlainTextString().trim();
 						String away = cells.elementAt(5).toPlainTextString().trim();
