@@ -162,15 +162,20 @@ public abstract class AbstractTeamEventProcessor {
 
 	private void prepareForProcessing(Event iceEvent) {
 
-		if (iceEvent.getLocation() == null) {
+		String location = iceEvent.getLocation();
+		// Once there was a location list "Richmond\nGame moved to 6:00" so we get rid of the \n and everything after that.
+		if (location.contains("\n")) {
+			location = location.split("\n")[0];
+		}
+		if (location == null) {
 			log.severe("Location is null: " + iceEvent.getTeam() + ":" + iceEvent.getDate() + ":" + iceEvent.getTime());
 		}
 		// look up normalized arena name
-		String resolvedLoction = ArenaMapper.getInstance().getProperty(iceEvent.getLocation());
+		String resolvedLoction = ArenaMapper.getInstance().getProperty(location);
 		if (resolvedLoction != null) {
 			iceEvent.setLocation(resolvedLoction);
 		} else {
-			ArenaMapper.getInstance().addError(iceEvent.getLocation());
+			ArenaMapper.getInstance().addError(location);
 		}
 		if (iceEvent.getLocation() == null || iceEvent.getLocation().isEmpty()
 				|| iceEvent.getLocation().equals("Unknown")) {
