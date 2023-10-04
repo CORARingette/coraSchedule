@@ -36,7 +36,9 @@
 	<entry key="Barrett W">Barrett West</entry>
 	<entry key="Barrett W - Gloucester">Barrett West</entry>
 	<entry key="Barrett West">Barrett West</entry>
+	<entry key="Fred Barrett Arena - West">Barrett West</entry>
 	<entry key="Barrett">Barrett East</entry>
+	<entry key="Fred Barrett Arena - EAST">Barrett East</entry>
 	<entry key="Barrett - Gloucester">Barrett</entry>
 	<entry key="Beaconsfield - LSL">Beaconsfield</entry>
 	<entry key="Beaudry - Gatineau">Beaudry</entry>
@@ -81,6 +83,7 @@
 	<entry key="Boisbriand">Boisbriand</entry>
 	<entry key="Bouctouche Forum">Bouctouche Forum</entry>
 	<entry key="Bourget, Rigaud">Bourget Arena</entry>
+	<entry key="Branchaud Briere Complex - Glace Branchaud">Branchaud-Briere</entry>
 	<entry key="Branchaud Briere - 499 Boulevard Labrosse Gatineau, QC">Branchaud-Briere</entry>
 	<entry key="Branchaud-Briere">Branchaud-Briere</entry>
 	<entry key="Gatineau Complexe Branchaud-Brière 2">Branchaud-Briere</entry>
@@ -95,6 +98,7 @@
 	<entry key="Buckingham Arena">Buckingham</entry>
 	<entry key="CARP - West Ottawa">Carp</entry>
 	<entry key="Carp Arena (W. Erskine Johnston)">Carp</entry>
+	<entry key="Canadian International Hockey Academy - Pad 1">CIHA - Rockland</entry>
 	<entry key="CIH - Rockland">CIHA - Rockland</entry>
 	<entry key="CIHA Rockland 2">CIHA - Rockland</entry>
 	<entry key="Rockland CIH Arena 2">CIHA - Rockland</entry>
@@ -109,11 +113,13 @@
 	<entry key="Carleton University - Ottawa">Carleton University</entry>
 	<entry key="Carleton University Arena A">Carleton University</entry>
 	<entry key="Carleton">Carleton University</entry>
+	<entry key="CARDELREC Recreation Complex B">Goulbourn Rec Centre</entry>
 	<entry key="Cardelrec  A- West Ottawa">Goulbourn Rec Centre</entry>
 	<entry key="CardelRec Complex - Rink A">Goulbourn Rec Centre</entry>
 	<entry key="CardelRec Complex - Rink B">Goulbourn Rec Centre</entry>
 	<entry key="Cardelrec - West Ottawa">Goulbourn Rec Centre</entry>
 	<entry key="CARDELREC Recreation Complex - Rink A">Goulbourn Rec Centre</entry>
+	<entry key="CARDELREC Recreation Complex A">Goulbourn Rec Centre</entry>
 	<entry key="Carp">Carp</entry>
 	<entry key="Cataraqui">Cataraqui</entry>
 	<entry key="Kingston Centre 70 Arena">Kingston Centre 70 Arena</entry>
@@ -123,6 +129,7 @@
 	<entry key="Cavanagh Sensplex">Cavanagh Sensplex</entry>
 	<entry key="Centre Caztel">Centre Caztel</entry>
 	<entry key="Centre Caztel - Sainte-Marie">Centre Caztel</entry>
+	<entry key="Slush Puppie Complex - Dilawri Ice">Centre Slush Puppie</entry>
 	<entry key="Centre Slush Puppie">Centre Slush Puppie</entry>
 	<entry key="Centre Slush Puppie - Gatineau">Centre Slush Puppie</entry>
 	<entry key="Cholette">Cholette</entry>
@@ -159,6 +166,7 @@
 	<entry key="GCRA Barrett East (Fred G Barrett Arena)">Barrett East</entry>
 	<entry key="GCRA Barrett West (Fred G Barrett Arena)">Barrett West</entry>
 	<entry key="GCRA Bob MacQuarrie - Roger Senecal">Orleans Rec - Senecal</entry>
+	<entry key="Bob MacQuarrie Recreation Complex - Roger Senecal Arena">Orleans Rec - Senecal</entry>
 	<entry key="Bob MacQuarrie">Orleans Rec - Senecal</entry>
 	<entry key="Bob Macquarrie - Ottawa">Orleans Rec - Senecal</entry>
 	<entry key="Gatineau Pierre Lafontaine">Gatineau Pierre Lafontaine</entry> 
@@ -195,12 +203,14 @@
 	<entry key="Jim Durrell Complex Peplinski Arena">Peplinski</entry>
 	<entry key="Jim Durell Peplinski">Peplinski</entry>
 	<entry key="Jim Durrell Complex Walkley Arena">Walkley</entry>
+	<entry key="Jim Durrell Complex - Walkley">Walkley</entry>
 	<entry key="Jacques-Cartier - Longueuil">Aréna Jacques-Cartier</entry>
 	<entry key="Kanata Rec">Kanata Rec Centre</entry>
 	<entry key="Kanata Rec Complex  - Ottawa">Kanata Rec Centre</entry>
 	<entry key="Kanata Rec B">Kanata Rec Centre</entry>
 	<entry key="Kanata RC B">Kanata Rec Centre</entry>
 	<entry key="Kanata RCB">Kanata Rec Centre</entry>
+	<entry key="Tony Graham Recreation Complex - Rink B">Kanata Rec Centre</entry>
 	<entry key="Kanata Recreation Complex Arena A">Kanata Rec Centre</entry>
 	<entry key="Kanata Recreation Complex Arena B">Kanata Rec Centre</entry>
 	<entry key="Kanawaki - LSL">Kahnawake Sports Complex</entry>
@@ -230,12 +240,15 @@
 	<entry key="McDonald Coll. - LSL">Aréna MacDonald</entry>
 	<entry key="Memramcook Arena">Arena Eugene Leblanc</entry>
 	<entry key="Merivale">Merivale</entry>
+	<entry key="Merivale Centennial Arena">Merivale</entry>
 	<entry key="Howard Darwin Centennial Arena - Merivale Arena">Merivale</entry>
 	<entry key="Howard Darwin Centennial - Merivale Arena">Merivale</entry>
 	<entry key="Howard Darwin">Merivale</entry>
+	<entry key="Metcalfe Arena">Metcalfe</entry>
 	<entry key="Metcalfe">Metcalfe</entry>
 	<entry key="Stuart Holmes - Metcalfe">Metcalfe</entry>
 	<entry key="Michel Normandin - Montreal">Michel Normandin - Montreal</entry>
+	<entry key="Minto Recreation Complex - Barrhaven - North">Minto Recreation Complex (Barrhaven)</entry>
 	<entry key="Minto Barrhaven">Minto Recreation Complex (Barrhaven)</entry>
 	<entry key="Minto Rec N">Minto Recreation Complex (Barrhaven)</entry>
 	<entry key="Minto Recreation Complex - Barrhaven - North Rink">Minto Recreation Complex (Barrhaven)</entry>
@@ -250,6 +263,7 @@
 	<entry key="Nepean Sportsplex Rink 2">Nepean Sportsplex Rink 2</entry>
 	<entry key="Nepean Sportsplex Rink 3">Nepean Sportsplex Rink 3</entry>
 	<entry key="Nick Smith A">Arnprior A</entry>
+	<entry key="Nick Smith Centre - Pad B">Arnprior A</entry>
 	<entry key="Nick Smith Centre Arena A">Arnprior A</entry>
 	<entry key="Nick Smith B">Arnprior B</entry>
 	<entry key="Nick Smith Centre Arena B">Arnprior B</entry>
@@ -261,9 +275,11 @@
 	<entry key="Orleans">Orleans</entry>
 	<entry key="Orleans-Senecal">Orleans Rec - Senecal</entry>
 	<entry key="Osgoode">Osgoode</entry>
+	<entry key="Osgoode Community Centre">Osgoode</entry>
 	<entry key="Osgoode Community Centre - Stuart Holmes Arena">Osgoode</entry>
 	<entry key="Ottawa Brewer Arena">Brewer</entry>
 	<entry key="Ottawa Bernard-Grandmaitre">Grandmaitre</entry>
+	<entry key="Jim Durrell Complex - Peplinski">Peplinski</entry>
 	<entry key="Pavillon">Peplinski</entry>
 	<entry key="Patrick-Poulin-Québec">Patrick-Poulin</entry>
 	<entry key="Peplinski - Ottawa">Peplinski</entry>
@@ -300,6 +316,7 @@
 	<entry key="Renfrew">Renfrew</entry>
 	<entry key="Renfrew - UOV">Renfrew</entry>
 	<entry key="Ma-te-way Park">Renfrew</entry>
+	<entry key="Ma-Te-Way Activity Center">Renfrew</entry>
 	<entry key="Renfrew Arena Ma-Te-Way Center">Renfrew</entry>
 	<entry key="Repentigny - BLL">Repentigny</entry>
 	<entry key="Richcraft - Gloucester">Richcraft Sensplex</entry>
@@ -329,6 +346,7 @@
 	<entry key="Rockland - CIH">CIHA - Rockland</entry>
 	<entry key="Rockland-CIH">CIHA - Rockland</entry>
 	<entry key="Rockland CIH Arena 1">CIHA - Rockland</entry>
+	<entry key="Canadian International Hockey Academy - Pad 2">CIHA - Rockland</entry>
 	<entry key="Roger Senecal Arena - 1490 Youville Drive Orleans, ON">Orleans Rec - Senecal</entry>
 	<entry key="Roger Senecal">Orleans Rec - Senecal</entry>
 	<entry key="Sandy Hill - Ottawa">Sandy Hill</entry>
@@ -366,6 +384,7 @@
 	<entry key="Sportsplex #1">Nepean Sportsplex Rink 1</entry>
 	<entry key="St Laurent">St Laurent</entry>
 	<entry key="St laurent">St Laurent</entry>
+	<entry key="St. Laurent Arena">St Laurent</entry>
 	<entry key="St. Laurent Complex">St Laurent</entry>
 	<entry key="St-Agapit Centre Sportif G.H. Vermette">Centre Sportif G.H. Vermette</entry>
 	<entry key="Saint-Anselme">Saint-Anselme</entry>
@@ -405,7 +424,7 @@
 	<entry key="Tom Brown Arena - 141 Bayview Rd. Ottawa, ON">Tom Brown</entry>
 	<entry key="Tom Brown">Tom Brown</entry>
 	<entry key="Tom Brown Arena">Tom Brown</entry>
-	<entry key="Tom Graham Arena - 1300 Elgin Mills Rd. Richmond Hill, ON">Tom Graham Arena</entry>
+	<entry key="Tom Graham Arena - 1300 Elgin Mills Rd. Richmond Hill, ON">Tom Graham Arena</entry>	
 	<entry key="uOttawa Minto Sports Complex - Arena 2">University of Ottawa</entry>
 	<entry key="Val Bélair">Val Belair</entry>
 	<entry key="Val Bélair - Québec">Val Belair</entry>
