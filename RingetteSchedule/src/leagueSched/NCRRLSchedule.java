@@ -69,7 +69,11 @@ public class NCRRLSchedule extends AbstractLeagueSchedule {
 						Date startDate = start.getDate();
 						Summary summary = vEvent.getSummary();
 						if (summary.getValue().contains("Ottawa")) {
-							// Not working anymore after NCRRL moved to RAMP
+							// If the game is marked as cancelled in RAMP we need to ignore it
+							if (summary.getValue().contains("cancelled"))
+								continue;
+							
+							// Parsing of game number not working anymore after NCRRL moved to RAMP
 							String gameNumber = "Game";
 							//String[] parts = gameNumberStr.split("-");
 							//String gameNumber = (parts.length > 1) ? parts[1]:"0";

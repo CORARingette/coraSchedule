@@ -10,6 +10,20 @@
 		<active>true</active>
 	</team>
 	<team>
+		<name>Ottawa Ice - FUN2 - Gil-Meloche</name>
+		<map>Ottawa Ice - FUN2 - Gil-Meloche</map>
+		<url>https://ncrrl.com/teamical/215199?nocache</url>
+		<division>FUNdamentals</division>
+		<active>true</active>
+	</team>
+	<team>
+		<name>Ottawa Ice - FUN2 - Deschenes-Doherty</name>
+		<map>Ottawa Ice - FUN2 - Doherty</map>
+		<url>https://ncrrl.com/teamical/215198?nocache</url>
+		<division>FUNdamentals</division>
+		<active>true</active>
+	</team>
+	<team>
 		<name>Ottawa Ice - FUN3 - Korah</name>
 		<map>Ottawa Ice - FUN3 - Korah</map>
 		<url>https://ncrrl.com/teamical/203199?nocache</url>
@@ -111,14 +125,14 @@
 		<active>true</active>
 	</team>
 	<team>
-		<name>Ottawa Ice - U14A</name>
+		<name>Ottawa Ice - U14A - Falconer</name>
 		<map>Ottawa Ice - U14A - Falconer</map>
 		<url>https://ncrrl.com/teamical/203237?nocache</url>
 		<division>U14</division>
 		<active>true</active>
 	</team>
 	<team>
-		<name>Ottawa Ice - U14AA</name>
+		<name>Ottawa Ice - U14AA - Stachon</name>
 		<map>Ottawa Ice - U14AA - Stachon</map>
 		<url>https://ncrrl.com/teamical/203241?nocache</url>
 		<division>U14</division>
@@ -141,7 +155,7 @@
 		<active>true</active>
 	</team>
 	<team>
-		<name>Ottawa Ice - U16A</name>
+		<name>Ottawa Ice - U16A - McWaters</name>
 		<map>Ottawa Ice - U16A - McWaters</map>
 		<url>https://ncrrl.com/teamical/203266?nocache</url>
 		<division>U16</division>
