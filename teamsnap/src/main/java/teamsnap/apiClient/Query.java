@@ -25,11 +25,21 @@ public class Query {
 			jsonResponse = Unirest.get(query).queryString(parmName, parmValue)
 					.header("Authorization", "Bearer " + Authorization.instance().getToken()).header("accept-encoding", "gzip").asJson();
 			log.fine(query + "=>" + jsonResponse.getBody().toString());
+			if (jsonResponse.getStatus() != 400) {
+				throw new Exception("Invalid HTTP response code from TeamSnap: " + jsonResponse.getStatus());
+			}
 
 			ObjectMapper mapper = new ObjectMapper();
 			result = mapper.readValue(jsonResponse.getBody().toString(), Response.class);
 		} catch (Exception e) {
-			log.severe(jsonResponse != null? jsonResponse.getBody().toString(): "JSON Response NULL");
+
+			String s;
+			if (jsonResponse != null) {
+				s = jsonResponse.getBody().toString();
+			}
+			else
+				s = "JSON Response NULL";
+			log.severe(s);
 			e.printStackTrace();
 		}
 		return result;
