@@ -7,13 +7,14 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 
-import ice.IceSpreadsheet;
+import ice.IceData;
+import ice.IceDataGlobal;
 import model.Event;
 import model.ShareValue;
 
 public class Analyser {
 
-	IceSpreadsheet sheet = IceSpreadsheet.getInstance();
+	IceData sheet = IceDataGlobal.getInstance();
 
 	HashMap<String, List<Event>> iceByTeam = new HashMap<String, List<Event>>();
 	HashMap<String, List<Event>> iceByLocation = new HashMap<String, List<Event>>();

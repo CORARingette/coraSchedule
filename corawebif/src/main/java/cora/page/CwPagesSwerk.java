@@ -35,16 +35,18 @@ import org.slf4j.LoggerFactory;
 
 import cora.main.CwRunner;
 
-@Path("/corawebif")
+@Path("/corawebifswerk")
 @PermitAll
-public class CwPages {
+public class CwPagesSwerk {
 
-	private static Logger logger_ms = LoggerFactory.getLogger(CwPages.class.getName());
+	private static String FILENAME = "swerkdata.csv";
+	private static String FILENAME_WITH_SUBST = "swerkdata-%s.csv";
+	private static Logger logger_ms = LoggerFactory.getLogger(CwPagesSwerk.class.getName());
 
 	@GET
 	@Path("/")
 	public CwPageView getMain(@QueryParam(CwPageView.MESSAGE_PARAM) String message) {
-		return new CwPageView("main.ftl").setMessage(message);
+		return new CwPageView("mainswerk.ftl").setMessage(message);
 	}
 
 	@GET
@@ -64,15 +66,15 @@ public class CwPages {
 
 		try {
 			String filePath = System.getenv("CW_FILE_PATH");
-			java.nio.file.Path outputPath = FileSystems.getDefault().getPath(filePath, "working", "Master.xlsx");
+			java.nio.file.Path outputPath = FileSystems.getDefault().getPath(filePath, "working", FILENAME);
 			Files.deleteIfExists(outputPath);
 			Files.copy(uploadedInputStream, outputPath);
 			String date_tag = Instant.now().toString().replace( "-" , "" ).replace( ":" , "" ).replaceAll("\\..*", "");
-			java.nio.file.Path outputPath2 = FileSystems.getDefault().getPath(filePath, "uploads", String.format("Master-%s.xlsx", date_tag));
+			java.nio.file.Path outputPath2 = FileSystems.getDefault().getPath(filePath, "uploads", String.format(FILENAME_WITH_SUBST, date_tag));
 			Files.copy(uploadedInputStream, outputPath2);
 		} catch (IOException e) {
 			logger_ms.error("Error in file upload", e);
-			URI uri = UriBuilder.fromUri("/corawebif").queryParam(CwPageView.MESSAGE_PARAM, "Error uploading file").build();
+			URI uri = UriBuilder.fromUri("/corawebifswerk").queryParam(CwPageView.MESSAGE_PARAM, "Error uploading file").build();
 			return Response.seeOther(uri).build();
 		}
 
@@ -83,17 +85,17 @@ public class CwPages {
 				runner.terminateRunningProcess();
 			}
 
-			runner.startRun(true);
+			runner.startRun(false); // Run in ScheduleWerks mode
 
 		} catch (Exception e) {
 			logger_ms.error("Error in schedule launch", e);
-			URI uri = UriBuilder.fromUri("/corawebif").queryParam(CwPageView.MESSAGE_PARAM, "Error launching scheduling tool")
+			URI uri = UriBuilder.fromUri("/corawebifswerk").queryParam(CwPageView.MESSAGE_PARAM, "Error launching scheduling tool")
 					.build();
 			return Response.seeOther(uri).build();
 		}
 
 		// Redirect to the "waiting for completion" page
-		URI uri = UriBuilder.fromUri("/corawebif/uploadwait").build();
+		URI uri = UriBuilder.fromUri("/corawebifswerk/uploadwait").build();
 		return Response.seeOther(uri).build();
 	}
 
@@ -138,7 +140,7 @@ public class CwPages {
 			return new CwPageArenaList("view_arena_list.ftl").setArenaInfo(lst);
 		} catch (IOException e) {
 			logger_ms.error("Error in loading ArenaMapper.xml from " + path + " file", e);
-			URI uri = UriBuilder.fromUri("/corawebif").queryParam(CwPageView.MESSAGE_PARAM, "Error launching scheduling tool")
+			URI uri = UriBuilder.fromUri("/corawebifswerk").queryParam(CwPageView.MESSAGE_PARAM, "Error launching scheduling tool")
 					.build();
 			return Response.seeOther(uri).build();
 		}
@@ -157,17 +159,17 @@ public class CwPages {
 				runner.terminateRunningProcess();
 			}
 
-			runner.startRun(true); // Run in classic mode
+			runner.startRun(false);
 
 		} catch (Exception e) {
 			logger_ms.error("Error in schedule launch", e);
-			URI uri = UriBuilder.fromUri("/corawebif").queryParam(CwPageView.MESSAGE_PARAM, "Error launching scheduling tool")
+			URI uri = UriBuilder.fromUri("/corawebifswerk").queryParam(CwPageView.MESSAGE_PARAM, "Error launching scheduling tool")
 					.build();
 			return Response.seeOther(uri).build();
 		}
 
 		// Redirect to the "waiting for completion" page
-		URI uri = UriBuilder.fromUri("/corawebif/uploadwait").build();
+		URI uri = UriBuilder.fromUri("/corawebifswerk/uploadwait").build();
 		return Response.seeOther(uri).build();
 	}
 
@@ -184,7 +186,7 @@ public class CwPages {
                 try
                 {
         			String filePath = System.getenv("CW_FILE_PATH");
-        			java.nio.file.Path path = FileSystems.getDefault().getPath(filePath, "working", "Master.xlsx");
+        			java.nio.file.Path path = FileSystems.getDefault().getPath(filePath, "working", FILENAME);
 
                     byte[] data = Files.readAllBytes(path);
                     output.write(data);
@@ -199,7 +201,7 @@ public class CwPages {
         };
         return Response
                 .ok(fileStream, MediaType.APPLICATION_OCTET_STREAM)
-                .header("content-disposition","attachment; filename = Master.xlsx")
+                .header("content-disposition","attachment; filename = ScheduleWerks.csv")
                 .build();
     }
 
@@ -228,7 +230,7 @@ public class CwPages {
 	public Response getUploadConfirm(@QueryParam(CwPageView.MESSAGE_PARAM) String message) {
 		CwRunner.getGlobalRunner().sendInput("YES");
 
-		return Response.seeOther(UriBuilder.fromUri("/corawebif/uploadwait").build()).build();
+		return Response.seeOther(UriBuilder.fromUri("/corawebifswerk/uploadwait").build()).build();
 	}
 
 	@GET
@@ -241,7 +243,7 @@ public class CwPages {
 		else {
 			runner.terminateRunningProcess();
 		}
-		return Response.seeOther(UriBuilder.fromUri("/corawebif/uploadwait").build()).build();
+		return Response.seeOther(UriBuilder.fromUri("/corawebifswerk/uploadwait").build()).build();
 	}
 
 	@GET

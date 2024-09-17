@@ -1,7 +1,9 @@
 package schedule;
 
 
-import ice.IceSpreadsheet;
+import java.util.Map;
+
+import ice.IceDataGlobal;
 import lombok.extern.java.Log;
 import processing.teamSnap.TeamSnapEventGenerator;
 
@@ -13,8 +15,18 @@ public class ScheduleMaker {
 	 */
 	public static void main(String[] args) {
 
+        Map<String, String> env = System.getenv();
+		String mode = env.getOrDefault("CW_MODE", "unset");
+		if (mode.equals("CLASSIC")) {
+			IceDataGlobal.makeIceData(IceDataGlobal.IceDataType.CLASSIC);
+		} else if (mode.equals("SWERK")) {
+			IceDataGlobal.makeIceData(IceDataGlobal.IceDataType.SWERK);
+		} else {
+			throw new Error("Invalid value for property CW_MODE: '" + mode + "'");
+		}
+		
 		for (int i = 1; i < 52; i++) {
-			if (IceSpreadsheet.getInstance().getWeekComment(i) == null) {
+			if (IceDataGlobal.getInstance().getWeekComment(i) == null) {
 				Context.getInstance().setProcessingEndWeek(i);
 				break;
 			}

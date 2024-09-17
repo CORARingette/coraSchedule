@@ -20,13 +20,20 @@
   <div id="formContent">
     <!-- Tabs Titles -->
 
+
     <!-- Icon -->
     <div>
       <img src="/corawebif/assets/ice-bear-purple.jpg" id="icon" alt="User Icon" />
     </div>
+	<br>
+	<h1>CORA Schedule Loader</h1>
+	<br>
+	
 
-    <!-- Login Form -->
+        <!-- Login Form -->
     <form autocomplete="on" method="post">
+	  <input type="checkbox" id="scheduletype" name="scheduletype" value="schedulewerks" checked>
+  	  <label for="scheduletype"> Use Schedule Werks Files: </label><br>
       <input type="text" id="login" name="username" placeholder="username" autocomplete="username">
       <input type="password" id="password"name="password" placeholder="password" autocomplete="current-password">
       <input type="submit" value="Log In">

@@ -6,7 +6,7 @@ import java.util.Date;
 import java.util.List;
 
 import ice.ArenaMapper;
-import ice.IceSpreadsheet;
+import ice.IceDataGlobal;
 import leagueSched.AbstractLeagueSchedule;
 import leagueSched.EmptySchedule;
 import leagueSched.LERQSchedule;
@@ -30,11 +30,10 @@ public abstract class AbstractTeamEventProcessor {
 	protected abstract void process(Event iceEvent);
 
 	public void doProcessingAll() {
-		for (String team : IceSpreadsheet.getInstance().getAllTeams()) {
+		for (String team : IceDataGlobal.getInstance().getAllTeams()) {
 			if (Config.getInstance().GetConfig(team).isActive()) {
 				doProcessing(team);
-			}
-			else {
+			} else {
 				log.warning("TEAM '" + team + "' IS DISABLED");
 			}
 		}
@@ -57,13 +56,12 @@ public abstract class AbstractTeamEventProcessor {
 		Date currentDate = new Date(0);
 		List<ScheduleRecord> records = null;
 
-		for (Event iceEvent : IceSpreadsheet.getInstance().getIceEvents(team)) {
+		for (Event iceEvent : IceDataGlobal.getInstance().getIceEvents(team)) {
 
 			if (ShareValue.isPractice(iceEvent.getShareValue()) && !ShareValue.isFullIce(iceEvent.getShareValue())) {
-				iceEvent.setShareTeam(IceSpreadsheet.getInstance().getShareTeam(iceEvent.getDate(), iceEvent.getTime(),
+				iceEvent.setShareTeam(IceDataGlobal.getInstance().getShareTeam(iceEvent.getDate(), iceEvent.getTime(),
 						iceEvent.getLocation(), team));
-				if (iceEvent.getShareTeam() == null)
-				{
+				if (iceEvent.getShareTeam() == null) {
 					log.warning("Share team not found: " + iceEvent.getTeam() + ":" + iceEvent.getFullDateTime());
 				}
 			}
@@ -75,7 +73,8 @@ public abstract class AbstractTeamEventProcessor {
 				records = schedule.findEntriesForDay(iceEvent.getDate());
 			}
 
-			// This is very rarely used. 99% of games are handled below in processUnmatchedEvents()
+			// This is very rarely used. 99% of games are handled below in
+			// processUnmatchedEvents()
 			if (ShareValue.isGame(iceEvent.getShareValue())) {
 				// look up records that match
 				if (records.size() > 0) {
@@ -163,7 +162,8 @@ public abstract class AbstractTeamEventProcessor {
 	private void prepareForProcessing(Event iceEvent) {
 
 		String location = iceEvent.getLocation();
-		// Once there was a location list "Richmond\nGame moved to 6:00" so we get rid of the \n and everything after that.
+		// Once there was a location list "Richmond\nGame moved to 6:00" so we get rid
+		// of the \n and everything after that.
 		if (location.contains("\n")) {
 			location = location.split("\n")[0];
 		}

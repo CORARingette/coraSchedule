@@ -93,7 +93,7 @@
 			<groupId>software.amazon.awssdk</groupId>
 			<artifactId>sesv2</artifactId>
 		</dependency>
-
+        
 	</dependencies>
 
 	<build>

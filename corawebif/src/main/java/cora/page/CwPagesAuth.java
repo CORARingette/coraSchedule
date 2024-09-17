@@ -27,7 +27,7 @@ import cora.auth.CwAuthPassword;
 public class CwPagesAuth {
 
 	private static Logger logger_ms = LoggerFactory.getLogger(CwPagesAuth.class.getName());
-	
+
 	@Path("/logout")
 	@Produces(MediaType.TEXT_HTML)
 	@GET
@@ -35,7 +35,8 @@ public class CwPagesAuth {
 		logger_ms.info("User logged out");
 
 		JwtCookiePrincipal.removeFromContext(requestContext);
-		URI uri = UriBuilder.fromUri("/corawebif/login").queryParam(CwPageView.MESSAGE_PARAM, "User logged out").build();
+		URI uri = UriBuilder.fromUri("/corawebif/login").queryParam(CwPageView.MESSAGE_PARAM, "User logged out")
+				.build();
 		return Response.seeOther(uri).build();
 	}
 
@@ -49,7 +50,8 @@ public class CwPagesAuth {
 	@Path("/login")
 	public Response validateLogin(@Context ContainerRequestContext requestContext, //
 			@FormParam("username") String username, //
-			@FormParam("password") String password) {
+			@FormParam("password") String password, //
+			@FormParam("scheduletype") String scheduleType) {
 
 		CwAuthHolder authHolder = CwAuthHolder.getGlobalHolder();
 		
@@ -71,8 +73,13 @@ public class CwPagesAuth {
 				DefaultJwtCookiePrincipal principal = new DefaultJwtCookiePrincipal(username);
 				principal.addInContext(requestContext);
 				logger_ms.info("User logged in as {}", username);
-				URI uri = UriBuilder.fromUri("/corawebif").build();
-				return Response.seeOther(uri).build();
+				if (scheduleType != null) {
+					URI uri = UriBuilder.fromUri("/corawebifswerk").build();
+					return Response.seeOther(uri).build();
+				}else {
+					URI uri = UriBuilder.fromUri("/corawebif").build();
+					return Response.seeOther(uri).build();
+				}
 			} else {
 				// If wrong, delay and make login page with message
 				Thread.sleep(1000);
@@ -93,6 +100,5 @@ public class CwPagesAuth {
 	public CwPageView getProfile(@QueryParam(CwPageView.MESSAGE_PARAM) String message) {
 		return new CwPageView("profile.ftl").setMessage(message);
 	}
-
 
 }

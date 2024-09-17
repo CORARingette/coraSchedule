@@ -6,16 +6,18 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import ice.IceSpreadsheet;
+import ice.IceData;
+import ice.IceDataGlobal;
 
 public class IceSpreadsheetTest {
 
-	IceSpreadsheet iss = null;
+	IceData iss = null;
 	SimpleDateFormat formater = new SimpleDateFormat("yyyy/MM/dd");
 
 	@Before
 	public void setUp() throws Exception {
-		iss = IceSpreadsheet.getInstance();
+		IceDataGlobal.makeIceData(IceDataGlobal.IceDataType.CLASSIC);
+		iss = IceDataGlobal.getInstance();
 	}
 
 	@After

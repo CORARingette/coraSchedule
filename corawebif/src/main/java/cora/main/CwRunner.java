@@ -141,7 +141,7 @@ public class CwRunner {
 		}
 	}
 
-	public void startRun() throws IOException {
+	public void startRun(boolean classic) throws IOException {
 		ProcessBuilder builder = new ProcessBuilder(args_m);
 		String filePath = System.getenv("CW_FILE_PATH");
 		
@@ -158,7 +158,11 @@ public class CwRunner {
         }
         envs.put("CW_TS_AUTH_URL", auth_url);
         
-		
+		if (classic) {
+			envs.put("CW_MODE", "CLASSIC");
+		}else {
+			envs.put("CW_MODE", "SWERK");			
+		}
 		process_m = builder.start();
 		clear();
 		

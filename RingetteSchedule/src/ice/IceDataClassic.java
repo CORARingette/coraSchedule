@@ -19,7 +19,7 @@ import model.ShareValue;
 import utils.Config;
 
 @Log
-public class IceSpreadsheet {
+public class IceDataClassic implements IceData {
 
 	// sheet config
 	private final int ROW_COMMENT = 1;
@@ -41,9 +41,7 @@ public class IceSpreadsheet {
 	private Hashtable<String, List<Integer>> teamsLookup = new Hashtable<String, List<Integer>>();
 	private List<Event> iceEvents = new ArrayList<Event>();
 
-	private static IceSpreadsheet instance = new IceSpreadsheet();
-
-	private IceSpreadsheet() {
+	IceDataClassic() {
 		try {
 			wb = new XSSFWorkbook(WORKBOOK_FILENAME);
 			currentSheet = wb.getSheet(SHEET_NAME);
@@ -53,10 +51,6 @@ public class IceSpreadsheet {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-	}
-
-	public static IceSpreadsheet getInstance() {
-		return instance;
 	}
 
 	private void populateTeamRowMapping() {
@@ -179,28 +173,34 @@ public class IceSpreadsheet {
 		} while (!finished);
 	}
 
+	@Override
 	public String getWeekComment(int week) {
 		return weekComment.get(Integer.valueOf(week));
 	}
 
+	@Override
 	public List<String> getAllTeams() {
 		return Collections.list(teamsLookup.keys());
 	}
 
+	@Override
 	public boolean isValidTeam(String team) {
 		return teamsLookup.containsKey(team);
 	}
 
+	@Override
 	public List<Event> getIceEvents(String team) {
 		List<Event> teamEvents = iceEvents.stream().filter(i -> i.getTeam().equals(team)).collect(Collectors.toList());
 		Collections.sort(teamEvents);
 		return teamEvents;
 	}
 
+	@Override
 	public List<Event> getIceEvents() {
 		return iceEvents;
 	}
 
+	@Override
 	public String getShareTeam(Date date, String time, String location, String team) {
 		if (date == null || time == null || location == null || team == null) {
 			// no point running expensive lookup
@@ -274,6 +274,7 @@ public class IceSpreadsheet {
 		}
 	}
 
+	@Override
 	public void dump() {
 		for (String team : teamsLookup.keySet()) {
 			log.fine(team);
@@ -285,7 +286,7 @@ public class IceSpreadsheet {
 	}
 
 	public static void main(String[] args) {
-		IceSpreadsheet iss = new IceSpreadsheet();
+		IceData iss = new IceDataClassic();
 		iss.dump();
 	}
 }

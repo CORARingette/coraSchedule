@@ -5,14 +5,12 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map.Entry;
-
-import ice.ArenaMapper;
-import ice.IceSpreadsheet;
-
 import java.util.Optional;
 import java.util.Scanner;
 import java.util.Set;
 
+import ice.ArenaMapper;
+import ice.IceDataGlobal;
 import lombok.Cleanup;
 import lombok.extern.java.Log;
 import model.Event;
@@ -52,8 +50,7 @@ public class TeamSnapEventGenerator extends AbstractTeamEventProcessor {
 		allEvents = teamSnap.getAllEvents();
 		for (DivisionEvent divisionEvent : allEvents) {
 			Team team = divisionEvent.getTeam();
-			if ((team != null) 
-					&& configInst.GetConfig(team.getName()) != null
+			if ((team != null) && configInst.GetConfig(team.getName()) != null
 					&& configInst.GetConfig(team.getName()).isActive()) {
 				existingScheduleEvents.add(new EventKey(divisionEvent));
 			}
@@ -212,8 +209,9 @@ public class TeamSnapEventGenerator extends AbstractTeamEventProcessor {
 		for (EventKey existingScheduleEvent : existingScheduleEvents) {
 			DivisionEvent de = (DivisionEvent) existingScheduleEvent.getSource();
 			if (Config.getInstance().GetConfig(de.getTeam().getName()) == null
-					|| !IceSpreadsheet.getInstance().isValidTeam(de.getTeam().getName())) {
-				log.severe("Team '" + de.getTeam().getName() + "' in TeamSnap was not found either in the TeamConfig XML file or in the spreadshhet");
+					|| !IceDataGlobal.getInstance().isValidTeam(de.getTeam().getName())) {
+				log.severe("Team '" + de.getTeam().getName()
+						+ "' in TeamSnap was not found either in the TeamConfig XML file or in the spreadshhet");
 				ok = false;
 				break;
 			}
