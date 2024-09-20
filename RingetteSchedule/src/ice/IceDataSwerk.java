@@ -6,10 +6,14 @@ package ice;
 import java.io.FileReader;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.Date;
-import java.util.Hashtable;
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
+import java.util.Set;
 import java.util.logging.Level;
 import java.util.stream.Collectors;
 
@@ -27,8 +31,10 @@ import model.ShareValue;
 public class IceDataSwerk implements IceData {
 
 	private final static String DATA_FILENAME = "swerkdata.csv";
-	private Hashtable<String, List<Integer>> teamsLookup = new Hashtable<String, List<Integer>>();
+	private Set<String> teamsLookup = new HashSet<String>();
 	private List<Event> iceEvents = new ArrayList<Event>();
+	// Map from date/time/arena+sheet to list of Events - this allows a quick lookup of shared events
+	Map<String, List<Event>> eventShareList = new HashMap<String, List<Event>> ();
 
 	private final static int CSV_OFFSET_DATE = 0;
 	private final static int CSV_OFFSET_START_TIME = 1;
@@ -51,27 +57,59 @@ public class IceDataSwerk implements IceData {
 				throw new Exception("'Date' must be first token of CSV file");
 			}
 			
+			
 			// Process lines
 			while ((nextLine = reader.readNext()) != null) {
 				log.log((Level.SEVERE), "Tokens: {0}, {1}, {4}, {5}, {7}, {9}", nextLine);
 				Date date = formatter.parse(nextLine[CSV_OFFSET_DATE]);
-				String share = nextLine.toString().trim();
 				String iceTime = nextLine[CSV_OFFSET_START_TIME];
 				String team = nextLine[CSV_OFFSET_TEAM];
-				String location = parseLocationFromIceInfo(nextLine[CSV_OFFSET_LOCATION]);
-				if (location == null || location.isEmpty()) {
+				if (!teamsLookup.contains(team)) {
+					teamsLookup.add(team);
+				}
+					
+				String normalizedLocation = parseLocationFromIceInfo(nextLine[CSV_OFFSET_LOCATION]);
+				if (normalizedLocation == null || normalizedLocation.isEmpty()) {
 					log.warning("Unknown location: " + nextLine[CSV_OFFSET_LOCATION]);
+					ArenaMapper.getInstance().addError(normalizedLocation);
+					break;
 				}
-				String normalizedLocation = ArenaMapper.getInstance().getProperty(location);
-				if (normalizedLocation == null) {
-					ArenaMapper.getInstance().addError(location);
-				}
+				String sheet = parseSheetFromIceInfo(nextLine[CSV_OFFSET_LOCATION]);
+				
+				// We can't set the "share value" yet because we don't know all the events so we set it to Other.
 				Event event = new Event(team,
-						normalizedLocation != null ? normalizedLocation : location,
-						ShareValue.fromShortString(share), null, date, iceTime, null);
+						normalizedLocation, sheet,
+						ShareValue.OTHER, null, date, iceTime, null);
 				iceEvents.add(event);
 				
-			}
+				String eventShareListKey = getShareKey(event.getDate(), event.getTime(), event.getLocation(), event.getSheet());
+				List<Event> eventShareListItem = eventShareList.get (eventShareListKey);
+				if (eventShareListItem == null) {
+					List<Event> l = new ArrayList<Event>();
+					l.add(event);
+					eventShareList.put(eventShareListKey, l);
+				} else {
+					eventShareListItem.add(event);
+				}
+				
+					
+			} // While
+			
+			// Set the "share value"
+			for (Event event: iceEvents) {
+				String eventShareListKey = getShareKey(event.getDate(), event.getTime(), event.getLocation(), event.getSheet());
+				List<Event> eventList = eventShareList.get(eventShareListKey);
+				if (eventList.size() == 1) {
+					event.setShareValue(ShareValue.FULL);
+				}
+				else if (eventList.size() == 2) {
+					event.setShareValue(ShareValue.HALF);
+				}
+				else
+				{
+					throw new Error("Bad lookup for share team.  Expected 1 or 2 entries found " + eventList.size());
+				}
+			}	
 		} catch (Exception e) {
 			System.out.println("Working directory is " + System.getProperty("user.dir"));
 			e.printStackTrace();
@@ -79,8 +117,19 @@ public class IceDataSwerk implements IceData {
 		}
 	}
 
-	private String parseLocationFromIceInfo(String location) {
+	private String getShareKey(Date date, String time, String location, String sheet) {
+		return date.toString() + ":" + time + ":" + location + ":" + sheet;
+	}
+
+	private String parseLocationFromIceInfo(String locationWithSheet) {
+		// Delete everything after the ":" which indicates the sheet within the location
+		String location = locationWithSheet.replaceAll(":.*", "");
 		return ArenaMapper.getInstance().getProperty(location);
+	}
+
+	private String parseSheetFromIceInfo(String locationWithSheet) {
+		// Delete everything before the ":" which indicates the location, leaving the sheet
+		return locationWithSheet.replaceAll(".*:", "");
 	}
 
 	@Override
@@ -91,12 +140,12 @@ public class IceDataSwerk implements IceData {
 
 	@Override
 	public List<String> getAllTeams() {
-		return Collections.list(teamsLookup.keys());
+		return new ArrayList<String>(teamsLookup);
 	}
 
 	@Override
 	public boolean isValidTeam(String team) {
-		return teamsLookup.containsKey(team);
+		return teamsLookup.contains(team);
 	}
 
 	@Override
@@ -112,33 +161,32 @@ public class IceDataSwerk implements IceData {
 	}
 
 	@Override
-	public String getShareTeam(Date date, String time, String location, String team) {
+	public String getShareTeam(Date date, String time, String location, String sheet,
+			String team) {
 		if (date == null || time == null || location == null || team == null) {
 			// no point running expensive lookup
 			return null;
 		}
 
-		Event matchingEvent = null;
-		try {
-			String normalizedLocation = ArenaMapper.getInstance().getProperty(location);
-
-			if (normalizedLocation != null) {
-				matchingEvent = iceEvents.stream().filter(e -> normalizedLocation.equals(e.getLocation())
-						&& date.equals(e.getDate()) && time.equals(e.getTime()) && !team.equals(e.getTeam())).findAny()
-						.orElse(null);
-			} else {
-				log.warning("******************* Loader Error: No normalized location found for " + location
-						+ ".  Add rink name to ArenaMapper.xml");
-			}
-		} catch (Exception e) {
-			dump();
+		String key = getShareKey(date, time, location, sheet);
+		List<Event> eventList = eventShareList.get(key);
+		if (eventList.size() == 1) {
+			return null;
 		}
-		return matchingEvent != null ? matchingEvent.getTeam() : null;
+		else if (eventList.size() == 2) {
+			for (Event e: eventList)
+				if (!e.getTeam().equals(team))
+					return e.getTeam();
+			throw new Error("Bad lookup for share team for:" + team);
+		}
+		else
+		{
+			throw new Error("Bad lookup for share team.  Expected 1 or 2 entries found " + eventList.size());
+		}
 	}
-
 	@Override
 	public void dump() {
-		for (String team : teamsLookup.keySet()) {
+		for (String team : teamsLookup) {
 			log.fine(team);
 		}
 		for (Event event : iceEvents) {

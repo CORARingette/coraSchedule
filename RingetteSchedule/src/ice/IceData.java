@@ -17,8 +17,8 @@ public interface IceData {
 
 	List<Event> getIceEvents();
 
-	String getShareTeam(Date date, String time, String location, String team);
-
 	void dump();
+
+	String getShareTeam(Date date, String time, String location, String sheet, String team);
 
 }

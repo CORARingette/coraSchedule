@@ -46,6 +46,7 @@ public class TeamSnapEventGenerator extends AbstractTeamEventProcessor {
 
 	public TeamSnapEventGenerator() {
 		Config configInst = Config.getInstance();
+		log.info("Loading events from TeamSnap...");
 		teamSnap = new League();
 		allEvents = teamSnap.getAllEvents();
 		for (DivisionEvent divisionEvent : allEvents) {

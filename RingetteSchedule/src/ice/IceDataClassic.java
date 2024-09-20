@@ -201,7 +201,7 @@ public class IceDataClassic implements IceData {
 	}
 
 	@Override
-	public String getShareTeam(Date date, String time, String location, String team) {
+	public String getShareTeam(Date date, String time, String location, String sheet, String team) {
 		if (date == null || time == null || location == null || team == null) {
 			// no point running expensive lookup
 			return null;

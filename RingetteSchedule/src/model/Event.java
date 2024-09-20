@@ -28,6 +28,9 @@ public class Event implements Comparable<Event> {
 	private String location;
 	@Getter
 	@Setter
+	private String sheet;
+	@Getter
+	@Setter
 	private ShareValue shareValue;
 
 	public Event(String team, String location, ShareValue shareValue, String shareTeam, Date date, String time,
@@ -40,12 +43,22 @@ public class Event implements Comparable<Event> {
 		this.time = time;
 		this.gameNumber = gameNumber;
 		this.location = location;
+		this.sheet = null;
 	}
 
 
-
-
-
+	public Event(String team, String location, String sheet, ShareValue shareValue, String shareTeam, Date date, String time,
+			String gameNumber) {
+		super();
+		this.team = team;
+		this.shareValue = shareValue;
+		this.shareTeam = shareTeam;
+		this.date = date;
+		this.time = time;
+		this.gameNumber = gameNumber;
+		this.location = location;
+		this.sheet = sheet;
+	}
 
 
 	public Date getFullDateTime() {

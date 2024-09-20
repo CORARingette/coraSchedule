@@ -19,6 +19,7 @@ import model.GameType;
 import model.ShareValue;
 import schedule.Context;
 import utils.Config;
+import utils.Config.ConfigItem;
 
 @Log
 public abstract class AbstractTeamEventProcessor {
@@ -31,7 +32,11 @@ public abstract class AbstractTeamEventProcessor {
 
 	public void doProcessingAll() {
 		for (String team : IceDataGlobal.getInstance().getAllTeams()) {
-			if (Config.getInstance().GetConfig(team).isActive()) {
+			ConfigItem teamData = Config.getInstance().GetConfig(team);
+			if (teamData == null) {
+				throw new Error("This team is not in the TeamConfig file: " + team);
+			}
+			if (teamData.isActive()) {
 				doProcessing(team);
 			} else {
 				log.warning("TEAM '" + team + "' IS DISABLED");
@@ -60,7 +65,7 @@ public abstract class AbstractTeamEventProcessor {
 
 			if (ShareValue.isPractice(iceEvent.getShareValue()) && !ShareValue.isFullIce(iceEvent.getShareValue())) {
 				iceEvent.setShareTeam(IceDataGlobal.getInstance().getShareTeam(iceEvent.getDate(), iceEvent.getTime(),
-						iceEvent.getLocation(), team));
+						iceEvent.getLocation(), iceEvent.getSheet(), team));
 				if (iceEvent.getShareTeam() == null) {
 					log.warning("Share team not found: " + iceEvent.getTeam() + ":" + iceEvent.getFullDateTime());
 				}
