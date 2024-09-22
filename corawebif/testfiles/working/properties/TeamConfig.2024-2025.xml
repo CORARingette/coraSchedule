@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<teams>
+
+	<team>
+		<name>Ottawa Ice - FUN1 (2024-25)</name>
+		<map>Ottawa Ice - FUN1 (2024-25)</map>
+		<url></url>
+		<division>FUNdamentals</division>
+		<active>true</active>
+	</team>
+	
+	<team>
+		<name>Ottawa Ice - FUN2 - Shah</name>
+		<map>Ottawa Ice - FUN2 - Shah</map>
+		<url></url>
+		<division>FUNdamentals</division>
+		<active>true</active>
+	</team>
+	<team>
+		<name>Ottawa Ice - FUN2 - Peacock</name>
+		<map>Ottawa Ice - FUN2 - Peacock</map>
+		<url></url>
+		<division>FUNdamentals</division>
+		<active>true</active>
+	</team>
+	<team>
+		<name>Ottawa Ice - FUN2 - O'Brien</name>
+		<map>Ottawa Ice - FUN2 - O'Brien</map>
+		<url></url>
+		<division>FUNdamentals</division>
+		<active>true</active>
+	</team>
+	<team>
+		<name>Ottawa Ice - FUN2 - Meloche</name>
+		<map>Ottawa Ice - FUN2 - Meloche</map>
+		<url></url>
+		<division>FUNdamentals</division>
+		<active>true</active>
+	</team>
+	<team>
+		<name>Ottawa Ice - FUN3 - Peltzer</name>
+		<map>Ottawa Ice - FUN3 - Peltzer</map>
+		<url></url>
+		<division>FUN3</division>
+		<active>true</active>
+	</team>
+	<team>
+		<name>Ottawa Ice - FUN3 - Marum</name>
+		<map>Ottawa Ice - FUN3 - Marum</map>
+		<url></url>
+		<division>FUN3</division>
+		<active>true</active>
+	</team>
+	<team>
+		<name>Ottawa Ice - FUN3 - Kong</name>
+		<map>Ottawa Ice - FUN3 - Kong</map>
+		<url></url>
+		<division>FUN3</division>
+		<active>true</active>
+	</team>
+	<team>
+		<name>Ottawa Ice - FUN3 - Doherty</name>
+		<map>Ottawa Ice - FUN3 - Doherty</map>
+		<url></url>
+		<division>FUN3</division>
+		<active>true</active>
+	</team>
+
+
+	<team>
+		<name>Ottawa Ice - U12A - Reilly</name>
+		<map>Ottawa Ice - U12A - Reilly</map>
+		<url></url>
+		<division>U12</division>
+		<active>true</active>
+	</team>
+	<team>
+		<name>Ottawa Ice - U12A - Baker</name>
+		<map>Ottawa Ice - U12A - Baker</map>
+		<url></url>
+		<division>U12</division>
+		<active>true</active>
+	</team>
+
+	<team>
+		<name>Ottawa Ice - U14C - Winer</name>
+		<map>Ottawa Ice - U14C - Winer</map>
+		<url></url>
+		<division>U14</division>
+		<active>true</active>
+	</team>
+	<team>
+		<name>Ottawa Ice - U14C - Nelson</name>
+		<map>Ottawa Ice - U14C - Nelson</map>
+		<url>https://ncrrl.com/teamical/203260?nocache</url>
+		<division>U14</division>
+		<active>true</active>
+	</team>
+	<team>
+		<name>Ottawa Ice - U14B - Hearn</name>
+		<map>Ottawa Ice - U14B - Hearn</map>
+		<url></url>
+		<division>U14</division>
+		<active>true</active>
+	</team>
+	<team>
+		<name>Ottawa Ice - U14B - Bohemier</name>
+		<map>Ottawa Ice - U14B - Bohemier</map>
+		<url></url>
+		<division>U14</division>
+		<active>true</active>
+	</team>
+	<team>
+		<name>Ottawa Ice - U14AA - Stachon (2024-25)</name>
+		<map>Ottawa Ice - U14AA - Stachon (2024-25)</map>
+		<url></url>
+		<division>U14</division>
+		<active>true</active>
+	</team>
+	<team>
+		<name>Ottawa Ice - U14A - Gore</name>
+		<map>Ottawa Ice - U14A - Gore</map>
+		<url></url>
+		<division>U14</division>
+		<active>true</active>
+	</team>
+	
+	
+	<team>
+		<name>Ottawa Ice - U16C - Enouy</name>
+		<map>Ottawa Ice - U16C - Enouy</map>
+		<url></url>
+		<division>U16</division>
+		<active>true</active>
+	</team>
+	<team>
+		<name>Ottawa Ice - U16B - McWaters</name>
+		<map>Ottawa Ice - U16B - McWaters</map>
+		<url></url>
+		<division>U16</division>
+		<active>true</active>
+	</team>
+	<team>
+		<name>Ottawa Ice - U16B - Lannon</name>
+		<map>Ottawa Ice - U16B - Lannon</map>
+		<url></url>
+		<division>U16</division>
+		<active>true</active>
+	</team>
+	<team>
+		<name>Ottawa Ice - U16AA - Frechette (2024-25)</name>
+		<map>Ottawa Ice - U16AA - Frechette (2024-25)</map>
+		<url></url>
+		<division>U16</division>
+		<active>true</active>
+	</team>
+	<team>
+		<name>Ottawa Ice - U16A - Falconer</name>
+		<map>Ottawa Ice - U16A - Falconer</map>
+		<url></url>
+		<division>U16</division>
+		<active>true</active>
+	</team>
+	
+	
+	
+	<team>
+		<name>Ottawa Ice - U19B - McWaters</name>
+		<map>Ottawa Ice - U19B - McWaters</map>
+		<url></url>
+		<division>U19</division>
+		<active>true</active>
+	</team>
+	<team>
+		<name>Ottawa Ice - U19B - Mackey</name>
+		<map>Ottawa Ice - U19B - Mackey</map>
+		<url>https://www.ncrrl.com/teamical/203293?nocache</url>
+		<division>U19</division>
+		<active>true</active>
+	</team>
+	<team>
+		<name>Ottawa Ice - U19B - Gordon</name>
+		<map>Ottawa Ice - U19B - Gordon</map>
+		<url></url>
+		<division>U19</division>
+		<active>true</active>
+	</team>
+</teams>
