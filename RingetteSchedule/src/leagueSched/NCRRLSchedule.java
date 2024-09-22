@@ -54,7 +54,7 @@ public class NCRRLSchedule extends AbstractLeagueSchedule {
 				rd.close();
 
 				// Uncomment to view text from league website
-				// log.warning(sb.toString());
+				//log.warning(sb.toString());
 				StringReader sin = new StringReader(sb.toString());
 
 				CalendarBuilder builder = new CalendarBuilder();
@@ -90,6 +90,11 @@ public class NCRRLSchedule extends AbstractLeagueSchedule {
 								event.setVisitor(visitorStr);
 								event.setGameNumber(gameNumber);
 								schedule.add(event);
+							}
+							else {
+								log.warning("Team event from NCRRL does not contain team name " + team);
+								log.warning("Event details: " + sb.toString());
+
 							}
 						}
 					}
