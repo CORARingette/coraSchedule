@@ -96,6 +96,20 @@
 		<division>U12</division>
 		<active>true</active>
 	</team>
+	<team>
+		<name>Ottawa Ice - U12C - Telewiak</name>
+		<map>Ottawa Ice U12C - Telewiak</map>
+		<url>https://ncrrl.com/teamical/264895?nocache</url>
+		<division>U12</division>
+		<active>true</active>
+	</team>
+	<team>
+		<name>Ottawa Ice - U12C - Kelly</name>
+		<map>Ottawa Ice U12C - Kelly</map>
+		<url>https://ncrrl.com/teamical/264894?nocache</url>
+		<division>U12</division>
+		<active>true</active>
+	</team>
 
 	<team>
 		<name>Ottawa Ice - U14C - Winer</name>
