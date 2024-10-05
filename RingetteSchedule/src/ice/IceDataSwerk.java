@@ -60,10 +60,13 @@ public class IceDataSwerk implements IceData {
 			
 			// Process lines
 			while ((nextLine = reader.readNext()) != null) {
-				log.log((Level.SEVERE), "Tokens: {0}, {1}, {4}, {5}, {7}, {9}", nextLine);
+				log.log((Level.FINER), "Tokens: {0}, {1}, {4}, {5}, {7}, {9}", nextLine);
 				Date date = formatter.parse(nextLine[CSV_OFFSET_DATE]);
 				String iceTime = nextLine[CSV_OFFSET_START_TIME];
 				String team = nextLine[CSV_OFFSET_TEAM];
+				if (team.length() == 0)
+					team = "";
+				
 				if (!teamsLookup.contains(team)) {
 					teamsLookup.add(team);
 				}

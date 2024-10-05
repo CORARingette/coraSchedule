@@ -34,7 +34,7 @@ public abstract class AbstractTeamEventProcessor {
 		for (String team : IceDataGlobal.getInstance().getAllTeams()) {
 			ConfigItem teamData = Config.getInstance().GetConfig(team);
 			if (teamData == null) {
-				throw new Error("This team is not in the TeamConfig file: " + team);
+				throw new Error("This team is not in the TeamConfig file: '" + team + "'");
 			}
 			if (teamData.isActive()) {
 				doProcessing(team);
