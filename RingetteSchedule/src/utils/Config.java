@@ -3,8 +3,10 @@ package utils;
 import java.io.FileInputStream;
 import java.nio.file.Paths;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.Hashtable;
 import java.util.List;
+import java.util.Map;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -22,6 +24,8 @@ import lombok.extern.java.Log;
 public class Config {
 	private Hashtable<String, ConfigItem> configItems = new Hashtable<String, ConfigItem>();
 
+	private Map<String, String> swerkTeamNamesToTeamNamesMap;
+
 	private final static Config instance = new Config();
 
 	private Config() {
@@ -36,19 +40,22 @@ public class Config {
 			XPath xPath = XPathFactory.newInstance().newXPath();
 
 			NodeList nodeList = (NodeList) xPath.evaluate("//team", document, XPathConstants.NODESET);
-
+			swerkTeamNamesToTeamNamesMap = new HashMap<String, String> ();
+			
 			for (int i = 0; i < nodeList.getLength(); i++) {
 				Node teamNode = nodeList.item(i);
 				String team = xPath.evaluate("name", teamNode);
 				String url = xPath.evaluate("url", teamNode);
 				String map = xPath.evaluate("map", teamNode);
+				String swerkTeamName = xPath.evaluate("swerkName", teamNode);
 				String division = xPath.evaluate("division", teamNode);
 				String active = xPath.evaluate("active", teamNode);
 				boolean isActive = active.equals("true");
 				if (division == null || division.isEmpty()) {
 					log.severe("Missing division entry for team: " + team + ":" + url + ":" + map + ":" + division);
 				}
-				configItems.put(team, new ConfigItem(team, url, map, division, isActive));
+				swerkTeamNamesToTeamNamesMap.put(swerkTeamName, team);
+				configItems.put(team, new ConfigItem(team, url, map, swerkTeamName, division, isActive));
 			}
 
 		} catch (Exception e) {
@@ -67,19 +74,25 @@ public class Config {
 		private final String team;
 		private final String url;
 		private final String map;
+		private final String swerkTeamName;
 		private final String division;
 		private final boolean active;
 
-		public ConfigItem(String team, String url, String map, String division, boolean active) {
+		public ConfigItem(String team, String url, String map, String swerkTeamName, String division, boolean active) {
 			this.team = team;
 			this.url = url;
 			this.map = map;
+			this.swerkTeamName = swerkTeamName;
 			this.division = division;
 			this.active = active;
 		}
 
 		public String getTeam() {
 			return team;
+		}
+
+		public String getSwerkTeamName() {
+			return swerkTeamName;
 		}
 
 		public String getUrl() {
@@ -110,6 +123,10 @@ public class Config {
 
 	public static void main(String[] args) {
 		// Config c = new Config();
+	}
+
+	public Map<String, String> getSwerkTeamNamesToTeamNamesMap() {
+		return swerkTeamNamesToTeamNamesMap;
 	}
 
 }

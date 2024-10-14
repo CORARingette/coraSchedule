@@ -22,6 +22,7 @@ import com.opencsv.CSVReader;
 import lombok.extern.java.Log;
 import model.Event;
 import model.ShareValue;
+import utils.Config;
 
 /**
  * @author andrewmcgregor
@@ -30,6 +31,29 @@ import model.ShareValue;
 @Log
 public class IceDataSwerk implements IceData {
 
+	private final static Set<String> teamsToDiscard = new HashSet<>(Arrays.asList(
+			"BURN", // Ice being discarded
+			"Sort-U12A",
+			"Sort-U12B",
+			"Sort-U12C",
+			"Sort-U14B",
+			"Sort-U14C",
+			"Sort-U16B",
+			"Sort-U16C",
+			"Sort-U19B",
+			"Sort-FUN2",
+			"Sort-FUN3",
+			"U19AA",
+			"Erika",
+			"WarmUps",
+			"Coaches",
+			"U14-U16 Co",
+			"Avalanche",
+			"Blizzard",
+			"Moms",
+			"Carl",
+			"Goalie"));
+	
 	private final static String DATA_FILENAME = "swerkdata.csv";
 	private Set<String> teamsLookup = new HashSet<String>();
 	private List<Event> iceEvents = new ArrayList<Event>();
@@ -50,6 +74,8 @@ public class IceDataSwerk implements IceData {
 			// parsing a CSV file into CSVReader class constructor
 			reader = new CSVReader(new FileReader(DATA_FILENAME));
 			String[] nextLine;
+
+			Map<String, String> swerkTeamNamesToTeamNamesMap = Config.getInstance().getSwerkTeamNamesToTeamNamesMap();
 			
 			// Skip first line
 			nextLine = reader.readNext();
@@ -63,9 +89,19 @@ public class IceDataSwerk implements IceData {
 				log.log((Level.FINER), "Tokens: {0}, {1}, {4}, {5}, {7}, {9}", nextLine);
 				Date date = formatter.parse(nextLine[CSV_OFFSET_DATE]);
 				String iceTime = nextLine[CSV_OFFSET_START_TIME];
-				String team = nextLine[CSV_OFFSET_TEAM];
-				if (team.length() == 0)
-					team = "";
+				String swerkTeamName = nextLine[CSV_OFFSET_TEAM];
+				if (swerkTeamName.length() == 0)
+					continue;
+				
+				// Used to discard certain ICE times for eaxample
+				if (teamsToDiscard.contains(swerkTeamName)) {
+					continue;
+				}
+				
+				String team = swerkTeamNamesToTeamNamesMap.getOrDefault(swerkTeamName, null);
+				if (team == null) {
+					throw new Exception("No swerkTeamName found for '" + swerkTeamName + "'");
+				}
 				
 				if (!teamsLookup.contains(team)) {
 					teamsLookup.add(team);
