@@ -68,11 +68,14 @@ public class CwPagesAuth {
 			
 			CwAuthPassword passwordHolder = CwAuthPassword.fromHashedPassword(hashedPassword);
 			
+			// To generate a new account and password use the "main()" function in CwAuthPassword and pass in
+			// the password then put the username (in the clear) and the hashed password
+			// into the file /mnt/corawebif/auth_info.json on the server.
 			if (passwordHolder.checkPassword(password)) {
 				// If OK, save token and redirect to main page
 				DefaultJwtCookiePrincipal principal = new DefaultJwtCookiePrincipal(username);
 				principal.addInContext(requestContext);
-				logger_ms.info("User logged in as {}", username);
+				logger_ms.warn("User logged in as {}, scheduleType {}", username, scheduleType);
 				if (scheduleType != null) {
 					URI uri = UriBuilder.fromUri("/corawebifswerk").build();
 					return Response.seeOther(uri).build();
