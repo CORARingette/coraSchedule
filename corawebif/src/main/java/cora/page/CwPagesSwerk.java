@@ -214,7 +214,7 @@ public class CwPagesSwerk {
 		if (runner.isDone())
 			if (runner.getExitCode() != 0) // Can't call getExitCode() if not done!
 				showError = true;
-		return new CwPageViewWait("wait.ftl", 
+		return new CwPageViewWait("waitswerk.ftl", 
 				readyToConfirm, 
 				runner.isDone(),
 				showError,

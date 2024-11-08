@@ -98,18 +98,18 @@ public class TeamSnapEventGenerator extends AbstractTeamEventProcessor {
 	private void listChanges() {
 		for (EventKey eventToAdd : eventsToAdd) {
 			Event event = (Event) eventToAdd.getSource();
-			log.info("Adding new event::" + event.getTeam() + ":" + event.getLocation() + ":" + event.getFullDateTime()
-					+ ":" + ShareValue.isGame(event.getShareValue()) + ":" + event.getSummary());
+			log.info("Adding new event;" + event.getTeam() + ";" + event.getLocation() + ";" + event.getFullDateTime()
+					+ ";" + ShareValue.isGame(event.getShareValue()) + ";" + event.getSummary());
 		}
 
 		for (EventKey eventToRemove : eventsToRemove) {
 			DivisionEvent divisionEvent = (DivisionEvent) eventToRemove.getSource();
-			log.info("Deleting existing event: " + divisionEvent.getName() + ":" + divisionEvent.getLocation() + ":"
+			log.info("Deleting existing event; " + divisionEvent.getTeam().getName() + ";" + divisionEvent.getLocation().getName() + ";"
 					+ divisionEvent.getCalendarStartDate().getTime());
 		}
 
 		for (Entry<Event, DivisionEvent> mapping : eventsToUpdate.entrySet()) {
-			log.info("Summary Updated From:" + mapping.getValue().getName() + " To:" + mapping.getKey().getSummary());
+			log.info("Summary Updated From;" + mapping.getValue().getName() + "; To;" + mapping.getKey().getSummary());
 		}
 	}
 

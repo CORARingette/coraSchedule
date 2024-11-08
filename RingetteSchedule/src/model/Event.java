@@ -88,7 +88,7 @@ public class Event implements Comparable<Event> {
 		if (ShareValue.isFullIce(shareValue)) {
 			return team + " - Full Ice";
 		} else {
-			if (shareTeam != null) {
+			if ((shareTeam != null) && (!shareTeam.equals("BURN"))) {
 				return team + " shared with " + shareTeam;
 			} else {
 				return team + " - guaranteed 1/2 ice, possible full ice";

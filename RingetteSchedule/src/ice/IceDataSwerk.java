@@ -1,4 +1,4 @@
-/**
+	/**
  * 
  */
 package ice;
@@ -32,33 +32,37 @@ import utils.Config;
 public class IceDataSwerk implements IceData {
 
 	private final static Set<String> teamsToDiscard = new HashSet<>(Arrays.asList(
-			"BURN", // Ice being discarded
-			"Sort-U12A",
-			"Sort-U12B",
-			"Sort-U12C",
-			"Sort-U14B",
-			"Sort-U14C",
-			"Sort-U16B",
-			"Sort-U16C",
-			"Sort-U19B",
-			"Sort-FUN2",
-			"Sort-FUN3",
-			"U19AA",
-			"Erika",
-			"WarmUps",
-			"Coaches",
-			"U14-U16 Co",
-			"Avalanche",
-			"Blizzard",
-			"Moms",
-			"Carl",
+			// "BURN", // Ice being discarded - this is handled separately due to "possible
+			// full ice feature
+			"SOLD", // Ice being sold
+			"Sortouts - U12A", //
+			"Sortouts - U12B", //
+			"Sortouts - U12C", //
+			"Sortouts - U14B", //
+			"Sortouts - U14C", //
+			"Sortouts - U16B", //
+			"Sortouts - U16C", //
+			"Sortouts - U19B", //
+			"Sortouts - FUN2", //
+			"Sortouts - FUN3", //
+			"ERRA - U19AA", //
+			"Warm-ups - Regional Teams", //
+			"Come Try Ringette", //
+			"Clinics - Goalie", //
+			"Clinics - Coaching", //
+			"Avalanche Ice", //
+			"Blizzard Ice", //
+			"Moms of Ringette", //
+			"Powerskating-Carl", //
+			"Powerskating-Erika", //
 			"Goalie"));
-	
+
 	private final static String DATA_FILENAME = "swerkdata.csv";
 	private Set<String> teamsLookup = new HashSet<String>();
 	private List<Event> iceEvents = new ArrayList<Event>();
-	// Map from date/time/arena+sheet to list of Events - this allows a quick lookup of shared events
-	Map<String, List<Event>> eventShareList = new HashMap<String, List<Event>> ();
+	// Map from date/time/arena+sheet to list of Events - this allows a quick lookup
+	// of shared events
+	Map<String, List<Event>> eventShareList = new HashMap<String, List<Event>>();
 
 	private final static int CSV_OFFSET_DATE = 0;
 	private final static int CSV_OFFSET_START_TIME = 1;
@@ -66,7 +70,9 @@ public class IceDataSwerk implements IceData {
 	private final static int CSV_OFFSET_EVENT_TYPE = 5;
 	private final static int CSV_OFFSET_TEAM = 7;
 	private final static int CSV_OFFSET_LOCATION = 9;
-    SimpleDateFormat formatter = new SimpleDateFormat("MM/dd/yyyy");
+	SimpleDateFormat formatter = new SimpleDateFormat("MM/dd/yyyy");
+	SimpleDateFormat parseFormatForAmPmTime = new SimpleDateFormat("hh:mm a");
+	SimpleDateFormat displayFormatFor24hTime = new SimpleDateFormat("HH:mm");
 
 	IceDataSwerk() {
 		try {
@@ -75,38 +81,36 @@ public class IceDataSwerk implements IceData {
 			reader = new CSVReader(new FileReader(DATA_FILENAME));
 			String[] nextLine;
 
-			Map<String, String> swerkTeamNamesToTeamNamesMap = Config.getInstance().getSwerkTeamNamesToTeamNamesMap();
-			
 			// Skip first line
 			nextLine = reader.readNext();
 			if (!nextLine[CSV_OFFSET_DATE].equals("Date")) {
 				throw new Exception("'Date' must be first token of CSV file");
 			}
-			
-			
+
 			// Process lines
 			while ((nextLine = reader.readNext()) != null) {
 				log.log((Level.FINER), "Tokens: {0}, {1}, {4}, {5}, {7}, {9}", nextLine);
 				Date date = formatter.parse(nextLine[CSV_OFFSET_DATE]);
 				String iceTime = nextLine[CSV_OFFSET_START_TIME];
-				String swerkTeamName = nextLine[CSV_OFFSET_TEAM];
-				if (swerkTeamName.length() == 0)
+				Date d = parseFormatForAmPmTime.parse(iceTime);
+				String iceTimeIn24hFormat = displayFormatFor24hTime.format(d);
+
+				String team = nextLine[CSV_OFFSET_TEAM];
+				if (team.length() == 0)
 					continue;
-				
-				// Used to discard certain ICE times for eaxample
-				if (teamsToDiscard.contains(swerkTeamName)) {
+
+				// Used to discard certain ICE times for example
+				if (teamsToDiscard.contains(team)) {
 					continue;
 				}
-				
-				String team = swerkTeamNamesToTeamNamesMap.getOrDefault(swerkTeamName, null);
-				if (team == null) {
-					throw new Exception("No swerkTeamName found for '" + swerkTeamName + "'");
-				}
-				
+
+				// We treat the BURN team normally so sharing is set correctly but we don't
+				// put it in this list so it doesn't get sent to TeamSnap
 				if (!teamsLookup.contains(team)) {
-					teamsLookup.add(team);
+					if (!team.equals("BURN"))
+						teamsLookup.add(team);
 				}
-					
+
 				String normalizedLocation = parseLocationFromIceInfo(nextLine[CSV_OFFSET_LOCATION]);
 				if (normalizedLocation == null || normalizedLocation.isEmpty()) {
 					log.warning("Unknown location: " + nextLine[CSV_OFFSET_LOCATION]);
@@ -114,15 +118,16 @@ public class IceDataSwerk implements IceData {
 					break;
 				}
 				String sheet = parseSheetFromIceInfo(nextLine[CSV_OFFSET_LOCATION]);
-				
-				// We can't set the "share value" yet because we don't know all the events so we set it to Other.
-				Event event = new Event(team,
-						normalizedLocation, sheet,
-						ShareValue.OTHER, null, date, iceTime, null);
+
+				// We can't set the "share value" yet because we don't know all the events so we
+				// set it to Other.
+				Event event = new Event(team, normalizedLocation, sheet, ShareValue.OTHER, null, date,
+						iceTimeIn24hFormat, null);
 				iceEvents.add(event);
-				
-				String eventShareListKey = getShareKey(event.getDate(), event.getTime(), event.getLocation(), event.getSheet());
-				List<Event> eventShareListItem = eventShareList.get (eventShareListKey);
+
+				String eventShareListKey = getShareKey(event.getDate(), event.getTime(), event.getLocation(),
+						event.getSheet());
+				List<Event> eventShareListItem = eventShareList.get(eventShareListKey);
 				if (eventShareListItem == null) {
 					List<Event> l = new ArrayList<Event>();
 					l.add(event);
@@ -130,25 +135,22 @@ public class IceDataSwerk implements IceData {
 				} else {
 					eventShareListItem.add(event);
 				}
-				
-					
+
 			} // While
-			
+
 			// Set the "share value"
-			for (Event event: iceEvents) {
-				String eventShareListKey = getShareKey(event.getDate(), event.getTime(), event.getLocation(), event.getSheet());
+			for (Event event : iceEvents) {
+				String eventShareListKey = getShareKey(event.getDate(), event.getTime(), event.getLocation(),
+						event.getSheet());
 				List<Event> eventList = eventShareList.get(eventShareListKey);
 				if (eventList.size() == 1) {
 					event.setShareValue(ShareValue.FULL);
-				}
-				else if (eventList.size() == 2) {
+				} else if (eventList.size() == 2) {
 					event.setShareValue(ShareValue.HALF);
-				}
-				else
-				{
+				} else {
 					throw new Error("Bad lookup for share team.  Expected 1 or 2 entries found " + eventList.size());
 				}
-			}	
+			}
 		} catch (Exception e) {
 			System.out.println("Working directory is " + System.getProperty("user.dir"));
 			e.printStackTrace();
@@ -167,7 +169,8 @@ public class IceDataSwerk implements IceData {
 	}
 
 	private String parseSheetFromIceInfo(String locationWithSheet) {
-		// Delete everything before the ":" which indicates the location, leaving the sheet
+		// Delete everything before the ":" which indicates the location, leaving the
+		// sheet
 		return locationWithSheet.replaceAll(".*:", "");
 	}
 
@@ -200,8 +203,7 @@ public class IceDataSwerk implements IceData {
 	}
 
 	@Override
-	public String getShareTeam(Date date, String time, String location, String sheet,
-			String team) {
+	public String getShareTeam(Date date, String time, String location, String sheet, String team) {
 		if (date == null || time == null || location == null || team == null) {
 			// no point running expensive lookup
 			return null;
@@ -211,18 +213,16 @@ public class IceDataSwerk implements IceData {
 		List<Event> eventList = eventShareList.get(key);
 		if (eventList.size() == 1) {
 			return null;
-		}
-		else if (eventList.size() == 2) {
-			for (Event e: eventList)
+		} else if (eventList.size() == 2) {
+			for (Event e : eventList)
 				if (!e.getTeam().equals(team))
 					return e.getTeam();
 			throw new Error("Bad lookup for share team for:" + team);
-		}
-		else
-		{
+		} else {
 			throw new Error("Bad lookup for share team.  Expected 1 or 2 entries found " + eventList.size());
 		}
 	}
+
 	@Override
 	public void dump() {
 		for (String team : teamsLookup) {

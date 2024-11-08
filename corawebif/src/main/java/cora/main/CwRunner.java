@@ -83,6 +83,8 @@ public class CwRunner {
 	}
 
 	public int getExitCode() {
+		if (process_m == null)
+			return 0;
 		return process_m.exitValue();
 	}
 
