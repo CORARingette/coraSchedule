@@ -81,7 +81,9 @@ public class NCRRLSchedule extends AbstractLeagueSchedule {
 							String homeStr = parseHomeFromSummary(summary.getValue());
 							Location location = new Location(parseLocationFromSummary(summary.getValue()));
 							String visitorStr = parseVisitorFromSummary(summary.getValue());
-							if (homeStr.equals(teamName) || visitorStr.equals(teamName)) {
+							// NCRLL sometimes puts weird things like "(RAINOUT!)" in 
+							// front of the CORA team name.
+							if (homeStr.contains(teamName) || visitorStr.contains(teamName)) {
 								ScheduleRecord event = new ScheduleRecord();
 								event.setGameDate(DateTimeUtils.makeTruncatedDate(startDate));
 								event.setGameTime(DateTimeUtils.makeTruncatedTime(startDate));
@@ -93,6 +95,7 @@ public class NCRRLSchedule extends AbstractLeagueSchedule {
 							}
 							else {
 								log.warning("Team event from NCRRL does not contain team name " + team);
+								log.warning("homeStr: " + homeStr + "  visitorStr: " + visitorStr + "  teamName: " + teamName);
 								log.warning("Event details: " + sb.toString());
 
 							}
