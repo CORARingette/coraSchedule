@@ -35,26 +35,6 @@ public class IceDataSwerk implements IceData {
 			// "BURN", // Ice being discarded - this is handled separately due to "possible
 			// full ice feature
 			"SOLD", // Ice being sold
-			"Sortouts - U12A", //
-			"Sortouts - U12B", //
-			"Sortouts - U12C", //
-			"Sortouts - U14B", //
-			"Sortouts - U14C", //
-			"Sortouts - U16B", //
-			"Sortouts - U16C", //
-			"Sortouts - U19B", //
-			"Sortouts - FUN2", //
-			"Sortouts - FUN3", //
-			"ERRA - U19AA", //
-			"Warm-ups - Regional Teams", //
-			"Come Try Ringette", //
-			"Clinics - Goalie", //
-			"Clinics - Coaching", //
-			"Avalanche Ice", //
-			"Blizzard Ice", //
-			"Moms of Ringette", //
-			"Powerskating-Carl", //
-			"Powerskating-Erika", //
 			"Goalie"));
 
 	private final static String DATA_FILENAME = "swerkdata.csv";
@@ -99,6 +79,12 @@ public class IceDataSwerk implements IceData {
 				if (team.length() == 0)
 					continue;
 
+				// Discard events which are not practices (e.g. sort-outs, power skating, etc...
+				String eventType = nextLine [CSV_OFFSET_EVENT_TYPE];
+				if (!eventType.equals("Practice")) {
+					continue;
+				}
+				
 				// Used to discard certain ICE times for example
 				if (teamsToDiscard.contains(team)) {
 					continue;

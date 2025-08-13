@@ -209,8 +209,10 @@ public class TeamSnapEventGenerator extends AbstractTeamEventProcessor {
 		// check we are only removing events for teams we recognize
 		for (EventKey existingScheduleEvent : existingScheduleEvents) {
 			DivisionEvent de = (DivisionEvent) existingScheduleEvent.getSource();
+			// Extra check commented out to allow initial upload of SWERK file
+			// when there are no events for some teams
 			if (Config.getInstance().GetConfig(de.getTeam().getName()) == null
-					|| !IceDataGlobal.getInstance().isValidTeam(de.getTeam().getName())) {
+					/*|| !IceDataGlobal.getInstance().isValidTeam(de.getTeam().getName())*/) {
 				log.severe("Team '" + de.getTeam().getName()
 						+ "' in TeamSnap was not found either in the TeamConfig XML file or in the spreadshhet");
 				ok = false;

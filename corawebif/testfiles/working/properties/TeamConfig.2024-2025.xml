@@ -214,4 +214,42 @@
 		<division>U19</division>
 		<active>true</active>
 	</team>
+	
+	<!--  Temporary teams for tryout practices -->
+	<team>
+		<name>U14/U16 Conditioning</name>
+		<map>U14/U16 Conditioning</map>
+		<url></url>
+		<division></division>
+		<active>false</active>
+	</team>
+	<team>
+		<name>U14A - 2025/2026</name>
+		<map>U14A - 2025/2026</map>
+		<url></url>
+		<division></division>
+		<active>false</active>
+	</team>
+	<team>
+		<name>U14AA - 2025/2026</name>
+		<map>U14AA - 2025/2026</map>
+		<url></url>
+		<division></division>
+		<active>false</active>
+	</team>
+	<team>
+		<name>U16A - 2025/2026</name>
+		<map>U16A - 2025/2026</map>
+		<url></url>
+		<division></division>
+		<active>false</active>
+	</team>
+	<team>
+		<name>U16AA - 2025/2026</name>
+		<map>U16AA - 2025/2026</map>
+		<url></url>
+		<division></division>
+		<active>false</active>
+	</team>
+	
 </teams>
